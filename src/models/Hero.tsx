@@ -82,6 +82,7 @@ export interface SidekickData {
   }[];
   // Appended.
   skills: SkillData[];
+  equipmentSkills: SkillData[];
 }
 
 export interface CharacterData {

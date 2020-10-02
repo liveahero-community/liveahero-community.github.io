@@ -60,29 +60,29 @@ const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
   return (
     <>
       {/* Status */}
-      <Grid>
-        <Grid.Row columns={3}>
-          <Grid.Column>
-            <Header as='h3'>{`助手能力`}</Header>
-          </Grid.Column>
+      <Grid verticalAlign='middle'>
+        <Grid.Column width={5}>
+          <Header as='h3'>{`助手技能`}</Header>
+        </Grid.Column>
 
-          <Grid.Column textAlign='center'>
+        <Grid.Column width={11} textAlign='right'>
+          <div>
             {`固定星數：`}
             <Rating icon='star' disabled
               rating={rarity}
               maxRating={MAX_RARITY}
             />
-          </Grid.Column>
+          </div>
 
-          <Grid.Column textAlign='right'>
+          <div>
             {`調整上限：`}
             <Rating icon='heart'
               rating={selectedLevelZone}
               maxRating={MAX_LEVEL_ZONE}
               onRate={onLevelZoneChanged}
             />
-          </Grid.Column>
-        </Grid.Row>
+          </div>
+        </Grid.Column>
       </Grid>
 
       <Hero.CharacterDetailStatusTable
@@ -93,32 +93,42 @@ const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
       <Divider section />
 
       {/* Skills */}
-      <Grid>
-        <Grid.Row columns={3}>
-          <Grid.Column>
-            <Header as='h3'>{`助手技能`}</Header>
-          </Grid.Column>
+      <Grid verticalAlign='middle'>
+        <Grid.Column width={5}>
+          <Header as='h3'>{`助手技能`}</Header>
+        </Grid.Column>
 
-          <Grid.Column textAlign='center'>
+        <Grid.Column width={11} textAlign='right'>
+          <div>
             {`固定星數：`}
             <Rating icon='star' disabled
               rating={rarity}
               maxRating={MAX_RARITY}
             />
-          </Grid.Column>
+          </div>
 
-          <Grid.Column textAlign='right'>
+          <div>
             {`調整上限：`}
             <Rating icon='heart'
               rating={selectedLevelZone}
               maxRating={MAX_LEVEL_ZONE}
               onRate={onLevelZoneChanged}
             />
-          </Grid.Column>
-        </Grid.Row>
+          </div>
+        </Grid.Column>
       </Grid>
 
       <Hero.CharacterDetailSkillTable
+        path={'skills'}
+        card={sidekickCard}
+        previousCard={previousSidekickCard}
+      />
+
+      <Header as='h3'>{`助手裝備技能`}</Header>
+
+      <Hero.CharacterDetailSkillTable
+        hideCost={true}
+        path={'equipmentSkills'}
         card={sidekickCard}
         previousCard={previousSidekickCard}
       />

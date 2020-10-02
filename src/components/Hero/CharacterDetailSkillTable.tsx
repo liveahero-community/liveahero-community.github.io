@@ -45,12 +45,26 @@ const CharacterSkillCell: React.FC<CharacterSkillCellProps> = (props) => {
 };
 
 interface CharacterDetailSkillTableProps {
+  path: 'skills' | 'equipmentSkills';
   card: HeroData | SidekickData;
   previousCard?: HeroData | SidekickData;
+  hideCost?: boolean;
+}
+
+const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
+  return (card as SidekickData)?.equipmentSkills ? true : false;
 }
 
 const CharacterDetailSkillTable: React.FC<CharacterDetailSkillTableProps> = (props) => {
-  const { card, previousCard } = props;
+  const { path, card, previousCard, hideCost } = props;
+
+  const skills = path === 'equipmentSkills' && isSidekickData(card)
+    ? card.equipmentSkills
+    : card.skills;
+
+  const previousSkills = path === 'equipmentSkills' && isSidekickData(previousCard)
+    ? previousCard?.equipmentSkills
+    : previousCard?.skills;
 
   return (
     <Table unstackable compact>
@@ -58,24 +72,28 @@ const CharacterDetailSkillTable: React.FC<CharacterDetailSkillTableProps> = (pro
         <Table.Row>
           <Table.HeaderCell>名稱</Table.HeaderCell>
           <Table.HeaderCell>說明</Table.HeaderCell>
-          <Table.HeaderCell textAlign='right'>消耗 view</Table.HeaderCell>
+          {!hideCost &&
+            <Table.HeaderCell textAlign='right'>消耗 view</Table.HeaderCell>
+          }
         </Table.Row>
       </Table.Header>
 
       <Table.Body>
-        {card?.skills.map((skill, i) => (
+        {skills.map((skill, i) => (
           <Table.Row key={i}>
             <Table.Cell>{skill.skillName}</Table.Cell>
 
             <CharacterSkillCell wrap
               current={skill.description}
-              previous={previousCard?.skills[i].description}
+              previous={previousSkills && previousSkills[i].description}
             />
 
-            <CharacterSkillCell textAlign='right'
-              current={skill.useView}
-              previous={previousCard?.skills[i].useView}
-            />
+            {!hideCost &&
+              <CharacterSkillCell textAlign='right'
+                current={skill.useView}
+                previous={previousSkills && previousSkills[i].useView}
+              />
+            }
           </Table.Row>
         ))}
       </Table.Body>

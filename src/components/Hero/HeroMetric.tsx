@@ -76,21 +76,19 @@ const HeroMetric: React.FC<HeroMetricProps> = (props) => {
       </Grid>
 
       {/* Status */}
-      <Grid>
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <Header as='h3'>{`英雄能力`}</Header>
-          </Grid.Column>
+      <Grid columns={2} verticalAlign='middle'>
+        <Grid.Column>
+          <Header as='h3'>{`英雄能力`}</Header>
+        </Grid.Column>
 
-          <Grid.Column textAlign='right'>
-            {`調整星數：`}
-            <Rating icon='star'
-              rating={selectedRarity}
-              maxRating={MAX_RARITY}
-              onRate={onRarityChanged}
-            />
-          </Grid.Column>
-        </Grid.Row>
+        <Grid.Column textAlign='right'>
+          {`調整星數：`}
+          <Rating icon='star'
+            rating={selectedRarity}
+            maxRating={MAX_RARITY}
+            onRate={onRarityChanged}
+          />
+        </Grid.Column>
       </Grid>
 
       <Hero.CharacterDetailStatusTable
@@ -101,24 +99,23 @@ const HeroMetric: React.FC<HeroMetricProps> = (props) => {
       <Divider section />
 
       {/* Skills */}
-      <Grid>
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <Header as='h3'>{`英雄技能`}</Header>
-          </Grid.Column>
+      <Grid columns={2} verticalAlign='middle'>
+        <Grid.Column>
+          <Header as='h3'>{`英雄技能`}</Header>
+        </Grid.Column>
 
-          <Grid.Column textAlign='right'>
-            {`調整星數：`}
-            <Rating icon='star'
-              rating={selectedRarity}
-              maxRating={6}
-              onRate={onRarityChanged}
-            />
-          </Grid.Column>
-        </Grid.Row>
+        <Grid.Column textAlign='right'>
+          {`調整星數：`}
+          <Rating icon='star'
+            rating={selectedRarity}
+            maxRating={6}
+            onRate={onRarityChanged}
+          />
+        </Grid.Column>
       </Grid>
 
       <Hero.CharacterDetailSkillTable
+        path={'skills'}
         card={heroCard}
         previousCard={previousHeroCard}
       />
