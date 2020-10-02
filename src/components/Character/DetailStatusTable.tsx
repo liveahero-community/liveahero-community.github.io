@@ -6,12 +6,12 @@ import {
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
 
-interface CharacterStatusCellProps {
+interface StatusCellProps {
   current: number;
   previous?: number;
 }
 
-const CharacterStatusCell: React.FC<CharacterStatusCellProps> = (props) => {
+const StatusCell: React.FC<StatusCellProps> = (props) => {
   const { current, previous } = props;
 
   if (previous && current !== previous) {
@@ -25,12 +25,12 @@ const CharacterStatusCell: React.FC<CharacterStatusCellProps> = (props) => {
   );
 };
 
-interface CharacterDetailStatusTableProps {
+interface DetailStatusTableProps {
   card: HeroData | SidekickData;
   previousCard?: HeroData | SidekickData;
 }
 
-const CharacterDetailStatusTable: React.FC<CharacterDetailStatusTableProps> = (props) => {
+const DetailStatusTable: React.FC<DetailStatusTableProps> = (props) => {
   const { card, previousCard } = props;
 
   return (
@@ -49,10 +49,10 @@ const CharacterDetailStatusTable: React.FC<CharacterDetailStatusTableProps> = (p
         {card?.growths.map((growth, i) => (
           <Table.Row key={i} textAlign='right'>
             <Table.Cell textAlign='center'>{growth.level}</Table.Cell>
-            <CharacterStatusCell current={growth.hp} previous={previousCard?.growths[i].hp} />
-            <CharacterStatusCell current={growth.attack} previous={previousCard?.growths[i].attack} />
-            <CharacterStatusCell current={growth.agility} previous={previousCard?.growths[i].agility} />
-            <CharacterStatusCell current={growth.addView} previous={previousCard?.growths[i].addView} />
+            <StatusCell current={growth.hp} previous={previousCard?.growths[i].hp} />
+            <StatusCell current={growth.attack} previous={previousCard?.growths[i].attack} />
+            <StatusCell current={growth.agility} previous={previousCard?.growths[i].agility} />
+            <StatusCell current={growth.addView} previous={previousCard?.growths[i].addView} />
           </Table.Row>
         ))}
       </Table.Body>
@@ -61,5 +61,5 @@ const CharacterDetailStatusTable: React.FC<CharacterDetailStatusTableProps> = (p
 }
 
 export {
-  CharacterDetailStatusTable,
+  DetailStatusTable,
 };

@@ -91,7 +91,7 @@ const HeroMetric: React.FC<HeroMetricProps> = (props) => {
         </Grid.Column>
       </Grid>
 
-      <Hero.CharacterDetailStatusTable
+      <Hero.DetailStatusTable
         card={heroCard}
         previousCard={previousHeroCard}
       />
@@ -114,7 +114,7 @@ const HeroMetric: React.FC<HeroMetricProps> = (props) => {
         </Grid.Column>
       </Grid>
 
-      <Hero.CharacterDetailSkillTable
+      <Hero.DetailSkillTable
         path={'skills'}
         card={heroCard}
         previousCard={previousHeroCard}

@@ -85,7 +85,7 @@ const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
         </Grid.Column>
       </Grid>
 
-      <Hero.CharacterDetailStatusTable
+      <Hero.DetailStatusTable
         card={sidekickCard}
         previousCard={previousSidekickCard}
       />
@@ -118,7 +118,7 @@ const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
         </Grid.Column>
       </Grid>
 
-      <Hero.CharacterDetailSkillTable
+      <Hero.DetailSkillTable
         path={'skills'}
         card={sidekickCard}
         previousCard={previousSidekickCard}
@@ -126,7 +126,7 @@ const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
 
       <Header as='h3'>{`助手裝備技能`}</Header>
 
-      <Hero.CharacterDetailSkillTable
+      <Hero.DetailSkillTable
         hideCost={true}
         path={'equipmentSkills'}
         card={sidekickCard}

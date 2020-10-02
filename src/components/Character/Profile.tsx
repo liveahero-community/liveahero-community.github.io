@@ -10,11 +10,11 @@ import { RoleIcon } from '../Icon/RoleIcon';
 // Local components.
 import { DetailModal } from './index';
 
-interface HeroCardProps {
+interface ProfileProps {
   character: CharacterData;
 }
 
-const HeroCard: React.FC<HeroCardProps> = (props) => {
+const Profile: React.FC<ProfileProps> = (props) => {
   const { character } = props;
   const [heroCard] = _.orderBy(character.heroes, 'stockOrder', 'asc');
 
@@ -59,5 +59,5 @@ const HeroCard: React.FC<HeroCardProps> = (props) => {
 }
 
 export {
-  HeroCard,
+  Profile,
 };

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Segment, Image } from 'semantic-ui-react';
 // Local modules.
-import { HeroCatalog } from './components/Hero/';
+import * as Character from './components/Character';
 
 const App: React.FC = () => {
   const logUrl = 'https://live-a-hero.jp/wp-content/themes/liveahero/img/index/logo.png';
@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
       <div style={{ backgroundColor: '#333333', padding: '3em 0' }}>
         <Container>
-          <HeroCatalog />
+          <Character.Catalog />
         </Container>
       </div>
 

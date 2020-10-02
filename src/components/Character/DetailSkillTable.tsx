@@ -7,6 +7,10 @@ import {
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
 
+const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
+  return (card as SidekickData)?.equipmentSkills ? true : false;
+}
+
 const wrapDescription = (description?: any) => {
   if (_.isString(description)) {
     return description.split('。').filter(Boolean).map((token, i) => (
@@ -19,14 +23,14 @@ const wrapDescription = (description?: any) => {
   return description;
 };
 
-interface CharacterSkillCellProps {
+interface SkillCellProps {
   wrap?: boolean;
   textAlign?: 'center' | 'right';
   current: string | number;
   previous?: string | number;
 }
 
-const CharacterSkillCell: React.FC<CharacterSkillCellProps> = (props) => {
+const SkillCell: React.FC<SkillCellProps> = (props) => {
   const { wrap, textAlign, current, previous } = props;
 
   if (previous && current !== previous) {
@@ -44,18 +48,14 @@ const CharacterSkillCell: React.FC<CharacterSkillCellProps> = (props) => {
   );
 };
 
-interface CharacterDetailSkillTableProps {
+interface DetailSkillTableProps {
   path: 'skills' | 'equipmentSkills';
   card: HeroData | SidekickData;
   previousCard?: HeroData | SidekickData;
   hideCost?: boolean;
 }
 
-const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
-  return (card as SidekickData)?.equipmentSkills ? true : false;
-}
-
-const CharacterDetailSkillTable: React.FC<CharacterDetailSkillTableProps> = (props) => {
+const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
   const { path, card, previousCard, hideCost } = props;
 
   const skills = path === 'equipmentSkills' && isSidekickData(card)
@@ -83,13 +83,13 @@ const CharacterDetailSkillTable: React.FC<CharacterDetailSkillTableProps> = (pro
           <Table.Row key={i}>
             <Table.Cell>{skill.skillName}</Table.Cell>
 
-            <CharacterSkillCell wrap
+            <SkillCell wrap
               current={skill.description}
               previous={previousSkills && previousSkills[i].description}
             />
 
             {!hideCost &&
-              <CharacterSkillCell textAlign='right'
+              <SkillCell textAlign='right'
                 current={skill.useView}
                 previous={previousSkills && previousSkills[i].useView}
               />
@@ -102,5 +102,5 @@ const CharacterDetailSkillTable: React.FC<CharacterDetailSkillTableProps> = (pro
 }
 
 export {
-  CharacterDetailSkillTable,
+  DetailSkillTable,
 };
