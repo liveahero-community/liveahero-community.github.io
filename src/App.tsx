@@ -1,6 +1,6 @@
 // Node modules.
 import React, { useCallback, useEffect, useState } from 'react';
-import { Container, Segment, Image, Flag } from 'semantic-ui-react';
+import { Container, Segment, Image, Flag, Popup } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
 // Local modules.
@@ -30,6 +30,8 @@ const App: React.FC<AppProps> = (props) => {
       <Segment className='logo-banner' basic attached textAlign='center'>
         <Image size='medium' centered src={logoUrl} />
 
+        <div className='subtitle'>{'UNOFFICIAL DATABASE'}</div>
+
         <div className='languages'>
           <Flag className='flag'
             name='jp'
@@ -52,6 +54,15 @@ const App: React.FC<AppProps> = (props) => {
 
       <Segment className='logo-banner' basic attached textAlign='center'>
         <Image size='small' centered src={logoUrl} />
+
+        <a href={`https://forum.gamer.com.tw/Co.php?bsn=39312&sn=106`}>
+          <Popup inverted position='top center'
+            trigger={
+              <div className='footer'>{'Made by liveahero-community'}</div>
+            }
+            content='程式：Salmon / 翻譯：划水德小牛'
+          />
+        </a>
       </Segment>
     </div>
   );
@@ -62,6 +73,12 @@ const styledApp = styled(App)`
     background-color: #EC833D !important;
     border: none !important;
 
+    .subtitle {
+      margin-top: 0.25em;
+      color: #FFF;
+      font-weight: 700;
+    }
+
     .languages {
       position: absolute;
       top: 0;
@@ -70,6 +87,10 @@ const styledApp = styled(App)`
       .flag {
         cursor: pointer;
       }
+    }
+
+    .footer {
+      color: #333;
     }
   }
 
