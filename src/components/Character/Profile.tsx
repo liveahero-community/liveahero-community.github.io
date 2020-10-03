@@ -2,6 +2,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { Card, Grid, Image, Rating } from 'semantic-ui-react';
+import { isMobile } from 'react-device-detect';
 // Local modules.
 import { CharacterData } from '../../models/Hero';
 import { elementTransform, roleTransform } from '../../utils/Transformer';
@@ -22,7 +23,7 @@ const Profile: React.FC<ProfileProps> = (props) => {
     <DetailModal character={character}>
       <Card>
         <Image wrapped ui={false} alt={''}
-          src={`https://live-a-hero.jp/wp-content/uploads/2020/09/chara_${character.meta.resourceName}.png`}
+          src={`/assets/covers/${character.meta.resourceName}.png`}
         />
 
         <Card.Content>
@@ -31,15 +32,15 @@ const Profile: React.FC<ProfileProps> = (props) => {
           <Card.Meta>{character.meta.resourceName}</Card.Meta>
 
           <Card.Description>
-            <Grid divided textAlign='center'>
+            <Grid divided={!isMobile} textAlign='center'>
               <Grid.Row>
-                <Grid.Column width={6}>
+                <Grid.Column width={isMobile ? 4 : 6}>
                   <ElementIcon elementId={heroCard?.element} />
-                  {elementTransform(heroCard?.element)}
+                  {!isMobile && elementTransform(heroCard?.element)}
                 </Grid.Column>
 
-                <Grid.Column width={10}>
-                  <RoleIcon roleId={heroCard?.role} />
+                <Grid.Column width={isMobile ? 12 : 10}>
+                  {!isMobile && <RoleIcon roleId={heroCard?.role} />}
                   {roleTransform(heroCard?.role)}
                 </Grid.Column>
               </Grid.Row>

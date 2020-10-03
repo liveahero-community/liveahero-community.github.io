@@ -50,6 +50,10 @@ const DetailModal: React.FC<DetailModalProps> = (props) => {
                   : <Hero.SidekickMetric sidekickCards={character.sidekicks} />
                 ),
               },
+              {
+                menuItem: '人物資訊',
+                render: () => <Hero.Metadata character={character} />,
+              },
             ]}
           />
         </Modal.Description>

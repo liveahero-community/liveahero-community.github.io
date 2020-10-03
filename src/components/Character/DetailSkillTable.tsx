@@ -81,7 +81,7 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
       <Table.Body>
         {skills.map((skill, i) => (
           <Table.Row key={i}>
-            <Table.Cell>{skill.skillName}</Table.Cell>
+            <Table.Cell collapsing>{skill.skillName}</Table.Cell>
 
             <SkillCell wrap
               current={skill.description}
