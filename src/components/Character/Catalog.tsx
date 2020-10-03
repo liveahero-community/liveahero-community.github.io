@@ -1,25 +1,33 @@
 // Node modules.
 import _ from 'lodash';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
+import { CharacterData } from '../../models/Hero';
 // Local modules.
-import { characterDict } from '../../utils/DataProcess';
+import { allCharacterDict } from '../../utils/DataProcess';
 // Local components.
 import * as Character from './index';
 
 interface CatalogProps {
   className?: string;
+  language: 'jaJP' | 'zhTW';
 }
 
 const Catalog: React.FC<CatalogProps> = (props) => {
-  const { className } = props;
+  const { className, language } = props;
 
-  console.log(characterDict);
+  const [characterDict, setCharacterDict] = useState(allCharacterDict[language]);
+
+  useEffect(() => {
+    setCharacterDict(allCharacterDict[language]);
+  }, [language]);
+
+  console.log(language, characterDict);
 
   return (
     <Grid className={className} centered doubling>
-      {_.map(characterDict, (character, i) => (
+      {_.map(characterDict, (character: CharacterData, i) => (
         <Grid.Column className='character-profile' key={i}
           mobile={8}
           tablet={8}
@@ -28,7 +36,7 @@ const Catalog: React.FC<CatalogProps> = (props) => {
           widescreen={3}
         >
           <Character.Profile
-            character={character as any}
+            character={character}
           />
         </Grid.Column>
       ))}
