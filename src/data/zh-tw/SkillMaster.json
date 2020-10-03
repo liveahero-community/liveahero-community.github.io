@@ -7,7 +7,7 @@
     "resourceName": "b_skill_wait",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己「重量」1次。額外行動一次。",
+    "description": "賦予自己「重量」1 次。額外行動一次。",
     "cutin": [
       {
         "info": {
@@ -37,7 +37,7 @@
     "resourceName": "",
     "subResourceName": "",
     "timing": 0,
-    "description": "消除我方所有增益效果、減益效果，獲得免疫攻擊傷害1次。",
+    "description": "消除我方所有增益效果、減益效果，獲得免疫攻擊傷害 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -65,7 +65,7 @@
     "resourceName": "",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予攻擊力增加50%0次。",
+    "description": "賦予攻擊力增加 50% 0 次。",
     "cutin": [],
     "effects": [
       {
@@ -83,7 +83,7 @@
     "resourceName": "",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予攻擊力增加20%0次。",
+    "description": "賦予攻擊力增加 20% 0 次。",
     "cutin": [],
     "effects": [
       {
@@ -101,7 +101,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。40%機率賦予燒傷2次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。40% 機率賦予燒傷 2 次。",
     "cutin": [
       {
         "info": {
@@ -131,7 +131,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己攻擊力上升1次。",
+    "description": "賦予自己攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -156,7 +156,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "對敵方全體造成攻擊120%傷害。",
+    "description": "對敵方全體造成攻擊 120% 傷害。",
     "cutin": [
       {
         "info": {
@@ -181,7 +181,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己攻擊力上升2次。",
+    "description": "賦予自己攻擊力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -206,7 +206,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊80%傷害。",
+    "description": "對一個敵人造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
@@ -231,7 +231,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得15000 View。",
+    "description": "獲得 15000 View。",
     "cutin": [
       {
         "info": {
@@ -256,7 +256,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊150%傷害。70%機率賦予防禦力下降2次。",
+    "description": "對一個敵人造成攻擊 150% 傷害。70% 機率賦予防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -286,7 +286,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得15000 View。",
+    "description": "獲得 15000 View。",
     "cutin": [
       {
         "info": {
@@ -311,7 +311,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。50%機率賦予防禦力下降1次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。50% 機率賦予防禦力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -341,7 +341,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_spdDownTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害。50%機率賦予速度下降1次。",
+    "description": "對一個敵人造成攻擊 90% 傷害。50% 機率賦予速度下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -371,7 +371,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊150%傷害。賦予防禦力下降2次。消除所有增益效果。",
+    "description": "對一個敵人造成攻擊 150% 傷害。賦予防禦力下降 2 次。消除所有增益效果。",
     "cutin": [
       {
         "info": {
@@ -406,7 +406,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_spdDownTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害。賦予速度下降1次。",
+    "description": "對一個敵人造成攻擊 90% 傷害。賦予速度下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -436,7 +436,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊80%傷害。",
+    "description": "對一個敵人造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
@@ -461,7 +461,7 @@
     "resourceName": "b_skill_spdUpAll",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "賦予我方全體速度上升1次。賦予自己攻擊力上升1次。",
+    "description": "賦予我方全體速度上升 1 次。賦予自己攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -491,7 +491,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "對敵方全體造成攻擊90%傷害，且隨自己與對方的速度差增加傷害。",
+    "description": "對敵方全體造成攻擊 90% 傷害，且隨自己與對方的速度差增加傷害。",
     "cutin": [
       {
         "info": {
@@ -516,7 +516,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "對敵方全體造成攻擊90%傷害，且隨自己與對方的速度差增加傷害。",
+    "description": "對敵方全體造成攻擊 90% 傷害，且隨自己與對方的速度差增加傷害。",
     "cutin": [
       {
         "info": {
@@ -541,7 +541,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。50%機率對自己賦予防禦力提升1次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。50% 機率對自己賦予防禦力提升 1 次。",
     "cutin": [
       {
         "info": {
@@ -571,7 +571,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊50%的血量。賦予防禦力增加2次。",
+    "description": "恢復自己或一個友軍基礎攻擊 50% 的血量。賦予防禦力增加 2 次。",
     "cutin": [
       {
         "info": {
@@ -601,7 +601,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "對自己或一個友軍賦予防禦力增加、速度增加2次。",
+    "description": "對自己或一個友軍賦予防禦力增加、速度增加 2 次。",
     "cutin": [
       {
         "info": {
@@ -631,7 +631,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "對自己或一個友軍賦予防禦力增加、速度增加2次。賦予攻擊力增加1次。",
+    "description": "對自己或一個友軍賦予防禦力增加、速度增加 2 次。賦予攻擊力增加 1 次。",
     "cutin": [
       {
         "info": {
@@ -666,7 +666,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。40%機率賦予攻擊力下降1次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。40% 機率賦予攻擊力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -696,7 +696,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己傷害減少2次。",
+    "description": "賦予自己集中承受傷害 2 次。",
     "cutin": [
       {
         "info": {
@@ -721,7 +721,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對敵方全體造成攻擊90%傷害。賦予自己免疫攻擊傷害1次。",
+    "description": "對敵方全體造成攻擊 90% 傷害。賦予自己免疫攻擊傷害 1 次。",
     "cutin": [
       {
         "info": {
@@ -751,7 +751,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。賦予攻擊力下降1次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。賦予攻擊力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -781,7 +781,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害。賦予自己2燒傷次。",
+    "description": "對一個敵人造成攻擊 90% 傷害。賦予自己燒傷 2 次。",
     "cutin": [
       {
         "info": {
@@ -811,7 +811,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升、防禦力下降2次。",
+    "description": "賦予自己攻擊力上升、防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -846,7 +846,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊170%傷害，且該敵人血量越少傷害增加。",
+    "description": "對一個敵人造成攻擊 150% 傷害，且該敵人血量越少傷害增加。",
     "cutin": [
       {
         "info": {
@@ -871,7 +871,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊150%傷害，且該敵人血量越少傷害增加。",
+    "description": "對一個敵人造成攻擊 170% 傷害，且該敵人血量越少傷害增加。",
     "cutin": [
       {
         "info": {
@@ -896,7 +896,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊80%傷害。",
+    "description": "對一個敵人造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
@@ -921,7 +921,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "",
     "timing": 0,
-    "description": "combo數+3。",
+    "description": "combo 數 +3。",
     "cutin": [
       {
         "info": {
@@ -946,7 +946,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊180%傷害。",
+    "description": "對一個敵人造成攻擊 180% 傷害。",
     "cutin": [
       {
         "info": {
@@ -971,7 +971,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊200%傷害。",
+    "description": "對一個敵人造成攻擊 200% 傷害。",
     "cutin": [
       {
         "info": {
@@ -996,7 +996,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。 50%機率賦予攻擊力下降1次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。50% 機率賦予攻擊力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -1026,7 +1026,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍嘲諷、防禦力上升2次。",
+    "description": "賦予自己或一個友軍嘲諷、防禦力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -1056,7 +1056,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffAll",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。賦予我方所有人攻擊力上升1次。",
+    "description": "對一個敵人造成攻擊 120% 傷害。賦予我方所有人攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1086,7 +1086,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffAll",
     "timing": 0,
-    "description": "對一個敵人造成攻擊150%傷害。賦予我方所有人攻擊力上升1次。",
+    "description": "對一個敵人造成攻擊 150% 傷害。賦予我方所有人攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1116,7 +1116,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。40%機率賦予防禦力下降1次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。40% 機率賦予防禦力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -1146,7 +1146,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。",
+    "description": "對一個敵人造成攻擊 120% 傷害。",
     "cutin": [
       {
         "info": {
@@ -1171,7 +1171,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊150%傷害，且隨combo數增加傷害。",
+    "description": "對一個敵人造成攻擊 150% 傷害，且隨 combo 數增加傷害。",
     "cutin": [
       {
         "info": {
@@ -1196,7 +1196,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。賦予防禦力下降1次。",
+    "description": "對一個敵人造成攻擊 70%傷害。賦予防禦力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -1226,7 +1226,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_heal",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。恢復自己基礎攻擊50%的血量。",
+    "description": "對一個敵人造成攻擊 70% 傷害。恢復自己基礎攻擊 50% 的血量。",
     "cutin": [
       {
         "info": {
@@ -1256,7 +1256,7 @@
     "resourceName": "b_skill_cure",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "消除自己身上2個減益效果。賦予嘲諷2次。",
+    "description": "消除自己身上 2 個減益效果。賦予嘲諷 2 次。",
     "cutin": [
       {
         "info": {
@@ -1286,7 +1286,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffAll",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。賦予我方全體防禦力上升1次。",
+    "description": "對一個敵人造成攻擊 120% 傷害。賦予我方全體防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1316,7 +1316,7 @@
     "resourceName": "b_skill_cure",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "消除自己身上2個減益效果。賦予嘲諷2次。賦予攻擊力上升1次。",
+    "description": "消除自己身上 2 個減益效果。賦予嘲諷 2 次。賦予攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1351,7 +1351,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。獲得3000 View。",
+    "description": "對一個敵人造成攻擊 60% 傷害。獲得 3000 View。",
     "cutin": [
       {
         "info": {
@@ -1381,7 +1381,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對敵方全體造成攻擊70%傷害。賦予自身注目1次。",
+    "description": "對敵方全體造成攻擊 70% 傷害。賦予自身注目 1 次。",
     "cutin": [
       {
         "info": {
@@ -1411,7 +1411,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊150%傷害，且隨當前View值增加傷害。",
+    "description": "對一個敵人造成攻擊 150% 傷害，且隨當前 View 值增加傷害。",
     "cutin": [
       {
         "info": {
@@ -1436,7 +1436,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊170%傷害，且隨當前View值增加傷害。",
+    "description": "對一個敵人造成攻擊 170% 傷害，且隨當前 View 值增加傷害。",
     "cutin": [
       {
         "info": {
@@ -1461,7 +1461,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。40%賦予攻擊力下降1次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。40% 賦予攻擊力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -1491,7 +1491,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "獲得5000 View。賦予自己免疫攻擊傷害1次。",
+    "description": "獲得 5000 View。賦予自己免疫攻擊傷害 1 次。",
     "cutin": [
       {
         "info": {
@@ -1521,7 +1521,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得30000 View。",
+    "description": "獲得 30000 View。",
     "cutin": [
       {
         "info": {
@@ -1546,7 +1546,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "獲得5000 View。賦予自己免疫攻擊傷害、速度上升1次。",
+    "description": "獲得 5000 View。賦予自己免疫攻擊傷害、速度上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1581,7 +1581,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊80%傷害。",
+    "description": "對一個敵人造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
@@ -1606,7 +1606,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升2次。",
+    "description": "賦予自己或一個友軍攻擊力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -1631,7 +1631,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "s_skill_buffAll",
     "timing": 0,
-    "description": "對敵方全體造成攻擊80%傷害。賦予我方全體幸運2次。",
+    "description": "對敵方全體造成攻擊 80% 傷害。賦予我方全體幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -1661,7 +1661,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升2次。",
+    "description": "賦予自己或一個友軍攻擊力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -1686,7 +1686,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。50%機率賦予防禦力下降1次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。50% 機率賦予防禦力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -1716,7 +1716,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_spdDownTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。賦予超級速度降低1次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。賦予超級速度降低 1 次。",
     "cutin": [
       {
         "info": {
@@ -1746,7 +1746,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍覺醒2次。",
+    "description": "賦予自己或一個友軍覺醒 2 次。",
     "cutin": [
       {
         "info": {
@@ -1771,7 +1771,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_cureTeam",
     "timing": 0,
-    "description": "賦予自己或一個友軍覺醒2次。消除2個減益效果。",
+    "description": "賦予自己或一個友軍覺醒 2 次。消除 2 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -1801,7 +1801,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_cureOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。消除自己身上1個減益效果。",
+    "description": "對一個敵人造成攻擊 70% 傷害。消除自己身上 1 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -1831,7 +1831,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊70%的血量。賦予防禦力上升1次。",
+    "description": "恢復自己或一個友軍基礎攻擊 70% 的血量。賦予防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1861,7 +1861,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊220%的血量。",
+    "description": "恢復自己或一個友軍基礎攻擊 220% 的血量。",
     "cutin": [
       {
         "info": {
@@ -1886,7 +1886,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊80%的血量。賦予防禦力上升1次。",
+    "description": "恢復自己或一個友軍基礎攻擊 80% 的血量。賦予防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -1916,7 +1916,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊80%傷害。",
+    "description": "對一個敵人造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
@@ -1941,7 +1941,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "對敵方全體造成攻擊120%傷害。",
+    "description": "對敵方全體造成攻擊 120% 傷害。",
     "cutin": [
       {
         "info": {
@@ -1966,7 +1966,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊180%傷害，且隨該對手身上增益數量增加傷害。",
+    "description": "對一個敵人造成攻擊 180% 傷害，且隨該對手身上增益數量增加傷害。",
     "cutin": [
       {
         "info": {
@@ -1991,7 +1991,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊180%傷害，且隨該對手身上增益數量增加傷害。",
+    "description": "對一個敵人造成攻擊 180% 傷害，且隨該對手身上增益數量增加傷害。",
     "cutin": [
       {
         "info": {
@@ -2016,7 +2016,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊50%傷害。60%機率賦予自己嘲諷2次。",
+    "description": "對一個敵人造成攻擊 50% 傷害。60% 機率賦予自己嘲諷 2 次。",
     "cutin": [
       {
         "info": {
@@ -2046,7 +2046,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己或一個友軍速度上升1次。賦予防禦力上升2次。",
+    "description": "賦予自己或一個友軍速度上升 1 次。賦予防禦力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -2076,7 +2076,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "s_skill_debuffAll",
     "timing": 0,
-    "description": "對敵方全體造成攻擊120%傷害。40%機率賦予攻擊力下降1次。",
+    "description": "對敵方全體造成攻擊 120% 傷害。40% 機率賦予攻擊力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -2106,7 +2106,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊50%傷害。賦予自己嘲諷2次。",
+    "description": "對一個敵人造成攻擊 50% 傷害。賦予自己嘲諷 2 次。",
     "cutin": [
       {
         "info": {
@@ -2136,7 +2136,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_cureOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。消除自己1個減益效果。",
+    "description": "對一個敵人造成攻擊 70% 傷害。消除自己 1 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -2166,7 +2166,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "s_skill_cureTeam",
     "timing": 0,
-    "description": "恢復自己或一個友軍攻擊力50%的血量。消除1個減益效果。",
+    "description": "恢復自己或一個友軍攻擊力 50% 的血量。消除 1 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -2196,7 +2196,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "s_skill_antiBuffAll",
     "timing": 0,
-    "description": "對敵方全體造成攻擊70%傷害。消除2個（敵方）增益效果。",
+    "description": "對敵方全體造成攻擊 70% 傷害。消除 2 個（敵方）增益效果。",
     "cutin": [
       {
         "info": {
@@ -2226,7 +2226,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "s_skill_cureTeam",
     "timing": 0,
-    "description": "恢復自己或一個友軍攻擊力50%的血量。消除2個減益效果。",
+    "description": "恢復自己或一個友軍攻擊力 50% 的血量。消除 2 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -2256,7 +2256,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。40%機率賦予中毒2次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。40% 機率賦予中毒 2 次。",
     "cutin": [
       {
         "info": {
@@ -2286,7 +2286,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_spdDownTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。賦予速度下降2次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。賦予速度下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -2316,7 +2316,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人沉默2次。",
+    "description": "賦予一個敵人沉默 2 次。",
     "cutin": [
       {
         "info": {
@@ -2341,7 +2341,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_spdDownTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。賦予速度下降2次。70%機率賦予防禦力下降1次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。賦予速度下降 2 次。70% 機率賦予防禦力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -2376,7 +2376,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。60%機率賦予燒傷2次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。60% 機率賦予燒傷 2 次。",
     "cutin": [
       {
         "info": {
@@ -2406,7 +2406,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "s_skill_cureTeam",
     "timing": 0,
-    "description": "恢復自己或一個友軍攻擊力100%的血量。消除一個減益效果。",
+    "description": "恢復自己或一個友軍攻擊力 100% 的血量。消除一個減益效果。",
     "cutin": [
       {
         "info": {
@@ -2436,7 +2436,7 @@
     "resourceName": "b_skill_healAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予我方所有成員回春（恢復血量）2次。",
+    "description": "賦予我方所有成員回春（恢復血量）2 次。",
     "cutin": [
       {
         "info": {
@@ -2461,7 +2461,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "s_skill_cureTeam",
     "timing": 0,
-    "description": "恢復自己或一個友軍攻擊力130%的血量。消除一個減益效果。",
+    "description": "恢復自己或一個友軍攻擊力 130% 的血量。消除一個減益效果。",
     "cutin": [
       {
         "info": {
@@ -2491,7 +2491,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。獲得1000 View。",
+    "description": "對一個敵人造成攻擊 60% 傷害。獲得 1000 View。",
     "cutin": [
       {
         "info": {
@@ -2521,7 +2521,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "對敵方全體造成攻擊90%傷害。",
+    "description": "對敵方全體造成攻擊 90% 傷害。",
     "cutin": [
       {
         "info": {
@@ -2546,7 +2546,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得25000 View。",
+    "description": "獲得 25000 View。",
     "cutin": [
       {
         "info": {
@@ -2571,7 +2571,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。獲得3000 View。",
+    "description": "對一個敵人造成攻擊 60% 傷害。獲得 3000 View。",
     "cutin": [
       {
         "info": {
@@ -2601,7 +2601,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊60%傷害。10%機率賦予自己覺醒1次。",
+    "description": "對一個敵人造成攻擊 60% 傷害。10% 機率賦予自己覺醒 1 次。",
     "cutin": [
       {
         "info": {
@@ -2631,7 +2631,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "賦予自己或一個友軍速度上升1次。獲得10000 View。",
+    "description": "賦予自己或一個友軍速度上升 1 次。獲得 10000 View。",
     "cutin": [
       {
         "info": {
@@ -2661,7 +2661,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍覺醒2次。",
+    "description": "賦予自己或一個友軍覺醒 2 次。",
     "cutin": [
       {
         "info": {
@@ -2686,7 +2686,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍覺醒2次。",
+    "description": "賦予自己或一個友軍覺醒 2 次。",
     "cutin": [
       {
         "info": {
@@ -2711,7 +2711,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己攻擊力上升、防禦力上升1次。",
+    "description": "賦予自己攻擊力上升、防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -2741,7 +2741,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己攻擊力上升、防禦力上升1次。",
+    "description": "賦予自己攻擊力上升、防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -2771,7 +2771,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "賦予自己攻擊力上升、防禦力上升1次。",
+    "description": "賦予自己攻擊力上升、防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -2801,7 +2801,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "賦予自己攻擊力上升1次。 額外行動一次。",
+    "description": "賦予自己攻擊力上升 1 次。額外行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -2824,7 +2824,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "賦予自己攻擊力上升1次。額外行動一次。",
+    "description": "賦予自己攻擊力上升 1 次。額外行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -2847,7 +2847,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "賦予自己攻擊力上升1次。額外行動一次。",
+    "description": "賦予自己攻擊力上升 1 次。額外行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -2870,7 +2870,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得10000 View。",
+    "description": "獲得 10000 View。",
     "cutin": [
       {
         "info": {
@@ -2895,7 +2895,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得10000 View。",
+    "description": "獲得 10000 View。",
     "cutin": [
       {
         "info": {
@@ -2920,7 +2920,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "",
     "timing": 0,
-    "description": "獲得10000 View。",
+    "description": "獲得 10000 View。",
     "cutin": [
       {
         "info": {
@@ -2945,7 +2945,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人防禦力下降2次。",
+    "description": "賦予一個敵人防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -2970,7 +2970,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人防禦力下降2次。25%賦予防禦力下降。",
+    "description": "賦予一個敵人防禦力下降 2 次。25% 賦予防禦力下降。",
     "cutin": [
       {
         "info": {
@@ -3000,7 +3000,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人防禦力下降2次。50%賦予防禦力下降。",
+    "description": "賦予一個敵人防禦力下降 2 次。50% 賦予防禦力下降。",
     "cutin": [
       {
         "info": {
@@ -3030,7 +3030,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害，且隨自己與對方的速度差增加傷害。",
+    "description": "對一個敵人造成攻擊 90% 傷害，且隨自己與對方的速度差增加傷害。",
     "cutin": [
       {
         "info": {
@@ -3055,7 +3055,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害，且隨自己與對方的速度差增加傷害。",
+    "description": "對一個敵人造成攻擊 90% 傷害，且隨自己與對方的速度差增加傷害。",
     "cutin": [
       {
         "info": {
@@ -3080,7 +3080,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害，且隨自己與對方的速度差增加傷害。",
+    "description": "對一個敵人造成攻擊 90% 傷害，且隨自己與對方的速度差增加傷害。",
     "cutin": [
       {
         "info": {
@@ -3105,7 +3105,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己防禦力增加2次。賦予速度增加1次。",
+    "description": "賦予自己防禦力增加 2 次。賦予速度增加 1 次。",
     "cutin": [
       {
         "info": {
@@ -3135,7 +3135,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己防禦力增加2次。賦予速度增加1次。",
+    "description": "賦予自己防禦力增加 2 次。賦予速度增加 1 次。",
     "cutin": [
       {
         "info": {
@@ -3165,7 +3165,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己防禦力增加2次。賦予速度增加1次。",
+    "description": "賦予自己防禦力增加 2 次。賦予速度增加 1 次。",
     "cutin": [
       {
         "info": {
@@ -3195,7 +3195,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己免疫攻擊傷害1次。",
+    "description": "賦予自己免疫攻擊傷害 1 次。",
     "cutin": [
       {
         "info": {
@@ -3220,7 +3220,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_heal",
     "timing": 0,
-    "description": "賦予自己免疫攻擊傷害1次。恢復基礎攻擊50%血量。",
+    "description": "賦予自己免疫攻擊傷害 1 次。恢復基礎攻擊 50% 血量。",
     "cutin": [
       {
         "info": {
@@ -3250,7 +3250,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_heal",
     "timing": 0,
-    "description": "賦予自己免疫攻擊傷害1次。恢復基礎攻擊80%血量。",
+    "description": "賦予自己免疫攻擊傷害 1 次。恢復基礎攻擊 80% 血量。",
     "cutin": [
       {
         "info": {
@@ -3280,7 +3280,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升x2、防禦力下降2次。",
+    "description": "賦予自己攻擊力上升 x2、防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -3315,7 +3315,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升x2、防禦力下降2次。",
+    "description": "賦予自己攻擊力上升 x2、防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -3350,7 +3350,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升x2、防禦力下降2次。",
+    "description": "賦予自己攻擊力上升 x2、防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -3385,7 +3385,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "",
     "timing": 0,
-    "description": "combo數+3。",
+    "description": "combo 數 +3。",
     "cutin": [
       {
         "info": {
@@ -3410,7 +3410,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "",
     "timing": 0,
-    "description": "combo數+3。",
+    "description": "combo 數 +3。",
     "cutin": [
       {
         "info": {
@@ -3435,7 +3435,7 @@
     "resourceName": "b_skill_special",
     "subResourceName": "",
     "timing": 0,
-    "description": "combo數+4。",
+    "description": "combo 數 +4。",
     "cutin": [
       {
         "info": {
@@ -3460,7 +3460,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升2次。",
+    "description": "賦予自己或一個友軍攻擊力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -3485,7 +3485,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升2次。",
+    "description": "賦予自己或一個友軍攻擊力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -3510,7 +3510,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_cureOwn",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升2次。消除自己身上的1個減益效果。",
+    "description": "賦予自己或一個友軍攻擊力上升 2 次。消除自己身上的 1 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -3540,7 +3540,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。",
+    "description": "對一個敵人造成攻擊 120% 傷害。",
     "cutin": [
       {
         "info": {
@@ -3565,7 +3565,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊130%傷害。",
+    "description": "對一個敵人造成攻擊 130% 傷害。",
     "cutin": [
       {
         "info": {
@@ -3590,7 +3590,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊130%傷害。",
+    "description": "對一個敵人造成攻擊 130% 傷害。",
     "cutin": [
       {
         "info": {
@@ -3615,7 +3615,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍防禦力上升2次。",
+    "description": "賦予自己或一個友軍防禦力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -3640,7 +3640,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍防禦力上升2次。",
+    "description": "賦予自己或一個友軍防禦力上升 2 次。50% 機率賦予自己防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -3670,7 +3670,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍防禦力上升2次。",
+    "description": "賦予自己或一個友軍防禦力上升 2 次。賦予自己防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -3700,7 +3700,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。50%機率賦予自己幸運2次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。50% 機率賦予自己幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -3730,7 +3730,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。75%機率賦予自己幸運2次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。75% 機率賦予自己幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -3760,7 +3760,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "對一個敵人造成攻擊70%傷害。賦予自己幸運2次。",
+    "description": "對一個敵人造成攻擊 70% 傷害。賦予自己幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -3790,7 +3790,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "獲得7000 View。賦予自己幸運2次。",
+    "description": "獲得 7000 View。賦予自己幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -3820,7 +3820,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "獲得7000 View。賦予自己幸運2次。",
+    "description": "獲得 7000 View。賦予自己幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -3850,7 +3850,7 @@
     "resourceName": "b_skill_view",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "獲得7000 View。賦予自己幸運2次。",
+    "description": "獲得 7000 View。賦予自己幸運 2 次。",
     "cutin": [
       {
         "info": {
@@ -3880,7 +3880,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升3次。",
+    "description": "賦予自己或一個友軍攻擊力上升 3 次。",
     "cutin": [
       {
         "info": {
@@ -3905,7 +3905,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升3次。",
+    "description": "賦予自己或一個友軍攻擊力上升 3 次。",
     "cutin": [
       {
         "info": {
@@ -3930,7 +3930,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍攻擊力上升3次。",
+    "description": "賦予自己或一個友軍攻擊力上升 3 次。",
     "cutin": [
       {
         "info": {
@@ -3955,7 +3955,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害。賦予防禦力下降2次。",
+    "description": "對一個敵人造成攻擊 90% 傷害。賦予防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -3985,7 +3985,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害。賦予防禦力下降2次。",
+    "description": "對一個敵人造成攻擊 90% 傷害。賦予防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -4015,7 +4015,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_spdDownTeam",
     "timing": 0,
-    "description": "對一個敵人造成攻擊90%傷害。賦予防禦力下降2次。",
+    "description": "對一個敵人造成攻擊 90% 傷害。賦予防禦力下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -4045,7 +4045,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊100%的血量。",
+    "description": "恢復自己或一個友軍基礎攻擊 100% 的血量。",
     "cutin": [
       {
         "info": {
@@ -4070,7 +4070,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊100%的血量。",
+    "description": "恢復自己或一個友軍基礎攻擊 100% 的血量。",
     "cutin": [
       {
         "info": {
@@ -4095,7 +4095,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "恢復自己或一個友軍基礎攻擊100%的血量。",
+    "description": "恢復自己或一個友軍基礎攻擊 100% 的血量。",
     "cutin": [
       {
         "info": {
@@ -4120,7 +4120,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。賦予自己攻擊力上升1次。",
+    "description": "對一個敵人造成攻擊 120% 傷害。賦予自己攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4150,7 +4150,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。賦予自己攻擊力上升1次。",
+    "description": "對一個敵人造成攻擊 120% 傷害。賦予自己攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4180,7 +4180,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "對一個敵人造成攻擊120%傷害。賦予自己攻擊力上升1次。",
+    "description": "對一個敵人造成攻擊 120% 傷害。賦予自己攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4210,7 +4210,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己嘲諷2次。賦予防禦力上升1次。",
+    "description": "賦予自己嘲諷 2 次。賦予防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4240,7 +4240,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己嘲諷2次。賦予防禦力上升1次。",
+    "description": "賦予自己嘲諷 2 次。賦予防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4270,7 +4270,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己嘲諷2次。賦予防禦力上升1次。",
+    "description": "賦予自己嘲諷 2 次。賦予防禦力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4300,7 +4300,7 @@
     "resourceName": "b_skill_cure",
     "subResourceName": "",
     "timing": 0,
-    "description": "消除自己1個減益效果。",
+    "description": "消除自己 1 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -4325,7 +4325,7 @@
     "resourceName": "b_skill_cure",
     "subResourceName": "",
     "timing": 0,
-    "description": "消除自己2個減益效果。",
+    "description": "消除自己 2 個減益效果。",
     "cutin": [
       {
         "info": {
@@ -4350,7 +4350,7 @@
     "resourceName": "b_skill_cure",
     "subResourceName": "s_skill_heal",
     "timing": 0,
-    "description": "消除自己2個減益效果。恢復基礎攻擊力50%的血量。",
+    "description": "消除自己 2 個減益效果。恢復基礎攻擊力 50% 的血量。",
     "cutin": [
       {
         "info": {
@@ -4380,7 +4380,7 @@
     "resourceName": "b_skill_spdDown",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人速度下降2次。",
+    "description": "賦予一個敵人速度下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -4405,7 +4405,7 @@
     "resourceName": "b_skill_spdDown",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人速度下降2次。",
+    "description": "賦予一個敵人速度下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -4430,7 +4430,7 @@
     "resourceName": "b_skill_spdDown",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予一個敵人速度下降2次。",
+    "description": "賦予一個敵人速度下降 2 次。",
     "cutin": [
       {
         "info": {
@@ -4455,7 +4455,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己回春（恢復血量）2次。",
+    "description": "賦予自己回春（恢復血量）2 次。",
     "cutin": [
       {
         "info": {
@@ -4480,7 +4480,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己回春（恢復血量）3次。",
+    "description": "賦予自己回春（恢復血量）3 次。",
     "cutin": [
       {
         "info": {
@@ -4505,7 +4505,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一位友軍回春（恢復血量）3次。",
+    "description": "賦予自己或一位友軍回春（恢復血量）3 次。",
     "cutin": [
       {
         "info": {
@@ -4530,7 +4530,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "賦予一個敵人防禦力下降1次。獲得5000 View。",
+    "description": "賦予一個敵人防禦力下降 1 次。獲得 5000 View。",
     "cutin": [
       {
         "info": {
@@ -4560,7 +4560,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "賦予一個敵人防禦力下降1次。獲得5000 View。",
+    "description": "賦予一個敵人防禦力下降 1 次。獲得 5000 View。",
     "cutin": [
       {
         "info": {
@@ -4590,7 +4590,7 @@
     "resourceName": "b_skill_debuff",
     "subResourceName": "s_skill_view",
     "timing": 0,
-    "description": "賦予一個敵人防禦力下降1次。獲得5000 View。",
+    "description": "賦予一個敵人防禦力下降 1 次。獲得 5000 View。",
     "cutin": [
       {
         "info": {
@@ -4620,7 +4620,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己速度上升、免疫攻擊傷害1次。",
+    "description": "賦予自己速度上升、免疫攻擊傷害 1 次。",
     "cutin": [
       {
         "info": {
@@ -4650,7 +4650,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己速度上升、免疫攻擊傷害1次。",
+    "description": "賦予自己速度上升、免疫攻擊傷害 1 次。",
     "cutin": [
       {
         "info": {
@@ -4680,7 +4680,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己速度上升、免疫攻擊傷害1次。",
+    "description": "賦予自己速度上升、免疫攻擊傷害 1 次。",
     "cutin": [
       {
         "info": {
@@ -4710,7 +4710,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己或一個友軍速度上升、攻擊力上升1次。",
+    "description": "賦予自己或一個友軍速度上升、攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4740,7 +4740,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己或一個友軍速度上升、攻擊力上升1次。",
+    "description": "賦予自己或一個友軍速度上升、攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4770,7 +4770,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffTeam",
     "timing": 0,
-    "description": "賦予自己或一個友軍速度上升、攻擊力上升1次。",
+    "description": "賦予自己或一個友軍速度上升、攻擊力上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -4800,7 +4800,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍幸運上升2次。",
+    "description": "賦予自己或一個友軍幸運上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -4825,7 +4825,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍幸運上升3次。",
+    "description": "賦予自己或一個友軍幸運上升 3 次。",
     "cutin": [
       {
         "info": {
@@ -4850,7 +4850,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己或一個友軍幸運上升3次。",
+    "description": "賦予自己或一個友軍幸運上升 3 次。",
     "cutin": [
       {
         "info": {
@@ -4875,7 +4875,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "尚未爆衣時，攻擊力增強10%",
+    "description": "尚未爆衣時，攻擊力增強 10%。",
     "cutin": [],
     "effects": [
       {
@@ -4893,7 +4893,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "尚未爆衣時，攻擊力增強12%",
+    "description": "尚未爆衣時，攻擊力增強 12%。",
     "cutin": [],
     "effects": [
       {
@@ -4911,7 +4911,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "尚未爆衣時，攻擊力增強14%",
+    "description": "尚未爆衣時，攻擊力增強 14%。",
     "cutin": [],
     "effects": [
       {
@@ -4929,7 +4929,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "尚未爆衣時，攻擊力增強16%",
+    "description": "尚未爆衣時，攻擊力增強 16%。",
     "cutin": [],
     "effects": [
       {
@@ -4947,7 +4947,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "尚未爆衣時，攻擊力增強18%",
+    "description": "尚未爆衣時，攻擊力增強 18%。",
     "cutin": [],
     "effects": [
       {
@@ -4965,7 +4965,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "尚未爆衣時，攻擊力增強20%",
+    "description": "尚未爆衣時，攻擊力增強 20%。",
     "cutin": [],
     "effects": [
       {
@@ -4983,7 +4983,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有50%機率賦予自己攻擊力上升1次。",
+    "description": "受到傷害時有 50% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5001,7 +5001,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有60%機率賦予自己攻擊力上升1次。",
+    "description": "受到傷害時有 60% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5019,7 +5019,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有70%機率賦予自己攻擊力上升1次。",
+    "description": "受到傷害時有 70% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5037,7 +5037,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有80%機率賦予自己攻擊力上升1次。",
+    "description": "受到傷害時有 80% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5055,7 +5055,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有90%機率賦予自己攻擊力上升1次。",
+    "description": "受到傷害時有 90% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5073,7 +5073,7 @@
     "resourceName": "icon_akashi_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時賦予自己攻擊力上升1次。",
+    "description": "受到傷害時賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5091,7 +5091,7 @@
     "resourceName": "icon_mokdai_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+5%。",
+    "description": "View 基礎值 +5%。",
     "cutin": [],
     "effects": [
       {
@@ -5109,7 +5109,7 @@
     "resourceName": "icon_mokdai_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+6%。",
+    "description": "View 基礎值 +6%。",
     "cutin": [],
     "effects": [
       {
@@ -5127,7 +5127,7 @@
     "resourceName": "icon_mokdai_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+7%。",
+    "description": "View 基礎值 +7%。",
     "cutin": [],
     "effects": [
       {
@@ -5145,7 +5145,7 @@
     "resourceName": "icon_mokdai_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+8%。",
+    "description": "View 基礎值 +8%。",
     "cutin": [],
     "effects": [
       {
@@ -5163,7 +5163,7 @@
     "resourceName": "icon_mokdai_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+9%。",
+    "description": "View 基礎值 +9%。",
     "cutin": [],
     "effects": [
       {
@@ -5181,7 +5181,7 @@
     "resourceName": "icon_mokdai_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+10%。",
+    "description": "View 基礎值 +10%。",
     "cutin": [],
     "effects": [
       {
@@ -5199,7 +5199,7 @@
     "resourceName": "icon_sui_s01",
     "subResourceName": "",
     "timing": 7,
-    "description": "若自己的攻擊造成敵方爆衣，則有5%機率再行動一次。",
+    "description": "若自己的攻擊造成敵方爆衣，則有 5% 機率再行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -5217,7 +5217,7 @@
     "resourceName": "icon_sui_s01",
     "subResourceName": "",
     "timing": 7,
-    "description": "若自己的攻擊造成敵方爆衣，則有6%機率再行動一次。",
+    "description": "若自己的攻擊造成敵方爆衣，則有 6% 機率再行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -5235,7 +5235,7 @@
     "resourceName": "icon_sui_s01",
     "subResourceName": "",
     "timing": 7,
-    "description": "若自己的攻擊造成敵方爆衣，則有7%機率再行動一次。",
+    "description": "若自己的攻擊造成敵方爆衣，則有 7% 機率再行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -5253,7 +5253,7 @@
     "resourceName": "icon_sui_s01",
     "subResourceName": "",
     "timing": 7,
-    "description": "若自己的攻擊造成敵方爆衣，則有8%機率再行動一次。",
+    "description": "若自己的攻擊造成敵方爆衣，則有 8% 機率再行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -5271,7 +5271,7 @@
     "resourceName": "icon_sui_s01",
     "subResourceName": "",
     "timing": 7,
-    "description": "若自己的攻擊造成敵方爆衣，則有9%機率再行動一次。",
+    "description": "若自己的攻擊造成敵方爆衣，則有 9% 機率再行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -5289,7 +5289,7 @@
     "resourceName": "icon_sui_s01",
     "subResourceName": "",
     "timing": 7,
-    "description": "若自己的攻擊造成敵方爆衣，則有10%機率再行動一次。",
+    "description": "若自己的攻擊造成敵方爆衣，則有 10% 機率再行動一次。",
     "cutin": [],
     "effects": [
       {
@@ -5307,7 +5307,7 @@
     "resourceName": "icon_ryekie_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "速度基礎值+5。",
+    "description": "速度基礎值 +5。",
     "cutin": [],
     "effects": [
       {
@@ -5325,7 +5325,7 @@
     "resourceName": "icon_ryekie_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "速度基礎值+5，攻擊加1%。",
+    "description": "速度基礎值 +5，攻擊加1%。",
     "cutin": [],
     "effects": [
       {
@@ -5348,7 +5348,7 @@
     "resourceName": "icon_ryekie_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "速度基礎值+5，攻擊加2%。",
+    "description": "速度基礎值 +5，攻擊加2%。",
     "cutin": [],
     "effects": [
       {
@@ -5371,7 +5371,7 @@
     "resourceName": "icon_ryekie_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "速度基礎值+5，攻擊加3%。",
+    "description": "速度基礎值 +5，攻擊加3%。",
     "cutin": [],
     "effects": [
       {
@@ -5394,7 +5394,7 @@
     "resourceName": "icon_ryekie_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "速度基礎值+5，攻擊加4%。",
+    "description": "速度基礎值 +5，攻擊加4%。",
     "cutin": [],
     "effects": [
       {
@@ -5417,7 +5417,7 @@
     "resourceName": "icon_ryekie_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "速度基礎值+5，攻擊加5%。",
+    "description": "速度基礎值 +5，攻擊加5%。",
     "cutin": [],
     "effects": [
       {
@@ -5440,7 +5440,7 @@
     "resourceName": "icon_crowne_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-5%。",
+    "description": "被動傷害 -5%。",
     "cutin": [],
     "effects": [
       {
@@ -5458,7 +5458,7 @@
     "resourceName": "icon_crowne_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-6%。",
+    "description": "被動傷害 -6%。",
     "cutin": [],
     "effects": [
       {
@@ -5476,7 +5476,7 @@
     "resourceName": "icon_crowne_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-7%。",
+    "description": "被動傷害 -7%。",
     "cutin": [],
     "effects": [
       {
@@ -5494,7 +5494,7 @@
     "resourceName": "icon_crowne_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-8%。",
+    "description": "被動傷害 -8%。",
     "cutin": [],
     "effects": [
       {
@@ -5512,7 +5512,7 @@
     "resourceName": "icon_crowne_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-9%。",
+    "description": "被動傷害 -9%。",
     "cutin": [],
     "effects": [
       {
@@ -5548,7 +5548,7 @@
     "resourceName": "icon_furlong_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-5%。",
+    "description": "被動傷害 -5%。",
     "cutin": [],
     "effects": [
       {
@@ -5566,7 +5566,7 @@
     "resourceName": "icon_furlong_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-6%。",
+    "description": "被動傷害 -6%。",
     "cutin": [],
     "effects": [
       {
@@ -5584,7 +5584,7 @@
     "resourceName": "icon_furlong_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-7%。",
+    "description": "被動傷害 -7%。",
     "cutin": [],
     "effects": [
       {
@@ -5602,7 +5602,7 @@
     "resourceName": "icon_furlong_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-8%。",
+    "description": "被動傷害 -8%。",
     "cutin": [],
     "effects": [
       {
@@ -5620,7 +5620,7 @@
     "resourceName": "icon_furlong_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-9%。",
+    "description": "被動傷害 -9%。",
     "cutin": [],
     "effects": [
       {
@@ -5638,7 +5638,7 @@
     "resourceName": "icon_furlong_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "被動傷害-10%。",
+    "description": "被動傷害 -10%。",
     "cutin": [],
     "effects": [
       {
@@ -5656,7 +5656,7 @@
     "resourceName": "icon_victom_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有10%機率獲得攻擊力上升1次。",
+    "description": "受到傷害時有 10% 機率獲得攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5674,7 +5674,7 @@
     "resourceName": "icon_victom_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有14%機率獲得攻擊力上升1次。",
+    "description": "受到傷害時有 14% 機率獲得攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5692,7 +5692,7 @@
     "resourceName": "icon_victom_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有18%機率獲得攻擊力上升1次。",
+    "description": "受到傷害時有 18% 機率獲得攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5710,7 +5710,7 @@
     "resourceName": "icon_victom_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有22%機率獲得攻擊力上升1次。",
+    "description": "受到傷害時有 22% 機率獲得攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5728,7 +5728,7 @@
     "resourceName": "icon_victom_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有26%機率獲得攻擊力上升1次。",
+    "description": "受到傷害時有 26% 機率獲得攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5746,7 +5746,7 @@
     "resourceName": "icon_victom_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有30%機率獲得攻擊力上升1次。",
+    "description": "受到傷害時有 30% 機率獲得攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -5764,7 +5764,7 @@
     "resourceName": "icon_kyoichi_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時有10%機率combo數+1。",
+    "description": "行動結束時有 10% 機率 combo 數 +1。",
     "cutin": [],
     "effects": [
       {
@@ -5782,7 +5782,7 @@
     "resourceName": "icon_kyoichi_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時有12%機率combo數+1。",
+    "description": "行動結束時有 12% 機率 combo 數 +1。",
     "cutin": [],
     "effects": [
       {
@@ -5800,7 +5800,7 @@
     "resourceName": "icon_kyoichi_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時有14%機率combo數+1。",
+    "description": "行動結束時有 14% 機率 combo 數+1。",
     "cutin": [],
     "effects": [
       {
@@ -5818,7 +5818,7 @@
     "resourceName": "icon_kyoichi_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時有16%機率combo數+1。",
+    "description": "行動結束時有 16% 機率 combo 數+1。",
     "cutin": [],
     "effects": [
       {
@@ -5836,7 +5836,7 @@
     "resourceName": "icon_kyoichi_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時有18%機率combo數+1。",
+    "description": "行動結束時有 18% 機率 combo 數+1。",
     "cutin": [],
     "effects": [
       {
@@ -5854,7 +5854,7 @@
     "resourceName": "icon_kyoichi_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時有20%機率combo數+1。",
+    "description": "行動結束時有 20% 機率 combo 數+1。",
     "cutin": [],
     "effects": [
       {
@@ -5872,7 +5872,7 @@
     "resourceName": "icon_shoen_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能發動率增加5%。",
+    "description": "技能發動率增加 5%。",
     "cutin": [],
     "effects": [
       {
@@ -5890,7 +5890,7 @@
     "resourceName": "icon_shoen_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能發動率增加6%。",
+    "description": "技能發動率增加 6%。",
     "cutin": [],
     "effects": [
       {
@@ -5908,7 +5908,7 @@
     "resourceName": "icon_shoen_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能發動率增加7%。",
+    "description": "技能發動率增加 7%。",
     "cutin": [],
     "effects": [
       {
@@ -5926,7 +5926,7 @@
     "resourceName": "icon_shoen_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能發動率增加8%。",
+    "description": "技能發動率增加 8%。",
     "cutin": [],
     "effects": [
       {
@@ -5944,7 +5944,7 @@
     "resourceName": "icon_shoen_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能發動率增加9%。",
+    "description": "技能發動率增加 9%。",
     "cutin": [],
     "effects": [
       {
@@ -5962,7 +5962,7 @@
     "resourceName": "icon_shoen_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能發動率增加10%。",
+    "description": "技能發動率增加 10%。",
     "cutin": [],
     "effects": [
       {
@@ -5980,7 +5980,7 @@
     "resourceName": "icon_toshu_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+5%。",
+    "description": "攻擊力 +5%。",
     "cutin": [],
     "effects": [
       {
@@ -5998,7 +5998,7 @@
     "resourceName": "icon_toshu_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+6%。",
+    "description": "攻擊力 +6%。",
     "cutin": [],
     "effects": [
       {
@@ -6016,7 +6016,7 @@
     "resourceName": "icon_toshu_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+7%。",
+    "description": "攻擊力 +7%。",
     "cutin": [],
     "effects": [
       {
@@ -6034,7 +6034,7 @@
     "resourceName": "icon_toshu_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+8%。",
+    "description": "攻擊力 +8%。",
     "cutin": [],
     "effects": [
       {
@@ -6052,7 +6052,7 @@
     "resourceName": "icon_toshu_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+9%。",
+    "description": "攻擊力 +9%。",
     "cutin": [],
     "effects": [
       {
@@ -6070,7 +6070,7 @@
     "resourceName": "icon_toshu_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+10%。",
+    "description": "攻擊力 +10%。",
     "cutin": [],
     "effects": [
       {
@@ -6088,7 +6088,7 @@
     "resourceName": "icon_marfik_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "爆衣狀態中，被動傷害-10%。",
+    "description": "爆衣狀態中，被動傷害 -10%。",
     "cutin": [],
     "effects": [
       {
@@ -6106,7 +6106,7 @@
     "resourceName": "icon_marfik_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "爆衣狀態中，被動傷害-12%。",
+    "description": "爆衣狀態中，被動傷害 -12%。",
     "cutin": [],
     "effects": [
       {
@@ -6124,7 +6124,7 @@
     "resourceName": "icon_marfik_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "爆衣狀態中，被動傷害-14%。",
+    "description": "爆衣狀態中，被動傷害 -14%。",
     "cutin": [],
     "effects": [
       {
@@ -6142,7 +6142,7 @@
     "resourceName": "icon_marfik_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "爆衣狀態中，被動傷害-16%。",
+    "description": "爆衣狀態中，被動傷害 -16%。",
     "cutin": [],
     "effects": [
       {
@@ -6160,7 +6160,7 @@
     "resourceName": "icon_marfik_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "爆衣狀態中，被動傷害-18%。",
+    "description": "爆衣狀態中，被動傷害 -18%。",
     "cutin": [],
     "effects": [
       {
@@ -6178,7 +6178,7 @@
     "resourceName": "icon_marfik_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "爆衣狀態中，被動傷害-20%。",
+    "description": "爆衣狀態中，被動傷害 -20%。",
     "cutin": [],
     "effects": [
       {
@@ -6196,7 +6196,7 @@
     "resourceName": "icon_polaris_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有50%機率獲得1000 View。",
+    "description": "受到傷害時有 50% 機率獲得 1000 View。",
     "cutin": [],
     "effects": [
       {
@@ -6214,7 +6214,7 @@
     "resourceName": "icon_polaris_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有60%機率獲得1000 View。",
+    "description": "受到傷害時有 60% 機率獲得 1000 View。",
     "cutin": [],
     "effects": [
       {
@@ -6232,7 +6232,7 @@
     "resourceName": "icon_polaris_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有70%機率獲得1000 View。",
+    "description": "受到傷害時有 70% 機率獲得 1000 View。",
     "cutin": [],
     "effects": [
       {
@@ -6250,7 +6250,7 @@
     "resourceName": "icon_polaris_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有80%機率獲得1000 View。",
+    "description": "受到傷害時有 80% 機率獲得 1000 View。",
     "cutin": [],
     "effects": [
       {
@@ -6268,7 +6268,7 @@
     "resourceName": "icon_polaris_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時有90%機率獲得1000 View。",
+    "description": "受到傷害時有 90% 機率獲得 1000 View。",
     "cutin": [],
     "effects": [
       {
@@ -6286,7 +6286,7 @@
     "resourceName": "icon_polaris_s01",
     "subResourceName": "",
     "timing": 8,
-    "description": "受到傷害時獲得1000 View。",
+    "description": "受到傷害時獲得 1000 View。",
     "cutin": [],
     "effects": [
       {
@@ -6304,7 +6304,7 @@
     "resourceName": "icon_kouki_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+5%。",
+    "description": "View基礎值 +5%。",
     "cutin": [],
     "effects": [
       {
@@ -6322,7 +6322,7 @@
     "resourceName": "icon_kouki_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+6%。",
+    "description": "View基礎值 +6%。",
     "cutin": [],
     "effects": [
       {
@@ -6340,7 +6340,7 @@
     "resourceName": "icon_kouki_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+7%。",
+    "description": "View基礎值 +7%。",
     "cutin": [],
     "effects": [
       {
@@ -6358,7 +6358,7 @@
     "resourceName": "icon_kouki_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+8%。",
+    "description": "View基礎值 +8%。",
     "cutin": [],
     "effects": [
       {
@@ -6376,7 +6376,7 @@
     "resourceName": "icon_kouki_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+9%。",
+    "description": "View基礎值 +9%。",
     "cutin": [],
     "effects": [
       {
@@ -6394,7 +6394,7 @@
     "resourceName": "icon_kouki_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "View基礎值+10%。",
+    "description": "View基礎值 +10%。",
     "cutin": [],
     "effects": [
       {
@@ -6412,7 +6412,7 @@
     "resourceName": "icon_hitomi_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有15%機率賦予自己攻擊力上升1次。",
+    "description": "行動開始時有 15% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6430,7 +6430,7 @@
     "resourceName": "icon_hitomi_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有18%機率賦予自己攻擊力上升1次。",
+    "description": "行動開始時有 18% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6448,7 +6448,7 @@
     "resourceName": "icon_hitomi_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有21%機率賦予自己攻擊力上升1次。",
+    "description": "行動開始時有 21% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6466,7 +6466,7 @@
     "resourceName": "icon_hitomi_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有24%機率賦予自己攻擊力上升1次。",
+    "description": "行動開始時有 24% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6484,7 +6484,7 @@
     "resourceName": "icon_hitomi_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有27%機率賦予自己攻擊力上升1次。",
+    "description": "行動開始時有 27% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6502,7 +6502,7 @@
     "resourceName": "icon_hitomi_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有30%機率賦予自己攻擊力上升1次。",
+    "description": "行動開始時有 30% 機率賦予自己攻擊力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6538,7 +6538,7 @@
     "resourceName": "icon_rakta_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "無視敵人嘲諷，攻擊力+1%。",
+    "description": "無視敵人嘲諷，攻擊力 +1%。",
     "cutin": [],
     "effects": [
       {
@@ -6561,7 +6561,7 @@
     "resourceName": "icon_rakta_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "無視敵人嘲諷，攻擊力+2%。",
+    "description": "無視敵人嘲諷，攻擊力 +2%。",
     "cutin": [],
     "effects": [
       {
@@ -6584,7 +6584,7 @@
     "resourceName": "icon_rakta_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "無視敵人嘲諷，攻擊力+3%。",
+    "description": "無視敵人嘲諷，攻擊力 +3%。",
     "cutin": [],
     "effects": [
       {
@@ -6607,7 +6607,7 @@
     "resourceName": "icon_rakta_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "無視敵人嘲諷，攻擊力+4%。",
+    "description": "無視敵人嘲諷，攻擊力 +4%。",
     "cutin": [],
     "effects": [
       {
@@ -6630,7 +6630,7 @@
     "resourceName": "icon_rakta_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "無視敵人嘲諷，攻擊力+5%。",
+    "description": "無視敵人嘲諷，攻擊力 +5%。",
     "cutin": [],
     "effects": [
       {
@@ -6653,7 +6653,7 @@
     "resourceName": "icon_loren_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時恢復基礎攻擊10%的血量。",
+    "description": "行動結束時恢復基礎攻擊 10% 的血量。",
     "cutin": [],
     "effects": [
       {
@@ -6671,7 +6671,7 @@
     "resourceName": "icon_loren_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時恢復基礎攻擊12%的血量。",
+    "description": "行動結束時恢復基礎攻擊 12% 的血量。",
     "cutin": [],
     "effects": [
       {
@@ -6689,7 +6689,7 @@
     "resourceName": "icon_loren_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時恢復基礎攻擊14%的血量。",
+    "description": "行動結束時恢復基礎攻擊 14% 的血量。",
     "cutin": [],
     "effects": [
       {
@@ -6707,7 +6707,7 @@
     "resourceName": "icon_loren_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時恢復基礎攻擊16%的血量。",
+    "description": "行動結束時恢復基礎攻擊 16% 的血量。",
     "cutin": [],
     "effects": [
       {
@@ -6725,7 +6725,7 @@
     "resourceName": "icon_loren_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時恢復基礎攻擊18%的血量。",
+    "description": "行動結束時恢復基礎攻擊 18% 的血量。",
     "cutin": [],
     "effects": [
       {
@@ -6743,7 +6743,7 @@
     "resourceName": "icon_loren_s01",
     "subResourceName": "",
     "timing": 3,
-    "description": "行動結束時恢復基礎攻擊20%的血量。",
+    "description": "行動結束時恢復基礎攻擊 20% 的血量。",
     "cutin": [],
     "effects": [
       {
@@ -6761,7 +6761,7 @@
     "resourceName": "icon_isaribi_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+5%。",
+    "description": "攻擊力 +5%。",
     "cutin": [],
     "effects": [
       {
@@ -6779,7 +6779,7 @@
     "resourceName": "icon_isaribi_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+6%。",
+    "description": "攻擊力 +6%。",
     "cutin": [],
     "effects": [
       {
@@ -6797,7 +6797,7 @@
     "resourceName": "icon_isaribi_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+7%。",
+    "description": "攻擊力 +7%。",
     "cutin": [],
     "effects": [
       {
@@ -6815,7 +6815,7 @@
     "resourceName": "icon_isaribi_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+8%。",
+    "description": "攻擊力 +8%。",
     "cutin": [],
     "effects": [
       {
@@ -6833,7 +6833,7 @@
     "resourceName": "icon_isaribi_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+9%。",
+    "description": "攻擊力 +9%。",
     "cutin": [],
     "effects": [
       {
@@ -6851,7 +6851,7 @@
     "resourceName": "icon_isaribi_s01",
     "subResourceName": "",
     "timing": 10,
-    "description": "攻擊力+10%。",
+    "description": "攻擊力 +10%。",
     "cutin": [],
     "effects": [
       {
@@ -6869,7 +6869,7 @@
     "resourceName": "icon_goro_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "角色登場時有50%機率賦予自己防禦力上升1次。",
+    "description": "角色登場時有 50% 機率賦予自己防禦力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6887,7 +6887,7 @@
     "resourceName": "icon_goro_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "角色登場時有60%機率賦予自己防禦力上升1次。",
+    "description": "角色登場時有 60% 機率賦予自己防禦力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6905,7 +6905,7 @@
     "resourceName": "icon_goro_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "角色登場時有70%機率賦予自己防禦力上升1次。",
+    "description": "角色登場時有 70% 機率賦予自己防禦力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6923,7 +6923,7 @@
     "resourceName": "icon_goro_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "角色登場時有80%機率賦予自己防禦力上升1次。",
+    "description": "角色登場時有 80% 機率賦予自己防禦力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6941,7 +6941,7 @@
     "resourceName": "icon_goro_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "角色登場時有90%機率賦予自己防禦力上升1次。",
+    "description": "角色登場時有 90% 機率賦予自己防禦力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6959,7 +6959,7 @@
     "resourceName": "icon_goro_s01",
     "subResourceName": "",
     "timing": 1,
-    "description": "角色登場時賦予自己防禦力上升1次。",
+    "description": "角色登場時賦予自己防禦力上升 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -6977,7 +6977,7 @@
     "resourceName": "icon_digram_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有25%機率消除自己1個減益效果。",
+    "description": "行動開始時有 25% 機率消除自己 1 個減益效果。",
     "cutin": [],
     "effects": [
       {
@@ -6995,7 +6995,7 @@
     "resourceName": "icon_digram_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有30%機率消除自己1個減益效果。",
+    "description": "行動開始時有 30% 機率消除自己 1 個減益效果。",
     "cutin": [],
     "effects": [
       {
@@ -7013,7 +7013,7 @@
     "resourceName": "icon_digram_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有35%機率消除自己1個減益效果。",
+    "description": "行動開始時有 35% 機率消除自己 1 個減益效果。",
     "cutin": [],
     "effects": [
       {
@@ -7031,7 +7031,7 @@
     "resourceName": "icon_digram_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有40%機率消除自己1個減益效果。",
+    "description": "行動開始時有 40% 機率消除自己 1 個減益效果。",
     "cutin": [],
     "effects": [
       {
@@ -7049,7 +7049,7 @@
     "resourceName": "icon_digram_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有45%機率消除自己1個減益效果。",
+    "description": "行動開始時有 45% 機率消除自己 1 個減益效果。",
     "cutin": [],
     "effects": [
       {
@@ -7067,7 +7067,7 @@
     "resourceName": "icon_digram_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有50%機率消除自己1個減益效果。",
+    "description": "行動開始時有 50% 機率消除自己 1 個減益效果。",
     "cutin": [],
     "effects": [
       {
@@ -7085,7 +7085,7 @@
     "resourceName": "icon_alchiba_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有10%機率賦予一個敵人防禦力下降1次。",
+    "description": "行動開始時有 10% 機率賦予一個敵人防禦力下降 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -7103,7 +7103,7 @@
     "resourceName": "icon_alchiba_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有12%機率賦予一個敵人防禦力下降1次。",
+    "description": "行動開始時有 12% 機率賦予一個敵人防禦力下降 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -7121,7 +7121,7 @@
     "resourceName": "icon_alchiba_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有14%機率賦予一個敵人防禦力下降1次。",
+    "description": "行動開始時有 14% 機率賦予一個敵人防禦力下降 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -7139,7 +7139,7 @@
     "resourceName": "icon_alchiba_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有16%機率賦予一個敵人防禦力下降1次。",
+    "description": "行動開始時有 16% 機率賦予一個敵人防禦力下降 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -7157,7 +7157,7 @@
     "resourceName": "icon_alchiba_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有18%機率賦予一個敵人防禦力下降1次。",
+    "description": "行動開始時有 18% 機率賦予一個敵人防禦力下降 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -7175,7 +7175,7 @@
     "resourceName": "icon_alchiba_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有20%機率賦予一個敵人防禦力下降1次。",
+    "description": "行動開始時有 20% 機率賦予一個敵人防禦力下降 1 次。",
     "cutin": [],
     "effects": [
       {
@@ -7193,7 +7193,7 @@
     "resourceName": "icon_kirsch_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有15%賦予自己回春（恢復血量）2次。",
+    "description": "行動開始時有 15% 賦予自己回春（恢復血量）2 次。",
     "cutin": [],
     "effects": [
       {
@@ -7211,7 +7211,7 @@
     "resourceName": "icon_kirsch_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有20%賦予自己回春（恢復血量）2次。",
+    "description": "行動開始時有 20% 賦予自己回春（恢復血量）2 次。",
     "cutin": [],
     "effects": [
       {
@@ -7229,7 +7229,7 @@
     "resourceName": "icon_kirsch_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有25%賦予自己回春（恢復血量）2次。",
+    "description": "行動開始時有 25% 賦予自己回春（恢復血量）2 次。",
     "cutin": [],
     "effects": [
       {
@@ -7247,7 +7247,7 @@
     "resourceName": "icon_kirsch_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有30%賦予自己回春（恢復血量）2次。",
+    "description": "行動開始時有 30% 賦予自己回春（恢復血量）2 次。",
     "cutin": [],
     "effects": [
       {
@@ -7265,7 +7265,7 @@
     "resourceName": "icon_kirsch_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有35%賦予自己回春（恢復血量）2次。",
+    "description": "行動開始時有 35% 賦予自己回春（恢復血量）2 次。",
     "cutin": [],
     "effects": [
       {
@@ -7283,7 +7283,7 @@
     "resourceName": "icon_kirsch_s01",
     "subResourceName": "",
     "timing": 2,
-    "description": "行動開始時有40%賦予自己回春（恢復血量）2次。",
+    "description": "行動開始時有 40% 賦予自己回春（恢復血量）2 次。",
     "cutin": [],
     "effects": [
       {
@@ -7301,7 +7301,7 @@
     "resourceName": "icon_narihito_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "爆衣狀態下，View基礎值+10%。",
+    "description": "爆衣狀態下，View 基礎值 +10%。",
     "cutin": [],
     "effects": [
       {
@@ -7319,7 +7319,7 @@
     "resourceName": "icon_narihito_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "爆衣狀態下，View基礎值+12%。",
+    "description": "爆衣狀態下，View 基礎值 +12%。",
     "cutin": [],
     "effects": [
       {
@@ -7337,7 +7337,7 @@
     "resourceName": "icon_narihito_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "爆衣狀態下，View基礎值+14%。",
+    "description": "爆衣狀態下，View 基礎值 +14%。",
     "cutin": [],
     "effects": [
       {
@@ -7355,7 +7355,7 @@
     "resourceName": "icon_narihito_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "爆衣狀態下，View基礎值+16%。",
+    "description": "爆衣狀態下，View 基礎值 +16%。",
     "cutin": [],
     "effects": [
       {
@@ -7373,7 +7373,7 @@
     "resourceName": "icon_narihito_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "爆衣狀態下，View基礎值+18%。",
+    "description": "爆衣狀態下，View 基礎值 +18%。",
     "cutin": [],
     "effects": [
       {
@@ -7391,7 +7391,7 @@
     "resourceName": "icon_narihito_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "爆衣狀態下，View基礎值+20%。",
+    "description": "爆衣狀態下，View 基礎值 +20%。",
     "cutin": [],
     "effects": [
       {
@@ -7409,7 +7409,7 @@
     "resourceName": "icon_procy_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥金幣獲得增加1%",
+    "description": "戰鬥金幣獲得增加 1%",
     "cutin": [],
     "effects": [
       {
@@ -7427,7 +7427,7 @@
     "resourceName": "icon_procy_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥金幣獲得增加2%",
+    "description": "戰鬥金幣獲得增加 2%",
     "cutin": [],
     "effects": [
       {
@@ -7445,7 +7445,7 @@
     "resourceName": "icon_procy_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥金幣獲得增加3%",
+    "description": "戰鬥金幣獲得增加 3%",
     "cutin": [],
     "effects": [
       {
@@ -7463,7 +7463,7 @@
     "resourceName": "icon_procy_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥金幣獲得增加4%",
+    "description": "戰鬥金幣獲得增加 4%",
     "cutin": [],
     "effects": [
       {
@@ -7481,7 +7481,7 @@
     "resourceName": "icon_procy_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥金幣獲得增加5%",
+    "description": "戰鬥金幣獲得增加 5%",
     "cutin": [],
     "effects": [
       {
@@ -7499,7 +7499,7 @@
     "resourceName": "icon_procy_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥金幣獲得增加6%",
+    "description": "戰鬥金幣獲得增加 6%",
     "cutin": [],
     "effects": [
       {
@@ -7517,7 +7517,7 @@
     "resourceName": "icon_huckle_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥經驗獲得增加1%",
+    "description": "戰鬥經驗獲得增加 1%",
     "cutin": [],
     "effects": [
       {
@@ -7535,7 +7535,7 @@
     "resourceName": "icon_huckle_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥經驗獲得增加2%",
+    "description": "戰鬥經驗獲得增加 2%",
     "cutin": [],
     "effects": [
       {
@@ -7553,7 +7553,7 @@
     "resourceName": "icon_huckle_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥經驗獲得增加3%",
+    "description": "戰鬥經驗獲得增加 3%",
     "cutin": [],
     "effects": [
       {
@@ -7571,7 +7571,7 @@
     "resourceName": "icon_huckle_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥經驗獲得增加4%",
+    "description": "戰鬥經驗獲得增加 4%",
     "cutin": [],
     "effects": [
       {
@@ -7589,7 +7589,7 @@
     "resourceName": "icon_huckle_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥經驗獲得增加5%",
+    "description": "戰鬥經驗獲得增加 5%",
     "cutin": [],
     "effects": [
       {
@@ -7607,7 +7607,7 @@
     "resourceName": "icon_huckle_s01",
     "subResourceName": "",
     "timing": 11,
-    "description": "戰鬥經驗獲得增加6%",
+    "description": "戰鬥經驗獲得增加 6%",
     "cutin": [],
     "effects": [
       {
@@ -7625,7 +7625,7 @@
     "resourceName": "@playerIcon",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能View消耗-500。",
+    "description": "技能 View 消耗 -500。",
     "cutin": [],
     "effects": [
       {
@@ -7643,7 +7643,7 @@
     "resourceName": "@playerIcon",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能View消耗-600。",
+    "description": "技能 View 消耗 -600。",
     "cutin": [],
     "effects": [
       {
@@ -7661,7 +7661,7 @@
     "resourceName": "@playerIcon",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能View消耗-700。",
+    "description": "技能 View 消耗 -700。",
     "cutin": [],
     "effects": [
       {
@@ -7679,7 +7679,7 @@
     "resourceName": "@playerIcon",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能View消耗-800。",
+    "description": "技能 View 消耗 -800。",
     "cutin": [],
     "effects": [
       {
@@ -7697,7 +7697,7 @@
     "resourceName": "@playerIcon",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能View消耗-900。",
+    "description": "技能 View 消耗 -900。",
     "cutin": [],
     "effects": [
       {
@@ -7715,7 +7715,7 @@
     "resourceName": "@playerIcon",
     "subResourceName": "",
     "timing": 10,
-    "description": "技能View消耗-1000。",
+    "description": "技能 View 消耗 -1000。",
     "cutin": [],
     "effects": [
       {
@@ -7733,7 +7733,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）賦予自己嘲諷2次。",
+    "description": "（敵人專屬）賦予自己嘲諷 2 次。",
     "cutin": [
       {
         "info": {
@@ -7758,7 +7758,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）賦予自己防禦力上升3次。",
+    "description": "（敵人專屬）賦予自己防禦力上升 3 次。",
     "cutin": [
       {
         "info": {
@@ -7783,7 +7783,7 @@
     "resourceName": "b_skill_spdUp",
     "subResourceName": "s_skill_buffOwn",
     "timing": 0,
-    "description": "（敵人專屬）賦予自己攻擊力上升、速度上升1次。",
+    "description": "（敵人專屬）賦予自己攻擊力上升、速度上升 1 次。",
     "cutin": [
       {
         "info": {
@@ -7813,7 +7813,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成攻擊力80%傷害，且玩家角色血量越低傷害越高。",
+    "description": "（敵人專屬）對一名玩家角色造成攻擊力 80% 傷害，且玩家角色血量越低傷害越高。",
     "cutin": [
       {
         "info": {
@@ -7838,7 +7838,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成200%攻擊傷害。",
+    "description": "（敵人專屬）對一名玩家角色造成 200% 攻擊傷害。",
     "cutin": [
       {
         "info": {
@@ -7863,7 +7863,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成80%攻擊傷害。",
+    "description": "（敵人專屬）對一名玩家角色造成 80% 攻擊傷害。",
     "cutin": [
       {
         "info": {
@@ -7888,7 +7888,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）回復CPU方全體基礎攻擊80%的血量。",
+    "description": "（敵人專屬）回復 CPU 方全體基礎攻擊 80% 的血量。",
     "cutin": [
       {
         "info": {
@@ -7913,7 +7913,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "s_skill_heal",
     "timing": 0,
-    "description": "（敵人專屬）對所有玩家角色造成攻擊80%傷害；回復CPU方全體基礎攻擊80%的血量。",
+    "description": "（敵人專屬）對所有玩家角色造成攻擊 80% 傷害；回復 CPU 方全體基礎攻擊 80% 的血量。",
     "cutin": [
       {
         "info": {
@@ -7943,7 +7943,7 @@
     "resourceName": "b_skill_buffAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）賦予CPU方全體攻擊力上升2次。",
+    "description": "（敵人專屬）賦予 CPU 方全體攻擊力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -7968,7 +7968,7 @@
     "resourceName": "b_skill_debuffAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）賦予所有玩家角色防禦力下降1次。",
+    "description": "（敵人專屬）賦予所有玩家角色防禦力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -7993,7 +7993,7 @@
     "resourceName": "b_skill_buffAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）賦予所有玩家角色攻擊力下降1次。",
+    "description": "（敵人專屬）賦予所有玩家角色攻擊力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -8018,7 +8018,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成攻擊80%傷害。",
+    "description": "（敵人專屬）對一名玩家角色造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
@@ -8043,7 +8043,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對所有玩家角色造成攻擊90%傷害。",
+    "description": "（敵人專屬）對所有玩家角色造成攻擊 90% 傷害。",
     "cutin": [
       {
         "info": {
@@ -8068,7 +8068,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對所有玩家角色造成攻擊150%傷害。",
+    "description": "（敵人專屬）對所有玩家角色造成攻擊 150% 傷害。",
     "cutin": [
       {
         "info": {
@@ -8093,7 +8093,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成攻擊70%傷害。40%機率賦予玩家角色速度力下降1次。",
+    "description": "（敵人專屬）對一名玩家角色造成攻擊 70% 傷害。40% 機率賦予玩家角色速度力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -8123,7 +8123,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成攻擊70%傷害。",
+    "description": "（敵人專屬）對一名玩家角色造成攻擊 70% 傷害。",
     "cutin": [
       {
         "info": {
@@ -8148,7 +8148,7 @@
     "resourceName": "",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對所有玩家角色造成攻擊90%傷害。賦予自己攻擊力上升、防禦力上升2次。賦予自己回春（恢復血量）3次。",
+    "description": "（敵人專屬）對所有玩家角色造成攻擊 90% 傷害。賦予自己攻擊力上升、防禦力上升 2 次。賦予自己回春（恢復血量）3 次。",
     "cutin": [
       {
         "info": {
@@ -8188,7 +8188,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成攻擊60%傷害。40%機率賦予玩家角色中毒1次。",
+    "description": "（敵人專屬）對一名玩家角色造成攻擊 60% 傷害。40% 機率賦予玩家角色中毒 1 次。",
     "cutin": [
       {
         "info": {
@@ -8218,7 +8218,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）賦予自己攻擊力上升、防禦力上升2次。",
+    "description": "（敵人專屬）賦予自己攻擊力上升、防禦力上升 2 次。",
     "cutin": [
       {
         "info": {
@@ -8248,7 +8248,7 @@
     "resourceName": "b_skill_damage",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "（敵人專屬）對一名玩家角色造成攻擊70%傷害。賦予玩家角色速度力下降1次。",
+    "description": "（敵人專屬）對一名玩家角色造成攻擊 70% 傷害。賦予玩家角色速度力下降 1 次。",
     "cutin": [
       {
         "info": {
@@ -8278,7 +8278,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "（敵人專屬）對所有玩家角色造成攻擊90%傷害。",
+    "description": "（敵人專屬）對所有玩家角色造成攻擊 90% 傷害。",
     "cutin": [
       {
         "info": {
@@ -8303,7 +8303,7 @@
     "resourceName": "b_skill_heal",
     "subResourceName": "s_skill_cureOwn",
     "timing": 0,
-    "description": "（敵人專屬）恢復自己基礎攻擊70%的血量。賦予自己防禦力上升2次。消除兩個減益效果。",
+    "description": "（敵人專屬）恢復自己基礎攻擊 70% 的血量。賦予自己防禦力上升 2 次。消除兩個減益效果。",
     "cutin": [],
     "effects": [
       {
