@@ -5,13 +5,14 @@ import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { CharacterData } from '../../models/Hero';
 // Local modules.
+import { Language } from '../../models/System';
 import { allCharacterDict } from '../../utils/DataProcess';
 // Local components.
 import * as Character from './index';
 
 interface CatalogProps {
   className?: string;
-  language: 'jaJP' | 'zhTW';
+  language: Language;
 }
 
 const Catalog: React.FC<CatalogProps> = (props) => {

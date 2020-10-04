@@ -5,10 +5,12 @@ import HeroDataRaw from '../data/ja-jp/CardMaster.json';
 import SidekickDataRaw from '../data/ja-jp/SidekickMaster.json';
 import SkillDataRaw from '../data/ja-jp/SkillMaster.json';
 import SkillEffectDataRaw from '../data/ja-jp/SkillEffectMaster.json';
+import StatusDataRaw from '../data/ja-jp/StatusMaster.json';
 import HeroDataRaw_zhTW from '../data/zh-tw/CardMaster.json';
 import SidekickDataRaw_zhTW from '../data/zh-tw/SidekickMaster.json';
 import SkillDataRaw_zhTW from '../data/zh-tw/SkillMaster.json';
 import SkillEffectDataRaw_zhTW from '../data/zh-tw/SkillEffectMaster.json';
+import StatusDataRaw_zhTW from '../data/zh-tw/StatusMaster.json';
 import { HeroData, SidekickData } from '../models/Hero';
 
 interface RawData {
@@ -16,6 +18,7 @@ interface RawData {
   sidekickDataRaw: typeof SidekickDataRaw;
   skillDataRaw: typeof SkillDataRaw;
   skillEffectDataRaw: typeof SkillEffectDataRaw;
+  statusDataRaw: typeof StatusDataRaw;
 }
 
 class DataProcess {
@@ -25,6 +28,7 @@ class DataProcess {
   private heroDict: any;
   private sidekickDict: any;
   public characterDict: any;
+  public statusDict: any;
 
   public constructor(rawData: RawData) {
     this.rawData = rawData;
@@ -59,6 +63,8 @@ class DataProcess {
         sidekicks: sidekicks || [],
       };
     });
+
+    this.statusDict = rawData.statusDataRaw;
   }
 
   private skillMapping(skillId: number) {
@@ -79,6 +85,7 @@ const rawData_jaJP: RawData = {
   sidekickDataRaw: SidekickDataRaw,
   skillDataRaw: SkillDataRaw,
   skillEffectDataRaw: SkillEffectDataRaw,
+  statusDataRaw: StatusDataRaw,
 };
 
 const rawData_zhTW: RawData = {
@@ -86,13 +93,23 @@ const rawData_zhTW: RawData = {
   sidekickDataRaw: SidekickDataRaw_zhTW,
   skillDataRaw: SkillDataRaw_zhTW,
   skillEffectDataRaw: SkillEffectDataRaw_zhTW,
+  statusDataRaw: StatusDataRaw_zhTW,
 };
 
+const jpDataProcess = new DataProcess(rawData_jaJP);
+const twDataProcess = new DataProcess(rawData_zhTW);
+
 const allCharacterDict = {
-  jaJP: new DataProcess(rawData_jaJP).characterDict,
-  zhTW: new DataProcess(rawData_zhTW).characterDict,
+  jaJP: jpDataProcess.characterDict,
+  zhTW: twDataProcess.characterDict,
+};
+
+const allStatusDict = {
+  jaJP: jpDataProcess.statusDict,
+  zhTW: twDataProcess.statusDict,
 };
 
 export {
   allCharacterDict,
+  allStatusDict,
 };
