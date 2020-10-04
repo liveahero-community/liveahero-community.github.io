@@ -1,7 +1,7 @@
 // Node modules.
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Redirect,
@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const useLanguage = useState<Language>('zhTW');
 
   return (
-    <Router>
+    <HashRouter>
       <Switch>
         <Route path={Routes.HEROES}>
           <Screen.HeroesScreen useLanguage={useLanguage} />
@@ -28,7 +28,7 @@ const App: React.FC = () => {
           <Redirect to={Routes.HEROES} />
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
 

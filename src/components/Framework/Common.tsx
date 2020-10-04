@@ -1,6 +1,6 @@
 // Node modules.
 import React, { useCallback, useEffect, useState } from 'react';
-import { Segment, Image, Flag, Popup } from 'semantic-ui-react';
+import { Grid, Segment, Image, Flag, Popup, Button, Container } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
@@ -35,6 +35,28 @@ const Common: React.FC<AppProps> = (props) => {
           <Image size='medium' centered src={logoUrl} />
           <div className='subtitle'>{'UNOFFICIAL DATABASE'}</div>
         </Link>
+
+        <Container text>
+          <Grid className='links' centered textAlign='center' columns={2}>
+            <Grid.Row>
+              <Grid.Column textAlign='center'>
+                <Link to={Routes.HEROES}>
+                  <Button basic inverted>
+                    {'英雄資料'}
+                  </Button>
+                </Link>
+              </Grid.Column>
+
+              <Grid.Column textAlign='center'>
+                <Link to={Routes.STATUSES}>
+                  <Button basic inverted>
+                    {'狀態一覽'}
+                  </Button>
+                </Link>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
 
         <div className='languages'>
           <Flag className='flag'
@@ -87,6 +109,10 @@ const styledCommon = styled(Common)`
       .flag {
         cursor: pointer;
       }
+    }
+
+    .links {
+      margin-top: 0.25em;
     }
 
     .footer {
