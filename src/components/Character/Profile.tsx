@@ -3,13 +3,13 @@ import _ from 'lodash';
 import React from 'react';
 import { Card, Grid, Image, Rating } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
+import { Link } from 'react-router-dom';
 // Local modules.
 import { CharacterData } from '../../models/Hero';
+import * as Routes from '../../utils/Routes';
 import { elementTransform, roleTransform } from '../../utils/Transformer';
 import { ElementIcon } from '../Icon/ElementIcon';
 import { RoleIcon } from '../Icon/RoleIcon';
-// Local components.
-import { DetailModal } from './index';
 
 interface ProfileProps {
   character: CharacterData;
@@ -20,8 +20,8 @@ const Profile: React.FC<ProfileProps> = (props) => {
   const [heroCard] = _.orderBy(character.heroes, 'stockOrder', 'asc');
 
   return (
-    <DetailModal character={character}>
-      <Card>
+    <Link to={`${Routes.HEROES}/${character.meta.characterId}`}>
+      <Card fluid>
         <Image wrapped ui={false} alt={''}
           src={`/assets/covers/${character.meta.resourceName}.png`}
         />
@@ -55,7 +55,7 @@ const Profile: React.FC<ProfileProps> = (props) => {
           />
         </Card.Content>
       </Card>
-    </DetailModal >
+    </Link>
   );
 }
 

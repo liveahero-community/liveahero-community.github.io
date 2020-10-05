@@ -7,28 +7,34 @@ import {
   Redirect,
 } from 'react-router-dom';
 // Local modules.
-import { Language } from './models/System';
 import * as Routes from './utils/Routes';
+import { AppContext } from './contexts/AppContext';
 // Local components.
 import * as Screen from './screens/';
+import { Language } from './models/System';
 
 const App: React.FC = () => {
-  const useLanguage = useState<Language>('zhTW');
+  const [language, setLanguage] = useState<Language>('zhTW');
 
   return (
-    <HashRouter>
-      <Switch>
-        <Route path={Routes.HEROES}>
-          <Screen.HeroesScreen useLanguage={useLanguage} />
-        </Route>
-        <Route path={Routes.STATUSES}>
-          <Screen.StatusesScreen useLanguage={useLanguage} />
-        </Route>
-        <Route path={Routes.HOME}>
-          <Redirect to={Routes.HEROES} />
-        </Route>
-      </Switch>
-    </HashRouter>
+    <AppContext.Provider value={{ language, setLanguage }}>
+      <HashRouter>
+        <Switch>
+          <Route path={Routes.HERO}>
+            <Screen.HeroScreen />
+          </Route>
+          <Route path={Routes.HEROES}>
+            <Screen.HeroesScreen />
+          </Route>
+          <Route path={Routes.STATUSES}>
+            <Screen.StatusesScreen />
+          </Route>
+          <Route path={Routes.HOME}>
+            <Redirect to={Routes.HEROES} />
+          </Route>
+        </Switch>
+      </HashRouter>
+    </AppContext.Provider>
   );
 }
 

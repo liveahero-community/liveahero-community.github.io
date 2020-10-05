@@ -61,9 +61,6 @@ const main = async () => {
     `https://live-a-hero.jp/wp-content/uploads/2020/09/fg_huckle_s01.png`,
     `illustrations/huckle_s01`
   );
-
-  // console.log(illustrations);
-  // console.log(illustrations.length);
 };
 
 main();

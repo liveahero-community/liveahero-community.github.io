@@ -1,3 +1,10 @@
+export interface StatusData {
+  statusId: number;
+  statusName: string;
+  description: string;
+  isGoodStatus: number;
+}
+
 export interface SkillEffectData {
   turn: number;
   count: number;
@@ -14,6 +21,8 @@ export interface SkillEffectData {
   isImmediate: boolean;
   persistence: boolean;
   canDuplicate: boolean;
+  // Appended.
+  status?: StatusData;
 }
 
 export interface SkillData {

@@ -1,17 +1,19 @@
 // Node modules.
 import _ from 'lodash';
 // Local modules.
+import { HeroData, SidekickData } from '../models/Hero';
+// ja-JP
 import HeroDataRaw from '../data/ja-jp/CardMaster.json';
 import SidekickDataRaw from '../data/ja-jp/SidekickMaster.json';
 import SkillDataRaw from '../data/ja-jp/SkillMaster.json';
 import SkillEffectDataRaw from '../data/ja-jp/SkillEffectMaster.json';
 import StatusDataRaw from '../data/ja-jp/StatusMaster.json';
+// zh-TW
 import HeroDataRaw_zhTW from '../data/zh-tw/CardMaster.json';
 import SidekickDataRaw_zhTW from '../data/zh-tw/SidekickMaster.json';
 import SkillDataRaw_zhTW from '../data/zh-tw/SkillMaster.json';
 import SkillEffectDataRaw_zhTW from '../data/zh-tw/SkillEffectMaster.json';
 import StatusDataRaw_zhTW from '../data/zh-tw/StatusMaster.json';
-import { HeroData, SidekickData } from '../models/Hero';
 
 interface RawData {
   heroDataRaw: typeof HeroDataRaw;
@@ -72,10 +74,20 @@ class DataProcess {
 
     return {
       ...skill,
-      effects: skill.effects.map((effect) => ({
-        ...effect,
-        effectDetail: _.get(this.rawData.skillEffectDataRaw, effect.skillEffectId).skillEffectJson,
-      })),
+      effects: skill.effects.map((effect) => {
+        const effectDetail = _.get(this.rawData.skillEffectDataRaw, effect.skillEffectId).skillEffectJson;
+        const status = _.get(this.rawData.statusDataRaw, effectDetail.statusId);
+
+        return {
+          ...effect,
+          // Append from skillEffectDataRaw.
+          effectDetail: {
+            ...effectDetail,
+            // Append from statusDataRaw.
+            status,
+          },
+        }
+      }),
     };
   }
 }

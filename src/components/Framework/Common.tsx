@@ -1,22 +1,22 @@
 // Node modules.
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { Grid, Segment, Image, Flag, Popup, Button, Container } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 // Local modules.
-import { Language } from '../../models/System';
 import * as Routes from '../../utils/Routes';
+import { AppContext } from '../../contexts/AppContext';
+import { Language } from '../../models/System';
 
 interface AppProps {
   className?: string;
-  useLanguage: [Language, React.Dispatch<React.SetStateAction<Language>>];
 }
 
 const Common: React.FC<AppProps> = (props) => {
-  const { className, useLanguage, children } = props;
+  const { className, children } = props;
 
-  const [language, setLanguage] = useLanguage;
+  const { language, setLanguage } = useContext(AppContext);
 
   const [logoUrl] = useState('/assets/logo.png');
 

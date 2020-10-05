@@ -24,8 +24,6 @@ const Catalog: React.FC<CatalogProps> = (props) => {
     setCharacterDict(allCharacterDict[language]);
   }, [language]);
 
-  console.log(language, characterDict);
-
   return (
     <Grid className={className} centered doubling>
       {_.map(characterDict, (character: CharacterData, i) => (

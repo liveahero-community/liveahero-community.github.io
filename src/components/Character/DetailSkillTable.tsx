@@ -3,6 +3,8 @@ import _ from 'lodash';
 import React from 'react';
 import {
   Table,
+  Popup,
+  List,
 } from 'semantic-ui-react';
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
@@ -73,6 +75,9 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
           <Table.HeaderCell>名稱</Table.HeaderCell>
           <Table.HeaderCell>說明</Table.HeaderCell>
           {!hideCost &&
+            <Table.HeaderCell>狀態</Table.HeaderCell>
+          }
+          {!hideCost &&
             <Table.HeaderCell textAlign='right'>消耗 view</Table.HeaderCell>
           }
         </Table.Row>
@@ -87,6 +92,21 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
               current={skill.description}
               previous={previousSkills && previousSkills[i].description}
             />
+
+            <Table.Cell>
+              <List bulleted divided relaxed>
+                {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
+                  <Popup inverted key={i}
+                    trigger={
+                      <List.Item >
+                        {`${effect.effectDetail.status?.statusName} x${effect.effectDetail.turn}`}
+                      </List.Item>
+                    }
+                    content={effect.effectDetail.status?.description}
+                  />
+                )}
+              </List>
+            </Table.Cell>
 
             {!hideCost &&
               <SkillCell textAlign='right'

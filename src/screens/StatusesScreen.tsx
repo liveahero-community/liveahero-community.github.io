@@ -1,23 +1,17 @@
 // Node modules.
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'semantic-ui-react';
 // Local modules.
-import { Language } from '../models/System';
+import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
 import { StatusTable } from '../components/Status/StatusTable';
 
-interface StatusesScreenProps {
-  useLanguage: [Language, React.Dispatch<React.SetStateAction<Language>>];
-}
-
-const StatusesScreen: React.FC<StatusesScreenProps> = (props) => {
-  const { useLanguage } = props;
-
-  const [language] = useLanguage;
+const StatusesScreen: React.FC = () => {
+  const { language } = useContext(AppContext);
 
   return (
-    <Framework.Common useLanguage={useLanguage} >
+    <Framework.Common>
       <Container text>
         <StatusTable language={language} />
       </Container>

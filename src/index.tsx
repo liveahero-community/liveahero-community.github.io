@@ -1,13 +1,13 @@
 // Node modules.
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ToastContainer } from 'react-toastify';
 import 'semantic-ui-css/semantic.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 // Local modules.
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ToastContainer } from 'react-toastify';
+import './index.css';
 
 ReactDOM.render(
   <>
