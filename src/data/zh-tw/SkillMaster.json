@@ -1941,7 +1941,7 @@
     "resourceName": "b_skill_damageAll",
     "subResourceName": "",
     "timing": 0,
-    "description": "對敵方全體造成攻擊 120% 傷害。",
+    "description": "對敵方全體造成攻擊 80% 傷害。",
     "cutin": [
       {
         "info": {
