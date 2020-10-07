@@ -7,7 +7,7 @@ import SkillData from '../src/data/ja-jp/SkillMaster.json';
 
 const main = async () => {
   const rawData = fs.readFileSync(`${appRoot}/translations/skills_zh-tw.tsv`, 'utf-8');
-  const updatedSkills = rawData.split(/\r\n/).map((line) => {
+  const updatedSkills = rawData.split(/\n/).map((line) => {
     const [skillId, skillName, description] = line.split('\t');
     return { skillId, skillName, description };
   });

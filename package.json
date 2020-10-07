@@ -28,9 +28,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "download-illustrations": "ts-node --compiler-options '{\"module\":\"commonjs\"}' tools/download-illustrations.ts",
-    "translate-gen-tsv": "ts-node --compiler-options '{\"module\":\"commonjs\"}' tools/translate-gen-tsv.ts",
-    "translate-gen-master-json": "ts-node --compiler-options '{\"module\":\"commonjs\"}' tools/translate-gen-master-json.ts"
+    "run:ts": "ts-node --compiler-options '{\"module\":\"commonjs\"}'",
+    "download:illustrations": "yarn run:ts tools/download-illustrations.ts",
+    "download:translation-tsv": "yarn run:ts tools/download-translation-tsv.ts",
+    "translate:gen-tsv": "yarn run:ts tools/translate-gen-tsv.ts",
+    "translate:gen-master-json": "yarn run:ts tools/translate-gen-master-json.ts",
+    "deploy": "yarn build & yarn deploy:ghpages",
+    "deploy:ghpages": "yarn run:ts tools/deploy-ghpages.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +53,7 @@
   },
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
+    "@types/gh-pages": "^3.0.0",
     "@types/lodash": "^4.14.161",
     "@types/node-fetch": "^2.5.7",
     "@types/react-router-dom": "^5.1.5",
@@ -56,6 +61,7 @@
     "@types/styled-components": "^5.1.3",
     "@types/xmldom": "^0.1.30",
     "app-root-path": "^3.0.0",
+    "gh-pages": "^3.1.0",
     "node-fetch": "^2.6.1",
     "xpath": "^0.0.29"
   }
