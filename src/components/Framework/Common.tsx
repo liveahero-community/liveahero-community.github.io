@@ -1,8 +1,7 @@
 // Node modules.
-import React, { useEffect, useState, useContext, useCallback } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import { Grid, Segment, Image, Flag, Popup, Button, Container } from 'semantic-ui-react';
 import styled from 'styled-components';
-import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 // Local modules.
 import * as Routes from '../../utils/Routes';
@@ -16,7 +15,7 @@ interface AppProps {
 const Common: React.FC<AppProps> = (props) => {
   const { className, children } = props;
 
-  const { language, setLanguage } = useContext(AppContext);
+  const { setLanguage } = useContext(AppContext);
 
   const [logoUrl] = useState('/assets/logo.png');
 
@@ -24,9 +23,10 @@ const Common: React.FC<AppProps> = (props) => {
     setLanguage(lang);
   }, [setLanguage]);
 
-  useEffect(() => {
-    toast(`現在語系為 ${language}`);
-  }, [language]);
+  // TODO:
+  // useEffect(() => {
+  //   toast(`現在語系為 ${language}`);
+  // }, [language]);
 
   return (
     <div className={className}>

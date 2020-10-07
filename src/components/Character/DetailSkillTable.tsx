@@ -4,10 +4,13 @@ import React from 'react';
 import {
   Table,
   Popup,
-  List,
+  Image,
+  Label,
 } from 'semantic-ui-react';
+import styled from 'styled-components';
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
+import { statusIcons } from '../../utils/Mapping';
 
 const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
   return (card as SidekickData)?.equipmentSkills ? true : false;
@@ -51,6 +54,7 @@ const SkillCell: React.FC<SkillCellProps> = (props) => {
 };
 
 interface DetailSkillTableProps {
+  className?: string;
   path: 'skills' | 'equipmentSkills';
   card: HeroData | SidekickData;
   previousCard?: HeroData | SidekickData;
@@ -58,6 +62,7 @@ interface DetailSkillTableProps {
 }
 
 const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
+  const { className } = props;
   const { path, card, previousCard, hideCost } = props;
 
   const skills = path === 'equipmentSkills' && isSidekickData(card)
@@ -69,14 +74,12 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
     : previousCard?.skills;
 
   return (
-    <Table unstackable compact>
+    <Table className={className} unstackable compact>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>名稱</Table.HeaderCell>
           <Table.HeaderCell>說明</Table.HeaderCell>
-          {!hideCost &&
-            <Table.HeaderCell>狀態</Table.HeaderCell>
-          }
+          <Table.HeaderCell textAlign='center'>狀態</Table.HeaderCell>
           {!hideCost &&
             <Table.HeaderCell textAlign='right'>消耗 view</Table.HeaderCell>
           }
@@ -93,19 +96,22 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
               previous={previousSkills && previousSkills[i].description}
             />
 
-            <Table.Cell>
-              <List bulleted divided relaxed>
-                {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
-                  <Popup inverted key={i}
-                    trigger={
-                      <List.Item >
-                        {`${effect.effectDetail.status?.statusName} x${effect.effectDetail.turn}`}
-                      </List.Item>
-                    }
-                    content={effect.effectDetail.status?.description}
-                  />
-                )}
-              </List>
+            <Table.Cell className='status-list'>
+              {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
+                <Popup inverted key={i}
+                  trigger={
+                    <div className='status'>
+                      <Image className='icon'
+                        src={_.get(statusIcons, effect.effectDetail.statusId)}
+                      />
+                      <Label className='turn' circular color='grey' size='tiny'>
+                        {effect.effectDetail.turn}
+                      </Label>
+                    </div>
+                  }
+                  content={`${effect.effectDetail.status?.statusName}: ${effect.effectDetail.status?.description}`}
+                />
+              )}
             </Table.Cell>
 
             {!hideCost &&
@@ -121,6 +127,33 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
   );
 }
 
+const styledDetailSkillTable = styled(DetailSkillTable)`
+  .status-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .status {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      margin: 10px;
+
+      .icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .turn {
+        position: absolute;
+        bottom: -9px;
+        right: -9px;
+      }
+    }
+  }
+`;
+
 export {
-  DetailSkillTable,
+  styledDetailSkillTable as DetailSkillTable,
 };
