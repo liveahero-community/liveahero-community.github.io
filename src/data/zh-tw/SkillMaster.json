@@ -696,7 +696,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "",
     "timing": 0,
-    "description": "賦予自己「集中」 2 層。",
+    "description": "賦予自己「傷害集中」 2 層。",
     "cutin": [
       {
         "info": {
@@ -3280,7 +3280,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升 x2、防禦力下降 2 層。",
+    "description": "賦予自己兩個攻擊力上升 2 層、一個防禦力下降 2 層。",
     "cutin": [
       {
         "info": {
@@ -3315,7 +3315,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升 x2、防禦力下降 2 層。",
+    "description": "賦予自己兩個攻擊力上升 2 層、一個防禦力下降 2 層。",
     "cutin": [
       {
         "info": {
@@ -3350,7 +3350,7 @@
     "resourceName": "b_skill_buff",
     "subResourceName": "s_skill_debuffTeam",
     "timing": 0,
-    "description": "賦予自己攻擊力上升 x2、防禦力下降 2 層。",
+    "description": "賦予自己兩個攻擊力上升 2 層、一個防禦力下降 2 層。",
     "cutin": [
       {
         "info": {
