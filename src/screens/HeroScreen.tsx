@@ -1,9 +1,18 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Tab, Message, Segment } from 'semantic-ui-react';
+import {
+  Container,
+  Tab,
+  TabProps,
+  Message,
+  Segment,
+  Header,
+  Image,
+} from 'semantic-ui-react';
 // Local modules.
+import { CharacterData } from '../models/Hero';
 import { allCharacterDict } from '../utils/DataProcess';
 import { AppContext } from '../contexts/AppContext';
 // Local components.
@@ -13,15 +22,20 @@ import * as Hero from '../components/Character/index';
 const HeroScreen: React.FC = () => {
   const { language } = useContext(AppContext);
 
-  const { characterId } = useParams();
+  const { characterId } = useParams<any>();
 
   const [characterDict, setCharacterDict] = useState(allCharacterDict[language]);
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const onTabChange = useCallback((_event, data: TabProps) => {
+    setTabIndex(Number(data.activeIndex));
+  }, []);
 
   useEffect(() => {
     setCharacterDict(allCharacterDict[language]);
   }, [language]);
 
-  const character = characterDict[characterId];
+  const character: CharacterData = characterDict[characterId];
 
   console.log(character);
 
@@ -29,8 +43,17 @@ const HeroScreen: React.FC = () => {
     <Framework.Common>
       <Container id='character-container'>
         <Segment>
+          <Header as='h2'>
+            {tabIndex === 0
+              ? <Image alt='' src={`/assets/icon/item/item_piece_${character.meta.resourceName}.png`} />
+              : <Image alt='' src={`/assets/icon/item/item_heart_${character.meta.resourceName}.png`} />
+            }
+            {`${character.meta.cardName} (${character.meta.resourceName})`}
+          </Header>
+
           <Tab
             menu={{ secondary: true, pointing: true }}
+            onTabChange={onTabChange}
             panes={[
               {
                 menuItem: '英雄資訊',

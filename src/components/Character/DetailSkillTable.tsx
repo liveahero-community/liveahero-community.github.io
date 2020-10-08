@@ -96,22 +96,24 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
               previous={previousSkills && previousSkills[i].description}
             />
 
-            <Table.Cell className='status-list'>
-              {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
-                <Popup inverted key={i}
-                  trigger={
-                    <div className='status'>
-                      <Image className='icon'
-                        src={_.get(statusIcons, effect.effectDetail.statusId)}
-                      />
-                      <Label className='turn' circular color='grey' size='tiny'>
-                        {effect.effectDetail.turn}
-                      </Label>
-                    </div>
-                  }
-                  content={`${effect.effectDetail.status?.statusName}: ${effect.effectDetail.status?.description}`}
-                />
-              )}
+            <Table.Cell>
+              <div className='status-list'>
+                {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
+                  <Popup inverted key={i}
+                    trigger={
+                      <div className='status'>
+                        <Image className='icon'
+                          src={_.get(statusIcons, effect.effectDetail.statusId)}
+                        />
+                        <Label className='turn' circular color='grey' size='tiny'>
+                          {effect.effectDetail.turn}
+                        </Label>
+                      </div>
+                    }
+                    content={`${effect.effectDetail.status?.statusName}: ${effect.effectDetail.status?.description}`}
+                  />
+                )}
+              </div>
             </Table.Cell>
 
             {!hideCost &&
