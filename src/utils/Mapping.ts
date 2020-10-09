@@ -25,7 +25,7 @@ export const statusIcons = {
     23: '/assets/icon/status/status_firepower.png',
     24: '/assets/icon/skill/main/b_skill_wait.png',
     25: '/assets/icon/status/status_speedatk.png',
-    26: '/assets/icon/status/status_aggregation.png',
+    26: '/assets/icon/status/status_damageAggregation.png',
     // TODO:
     27: '/assets/icon/status/???.png',
     28: '/assets/icon/skill/main/b_skill_special.png',
