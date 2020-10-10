@@ -114,11 +114,15 @@ const twDataProcess = new DataProcess(rawData_zhTW);
 const allCharacterDict = {
   jaJP: jpDataProcess.characterDict,
   zhTW: twDataProcess.characterDict,
+  // TODO: other lanuages.
+  enUS: jpDataProcess.characterDict,
 };
 
 const allStatusDict = {
   jaJP: jpDataProcess.statusDict,
   zhTW: twDataProcess.statusDict,
+  // TODO: other lanuages.
+  enUS: jpDataProcess.statusDict,
 };
 
 export {

@@ -56,7 +56,11 @@ const main = async () => {
     })
   })
 
-  // TODO: special case.
+  // TODO: special cases.
+  download(
+    `https://live-a-hero.jp/wp-content/uploads/2020/10/chara_player.png`,
+    `covers/player`
+  );
   download(
     `https://live-a-hero.jp/wp-content/uploads/2020/09/fg_huckle_s01.png`,
     `illustrations/huckle_s01`

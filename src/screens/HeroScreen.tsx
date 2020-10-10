@@ -11,7 +11,9 @@ import {
   Header,
   Image,
 } from 'semantic-ui-react';
+import { Helmet } from 'react-helmet';
 // Local modules.
+import * as Config from '../configs/index';
 import { CharacterData } from '../models/Hero';
 import { allCharacterDict } from '../utils/DataProcess';
 import { AppContext } from '../contexts/AppContext';
@@ -41,6 +43,11 @@ const HeroScreen: React.FC = () => {
 
   return (
     <Framework.Common>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>{`${character.meta.cardName} | ${Config.websiteTitle[language]}`}</title>
+      </Helmet>
+
       <Container id='character-container'>
         <Segment>
           <Header as='h2'>

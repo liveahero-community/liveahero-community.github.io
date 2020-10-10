@@ -12,7 +12,8 @@
     "download:translation-tsv": "yarn run:ts tools/download-translation-tsv.ts",
     "translate:gen-tsv": "yarn run:ts tools/translate-gen-tsv.ts",
     "translate:gen-master-json": "yarn run:ts tools/translate-gen-master-json.ts",
-    "deploy": "yarn build & rimraf build/assets & yarn deploy:ghpages",
+    "deploy": "yarn build & yarn deploy:rm-assets & yarn deploy:ghpages",
+    "deploy:rm-assets": "rimraf build/assets",
     "deploy:ghpages": "yarn run:ts tools/deploy-ghpages.ts"
   },
   "dependencies": {

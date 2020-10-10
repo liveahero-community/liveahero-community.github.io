@@ -1,1 +1,1 @@
-export type Language = 'jaJP' | 'zhTW';
+export type Language = 'jaJP' | 'zhTW' | 'enUS';

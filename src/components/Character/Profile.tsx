@@ -34,12 +34,12 @@ const Profile: React.FC<ProfileProps> = (props) => {
           <Card.Description>
             <Grid divided={!isMobile} textAlign='center'>
               <Grid.Row>
-                <Grid.Column width={isMobile ? 4 : 6}>
+                <Grid.Column width={6}>
                   <ElementIcon elementId={heroCard?.element} />
                   {!isMobile && elementTransform(heroCard?.element)}
                 </Grid.Column>
 
-                <Grid.Column width={isMobile ? 12 : 10}>
+                <Grid.Column width={10}>
                   {!isMobile && <RoleIcon roleId={heroCard?.role} />}
                   {roleTransform(heroCard?.role)}
                 </Grid.Column>

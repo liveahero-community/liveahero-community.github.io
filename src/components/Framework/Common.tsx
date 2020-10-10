@@ -3,7 +3,9 @@ import React, { useState, useContext, useCallback } from 'react';
 import { Grid, Segment, Image, Flag, Popup, Button, Container } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 // Local modules.
+import * as Config from '../../configs/index';
 import * as Routes from '../../utils/Routes';
 import { AppContext } from '../../contexts/AppContext';
 import { Language } from '../../models/System';
@@ -21,12 +23,8 @@ const Common: React.FC<AppProps> = (props) => {
 
   const switchLanguage = useCallback((lang: Language) => {
     setLanguage(lang);
+    toast(`現在語系為 ${Config.displayedLanguage[lang]}`);
   }, [setLanguage]);
-
-  // TODO:
-  // useEffect(() => {
-  //   toast(`現在語系為 ${language}`);
-  // }, [language]);
 
   return (
     <div className={className}>
