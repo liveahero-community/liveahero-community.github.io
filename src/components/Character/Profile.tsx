@@ -1,9 +1,10 @@
 // Node modules.
 import _ from 'lodash';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Grid, Image, Rating } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 // Local modules.
 import { CharacterData } from '../../models/Hero';
 import * as Routes from '../../utils/Routes';
@@ -19,12 +20,18 @@ const Profile: React.FC<ProfileProps> = (props) => {
   const { character } = props;
   const [heroCard] = _.orderBy(character.heroes, 'stockOrder', 'asc');
 
+  const [lazyLoadOffset] = useState(200);
+
   return (
     <Link to={`${Routes.HEROES}/${character.meta.characterId}`}>
       <Card fluid>
-        <Image wrapped ui={false} alt={''}
-          src={`/assets/covers/${character.meta.resourceName}.png`}
-        />
+        {/* This className is a workaround for LazyLoad with Card.Image */}
+        {/* className will be 'image lazy-wrapper' */}
+        <LazyLoad classNamePrefix='image lazy' offset={lazyLoadOffset}>
+          <Image ui={false} alt={''}
+            src={`/assets/covers/${character.meta.resourceName}.png`}
+          />
+        </LazyLoad>
 
         <Card.Content>
           <Card.Header>{character.meta.cardName}</Card.Header>
