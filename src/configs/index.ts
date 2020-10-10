@@ -23,3 +23,5 @@ export const displayedLanguage: i18nContent = {
   jaJP: '日本語',
   enUS: 'English',
 };
+
+export const gaTrackingId = 'UA-179486566-1';

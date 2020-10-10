@@ -13,6 +13,7 @@ import { Language } from './models/System';
 import * as Routes from './utils/Routes';
 import { AppContext } from './contexts/AppContext';
 // Local components.
+import { withTracker } from './hoc/ga';
 import * as Screen from './screens/';
 
 const App: React.FC = () => {
@@ -29,15 +30,15 @@ const App: React.FC = () => {
 
       <HashRouter>
         <Switch>
-          <Route path={Routes.HERO}>
-            <Screen.HeroScreen />
-          </Route>
-          <Route path={Routes.HEROES}>
-            <Screen.HeroesScreen />
-          </Route>
-          <Route path={Routes.STATUSES}>
-            <Screen.StatusesScreen />
-          </Route>
+          <Route path={Routes.HERO}
+            component={withTracker(Screen.HeroScreen)}
+          />
+          <Route path={Routes.HEROES}
+            component={withTracker(Screen.HeroesScreen)}
+          />
+          <Route path={Routes.STATUSES}
+            component={withTracker(Screen.StatusesScreen)}
+          />
           <Route path={Routes.HOME}>
             <Redirect to={Routes.HEROES} />
           </Route>
