@@ -99,6 +99,8 @@ export interface CharacterData {
     characterId: number;
     cardName: string;
     resourceName: string;
+    heroElement?: number;
+    heroRarity: number;
   };
   heroes: HeroData[];
   sidekicks: SidekickData[];

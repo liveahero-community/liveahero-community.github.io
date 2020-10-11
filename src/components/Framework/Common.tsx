@@ -75,20 +75,28 @@ const Common: React.FC<AppProps> = (props) => {
       <Segment className='logo-banner' basic attached textAlign='center'>
         <Image size='small' centered src={logoUrl} />
 
-        <a href={`https://forum.gamer.com.tw/Co.php?bsn=39312&sn=106`}>
-          <Popup inverted position='top center'
-            trigger={
-              <div className='footer'>{'Made by liveahero-community'}</div>
-            }
-            content='程式：Salmon / 翻譯：划水德小牛'
-          />
-        </a>
+        <Popup inverted position='top center'
+          trigger={
+            <div className='footer'>
+              <a href={`https://forum.gamer.com.tw/Co.php?bsn=39312&sn=106`}>
+                {'Made by liveahero-community'}
+              </a>
+            </div>
+          }
+          content='程式：Salmon / 翻譯：划水德小牛'
+        />
       </Segment>
     </div>
   );
 }
 
 const styledCommon = styled(Common)`
+  & {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
   .logo-banner {
     background-color: #EC833D !important;
     border: none !important;
@@ -115,10 +123,16 @@ const styledCommon = styled(Common)`
 
     .footer {
       color: #333;
+
+      a {
+        color:inherit;
+        text-decoration: none;
+      }
     }
   }
 
   .main-container {
+    flex: 1;
     background-color: #333333;
     padding: 3em 0;
   }

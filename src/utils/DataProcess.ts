@@ -60,6 +60,8 @@ class DataProcess {
           cardName: a?.cardName || b?.cardName,
           characterId: a?.characterId || b?.characterId,
           resourceName: a?.resourceName || b?.resourceName,
+          heroElement: a?.element,
+          heroRarity: a?.rarity,
         },
         heroes: heroes || [],
         sidekicks: sidekicks || [],

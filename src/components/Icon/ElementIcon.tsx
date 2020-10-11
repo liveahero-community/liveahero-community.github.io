@@ -6,6 +6,10 @@ import styled from 'styled-components';
 interface ElementIconProps {
   className?: string;
   elementId: number;
+  onClick?: Function;
+  size?: number;
+  pointer?: boolean;
+  translucent?: boolean;
 }
 
 const ElementIcon: React.FC<ElementIconProps> = (props) => {
@@ -71,9 +75,11 @@ const ElementIcon: React.FC<ElementIconProps> = (props) => {
 const styledElementIcon = styled(ElementIcon)`
   & {
     display: inline-block !important;
-    width: 18px;
-    height: 18px;
+    width: ${props => props.size || 18}px;
+    height: ${props => props.size || 18}px;
     margin-right: 0.25em;
+    cursor: ${props => props.pointer ? 'pointer' : 'auto'};
+    opacity: ${props => props.translucent ? 0.25 : 1};
   }
 `;
 

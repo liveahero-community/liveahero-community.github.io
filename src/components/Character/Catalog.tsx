@@ -13,10 +13,17 @@ import * as Character from './index';
 interface CatalogProps {
   className?: string;
   language: Language;
+  filtering: {
+    ranks: boolean[];
+    elements: boolean[];
+  };
 }
 
 const Catalog: React.FC<CatalogProps> = (props) => {
-  const { className, language } = props;
+  const { className } = props;
+  const { language, filtering } = props;
+
+  const { elements } = filtering;
 
   const [characterDict, setCharacterDict] = useState(allCharacterDict[language]);
 
@@ -27,17 +34,23 @@ const Catalog: React.FC<CatalogProps> = (props) => {
   return (
     <Grid className={className} centered doubling>
       {_.map(characterDict, (character: CharacterData, i) => (
-        <Grid.Column className='character-profile' key={i}
-          mobile={8}
-          tablet={8}
-          computer={4}
-          largeScreen={3}
-          widescreen={3}
-        >
-          <Character.Profile
-            character={character}
-          />
-        </Grid.Column>
+        // TODO: refactor in future.
+        // Filter for all - include none element.
+        (!_.includes(elements, false) && _.isUndefined(character.meta.heroElement))
+        // Filter specified element - without none element.
+        || (_.isNumber(character.meta.heroElement) && elements[character.meta.heroElement - 1])
+          ? <Grid.Column className='character-profile' key={i}
+            mobile={8}
+            tablet={8}
+            computer={4}
+            largeScreen={3}
+            widescreen={3}
+          >
+            <Character.Profile
+              character={character}
+            />
+          </Grid.Column>
+          : null
       ))}
     </Grid>
   );
