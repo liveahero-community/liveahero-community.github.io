@@ -1,10 +1,11 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Card, Grid, Image, Rating } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
+import { toast } from 'react-toastify';
 // Local modules.
 import { CharacterData } from '../../models/Hero';
 import * as Routes from '../../utils/Routes';
@@ -22,9 +23,18 @@ const Profile: React.FC<ProfileProps> = (props) => {
 
   const [lazyLoadOffset] = useState(200);
 
+  const onClick = useCallback(() => {
+    if (heroCard?.role === 0) {
+      toast(`${heroCard.cardName} 還未釋出`);
+    }
+  }, [heroCard]);
+
   return (
-    <Link to={`${Routes.HEROES}/${character.meta.characterId}`}>
-      <Card fluid>
+    <Link to={heroCard?.role !== 0
+      ? `${Routes.HEROES}/${character.meta.characterId}`
+      : `#`
+    }>
+      <Card fluid onClick={onClick}>
         {/* This className is a workaround for LazyLoad with Card.Image */}
         {/* className will be 'image lazy-wrapper' */}
         <LazyLoad classNamePrefix='image lazy' offset={lazyLoadOffset}>

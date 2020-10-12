@@ -37,7 +37,7 @@ class DataProcess {
 
     this.heroData = _.map(rawData.heroDataRaw, (data) => ({
       ...data,
-      skills: data.skillIds.map(this.skillMapping.bind(this)),
+      skills: (data.skillIds as any[]).map(this.skillMapping.bind(this)),
     })) as any;
 
     this.sidekickData = _.map(rawData.sidekickDataRaw, (data) => ({
@@ -51,11 +51,14 @@ class DataProcess {
 
     this.sidekickDict = _.groupBy(this.sidekickData, 'characterId');
 
-    this.characterDict = _.mergeWith(this.heroDict, this.sidekickDict, (heroes, sidekicks) => {
-      const [a] = heroes || [];
-      const [b] = sidekicks || [];
-  
-      return {
+    const characterIds = _.union(_.flattenDeep([_.keys(this.heroDict), _.keys(this.sidekickDict)]));
+    this.characterDict = characterIds.reduce((all, characterId) => {
+      const heroes = _.get(this.heroDict, characterId) || [];
+      const sidekicks = _.get(this.sidekickDict, characterId) || [];
+      const [a] = heroes;
+      const [b] = sidekicks;
+
+      const data = {
         meta: {
           cardName: a?.cardName || b?.cardName,
           characterId: a?.characterId || b?.characterId,
@@ -63,10 +66,12 @@ class DataProcess {
           heroElement: a?.element,
           heroRarity: a?.rarity,
         },
-        heroes: heroes || [],
-        sidekicks: sidekicks || [],
+        heroes,
+        sidekicks,
       };
-    });
+
+      return Object.assign(all, {[characterId.toString()]: data });
+    }, {});
 
     this.statusDict = rawData.statusDataRaw;
   }
