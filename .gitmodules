@@ -1,3 +1,6 @@
 [submodule "public/assets"]
 	path = public/assets
 	url = https://github.com/liveahero-community/assets
+[submodule "src/data"]
+	path = src/data
+	url = https://github.com/liveahero-community/translations

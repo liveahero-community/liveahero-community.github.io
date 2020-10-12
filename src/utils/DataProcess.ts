@@ -3,17 +3,17 @@ import _ from 'lodash';
 // Local modules.
 import { HeroData, SidekickData } from '../models/Hero';
 // ja-JP
-import HeroDataRaw from '../data/ja-jp/CardMaster.json';
-import SidekickDataRaw from '../data/ja-jp/SidekickMaster.json';
-import SkillDataRaw from '../data/ja-jp/SkillMaster.json';
-import SkillEffectDataRaw from '../data/ja-jp/SkillEffectMaster.json';
-import StatusDataRaw from '../data/ja-jp/StatusMaster.json';
+import HeroDataRaw from '../data/ja-JP/CardMaster.json';
+import SidekickDataRaw from '../data/ja-JP/SidekickMaster.json';
+import SkillDataRaw from '../data/ja-JP/SkillMaster.json';
+import SkillEffectDataRaw from '../data/ja-JP/SkillEffectMaster.json';
+import StatusDataRaw from '../data/ja-JP/StatusMaster.json';
 // zh-TW
-import HeroDataRaw_zhTW from '../data/zh-tw/CardMaster.json';
-import SidekickDataRaw_zhTW from '../data/zh-tw/SidekickMaster.json';
-import SkillDataRaw_zhTW from '../data/zh-tw/SkillMaster.json';
-import SkillEffectDataRaw_zhTW from '../data/zh-tw/SkillEffectMaster.json';
-import StatusDataRaw_zhTW from '../data/zh-tw/StatusMaster.json';
+import HeroDataRaw_zhTW from '../data/zh-TW/CardMaster.json';
+import SidekickDataRaw_zhTW from '../data/zh-TW/SidekickMaster.json';
+import SkillDataRaw_zhTW from '../data/zh-TW/SkillMaster.json';
+import SkillEffectDataRaw_zhTW from '../data/zh-TW/SkillEffectMaster.json';
+import StatusDataRaw_zhTW from '../data/zh-TW/StatusMaster.json';
 
 interface RawData {
   heroDataRaw: typeof HeroDataRaw;
