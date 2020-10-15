@@ -1,18 +1,16 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { CharacterData } from '../../models/Hero';
 // Local modules.
-import { Language } from '../../models/System';
-import { allCharacterDict } from '../../utils/DataProcess';
+import { AppContext } from '../../contexts/AppContext';
 // Local components.
 import * as Character from './index';
 
 interface CatalogProps {
   className?: string;
-  language: Language;
   filtering: {
     ranks: boolean[];
     elements: boolean[];
@@ -21,19 +19,15 @@ interface CatalogProps {
 
 const Catalog: React.FC<CatalogProps> = (props) => {
   const { className } = props;
-  const { language, filtering } = props;
+  const { filtering } = props;
 
   const { elements } = filtering;
 
-  const [characterDict, setCharacterDict] = useState(allCharacterDict[language]);
-
-  useEffect(() => {
-    setCharacterDict(allCharacterDict[language]);
-  }, [language]);
+  const { masterData } = useContext(AppContext);
 
   return (
     <Grid className={className} centered doubling>
-      {_.map(characterDict, (character: CharacterData, i) => (
+      {_.map(masterData?.characterDict, (character: CharacterData, i) => (
         // TODO: refactor in future.
         // Filter for all - include none element.
         (!_.includes(elements, false) && _.isUndefined(character.meta.heroElement))

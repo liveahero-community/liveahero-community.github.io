@@ -20,7 +20,7 @@ const StatusesScreen: React.FC = () => {
       </Helmet>
 
       <Container text>
-        <StatusTable language={language} />
+        <StatusTable />
       </Container>
     </Framework.Common>
   );

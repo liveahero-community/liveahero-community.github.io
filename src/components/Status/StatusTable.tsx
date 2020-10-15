@@ -1,25 +1,12 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useEffect, useState } from 'react';
-import {
-  Table,
-} from 'semantic-ui-react';
+import React, { useContext } from 'react';
+import { Table } from 'semantic-ui-react';
 // Local modules.
-import { Language } from '../../models/System';
-import { allStatusDict } from '../../utils/DataProcess';
+import { AppContext } from '../../contexts/AppContext';
 
-interface StatusTableProps {
-  language: Language;
-}
-
-const StatusTable: React.FC<StatusTableProps> = (props) => {
-  const { language } = props;
-
-  const [statusDict, setStatusDict] = useState(allStatusDict[language]);
-
-  useEffect(() => {
-    setStatusDict(allStatusDict[language]);
-  }, [language]);
+const StatusTable: React.FC = () => {
+  const { masterData } = useContext(AppContext);
 
   return (
     <Table unstackable selectable compact>
@@ -31,7 +18,7 @@ const StatusTable: React.FC<StatusTableProps> = (props) => {
       </Table.Header>
 
       <Table.Body>
-        {_.map(statusDict, (status, i) => (
+        {_.map(masterData?.statusDict, (status, i) => (
           <Table.Row key={i}
             positive={!!status.isGoodStatus}
             negative={!status.isGoodStatus}

@@ -1,5 +1,5 @@
 // Node modules.
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   HashRouter,
   Switch,
@@ -7,10 +7,12 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import fetch from 'node-fetch';
 // Local modules.
 import * as Config from './configs/index';
 import { Language } from './models/System';
 import * as Routes from './utils/Routes';
+import { DataProcess } from './utils/DataProcess';
 import { AppContext } from './contexts/AppContext';
 // Local components.
 import { withTracker } from './hoc/ga';
@@ -18,9 +20,37 @@ import * as Screen from './screens/';
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('zhTW');
+  // Data preparing.
+  const [masterData, setMasterData] = useState<DataProcess>();
+
+  const download = useCallback(async (url: string) => {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  }, []);
+
+  const fetchMasterData = useCallback(async (language: Language) => {
+    const masterRawData = await Promise.all([
+      download(`https://liveahero-community.github.io/translations/latest/zh-TW/CardMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/zh-TW/SidekickMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/zh-TW/SkillMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/zh-TW/SkillEffectMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/zh-TW/StatusMaster.json`),
+    ]).then(([heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw]) => ({
+      heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw,
+    }));
+
+    const updatedMasterData = new DataProcess(masterRawData);
+
+    setMasterData(updatedMasterData);
+  }, [download]);
+
+  useEffect(() => {
+    fetchMasterData(language);
+  }, [language, fetchMasterData]);
 
   return (
-    <AppContext.Provider value={{ language, setLanguage }}>
+    <AppContext.Provider value={{ language, setLanguage, masterData }}>
       <Helmet>
         <meta charSet='utf-8' />
         <title>{Config.websiteTitle[language]}</title>

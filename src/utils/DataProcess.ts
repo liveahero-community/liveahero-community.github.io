@@ -2,28 +2,16 @@
 import _ from 'lodash';
 // Local modules.
 import { HeroData, SidekickData } from '../models/Hero';
-// ja-JP
-import HeroDataRaw from '../data/ja-JP/CardMaster.json';
-import SidekickDataRaw from '../data/ja-JP/SidekickMaster.json';
-import SkillDataRaw from '../data/ja-JP/SkillMaster.json';
-import SkillEffectDataRaw from '../data/ja-JP/SkillEffectMaster.json';
-import StatusDataRaw from '../data/ja-JP/StatusMaster.json';
-// zh-TW
-import HeroDataRaw_zhTW from '../data/zh-TW/CardMaster.json';
-import SidekickDataRaw_zhTW from '../data/zh-TW/SidekickMaster.json';
-import SkillDataRaw_zhTW from '../data/zh-TW/SkillMaster.json';
-import SkillEffectDataRaw_zhTW from '../data/zh-TW/SkillEffectMaster.json';
-import StatusDataRaw_zhTW from '../data/zh-TW/StatusMaster.json';
 
 interface RawData {
-  heroDataRaw: typeof HeroDataRaw;
-  sidekickDataRaw: typeof SidekickDataRaw;
-  skillDataRaw: typeof SkillDataRaw;
-  skillEffectDataRaw: typeof SkillEffectDataRaw;
-  statusDataRaw: typeof StatusDataRaw;
-}
+  heroDataRaw: any;
+  sidekickDataRaw: any;
+  skillDataRaw: any;
+  skillEffectDataRaw: any;
+  statusDataRaw: any;
+};
 
-class DataProcess {
+export class DataProcess {
   private rawData: RawData;
   private heroData: HeroData[];
   private sidekickData: SidekickData[];
@@ -81,7 +69,7 @@ class DataProcess {
 
     return {
       ...skill,
-      effects: skill.effects.map((effect) => {
+      effects: skill.effects.map((effect: any) => {
         const effectDetail = _.get(this.rawData.skillEffectDataRaw, effect.skillEffectId).skillEffectJson;
         const status = _.get(this.rawData.statusDataRaw, effectDetail.statusId);
 
@@ -98,41 +86,3 @@ class DataProcess {
     };
   }
 }
-
-const rawData_jaJP: RawData = {
-  heroDataRaw: HeroDataRaw,
-  sidekickDataRaw: SidekickDataRaw,
-  skillDataRaw: SkillDataRaw,
-  skillEffectDataRaw: SkillEffectDataRaw,
-  statusDataRaw: StatusDataRaw,
-};
-
-const rawData_zhTW: RawData = {
-  heroDataRaw: HeroDataRaw_zhTW,
-  sidekickDataRaw: SidekickDataRaw_zhTW,
-  skillDataRaw: SkillDataRaw_zhTW,
-  skillEffectDataRaw: SkillEffectDataRaw_zhTW,
-  statusDataRaw: StatusDataRaw_zhTW,
-};
-
-const jpDataProcess = new DataProcess(rawData_jaJP);
-const twDataProcess = new DataProcess(rawData_zhTW);
-
-const allCharacterDict = {
-  jaJP: jpDataProcess.characterDict,
-  zhTW: twDataProcess.characterDict,
-  // TODO: other lanuages.
-  enUS: jpDataProcess.characterDict,
-};
-
-const allStatusDict = {
-  jaJP: jpDataProcess.statusDict,
-  zhTW: twDataProcess.statusDict,
-  // TODO: other lanuages.
-  enUS: jpDataProcess.statusDict,
-};
-
-export {
-  allCharacterDict,
-  allStatusDict,
-};

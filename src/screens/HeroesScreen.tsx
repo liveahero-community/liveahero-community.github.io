@@ -1,9 +1,7 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Container } from 'semantic-ui-react';
-// Local modules.
-import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
 import * as Character from '../components/Character';
@@ -11,8 +9,6 @@ import * as Character from '../components/Character';
 const MAX_AMOUNT_ELEMENT = 5;
 
 const HeroesScreen: React.FC = () => {
-  const { language } = useContext(AppContext);
-
   const [ranks, setRanks] = useState<boolean[]>(_.times(3, _.stubTrue));
   const [elements, setElements] = useState<boolean[]>(_.times(MAX_AMOUNT_ELEMENT, _.stubTrue));
 
@@ -43,7 +39,6 @@ const HeroesScreen: React.FC = () => {
     <Framework.Common>
       <Container>
         <Character.Catalog
-          language={language}
           filtering={filtering}
         />
       </Container>
