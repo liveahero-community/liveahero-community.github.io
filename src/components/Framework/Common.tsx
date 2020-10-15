@@ -59,11 +59,11 @@ const Common: React.FC<AppProps> = (props) => {
         <div className='languages'>
           <Flag className='flag'
             name='jp'
-            onClick={switchLanguage.bind(null, 'jaJP')}
+            onClick={switchLanguage.bind(null, 'ja-JP')}
           />
           <Flag className='flag'
             name='tw'
-            onClick={switchLanguage.bind(null, 'zhTW')}
+            onClick={switchLanguage.bind(null, 'zh-TW')}
           />
         </div>
       </Segment>

@@ -19,7 +19,7 @@ import { withTracker } from './hoc/ga';
 import * as Screen from './screens/';
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<Language>('zhTW');
+  const [language, setLanguage] = useState<Language>('zh-TW');
   // Data preparing.
   const [masterData, setMasterData] = useState<DataProcess>();
 
@@ -31,11 +31,11 @@ const App: React.FC = () => {
 
   const fetchMasterData = useCallback(async (language: Language) => {
     const masterRawData = await Promise.all([
-      download(`https://liveahero-community.github.io/translations/latest/zh-TW/CardMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/zh-TW/SidekickMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/zh-TW/SkillMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/zh-TW/SkillEffectMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/zh-TW/StatusMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/${language}/CardMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/${language}/SidekickMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/${language}/SkillMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/${language}/SkillEffectMaster.json`),
+      download(`https://liveahero-community.github.io/translations/latest/${language}/StatusMaster.json`),
     ]).then(([heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw]) => ({
       heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw,
     }));
