@@ -6,10 +6,8 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 import fetch from 'node-fetch';
 // Local modules.
-import * as Config from './configs/index';
 import { Language } from './models/System';
 import * as Routes from './utils/Routes';
 import { DataProcess } from './utils/DataProcess';
@@ -51,13 +49,6 @@ const App: React.FC = () => {
 
   return (
     <AppContext.Provider value={{ language, setLanguage, masterData }}>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <title>{Config.websiteTitle[language]}</title>
-        <link rel='canonical' href={Config.publicUrl} />
-        <meta name='description' content={Config.websiteDescription[language]} />
-      </Helmet>
-
       <HashRouter>
         <Switch>
           <Route path={Routes.HERO}
