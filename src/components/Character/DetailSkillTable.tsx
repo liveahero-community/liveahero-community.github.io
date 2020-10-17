@@ -41,7 +41,7 @@ const StatusIcon: React.FC<StatusIconProps> = (props) => {
   const { statusId, turn, name, description } = props;
 
   return (
-    <Popup inverted
+    <Popup inverted position='top center'
       trigger={
         <div className='status'>
           <Image className='icon'
@@ -74,16 +74,21 @@ const SkillComparison: React.FC<SkillComparisonProps> = (props) => {
         {`➡️`}
         <span className='updated'>{wrap ? wrapDescription(current) : current}</span>
       </>
-      : <>
+      : <div>
         <div className='legacy'>{wrap ? wrapDescription(previous) : previous}</div>
         <div>⬇</div>
         <div className='updated'>{wrap ? wrapDescription(current) : current}</div>
-      </>
+      </div>
     );
   }
 
-  return (
-    wrap ? wrapDescription(current) : current
+  return (direction === 'horizontal'
+    ? <>
+      {wrap ? wrapDescription(current) : current}
+    </>
+    : <div>
+      {wrap ? wrapDescription(current) : current}
+    </div>
   );
 };
 
@@ -113,6 +118,7 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
         <Card key={i} fluid>
           <Card.Content>
             <Card.Header>{skill.skillName}</Card.Header>
+
             {!hideCost &&
               <Card.Meta>
                 {`View: `}
@@ -122,11 +128,25 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
                 />
               </Card.Meta>
             }
-            <Card.Description>
-              <SkillComparison wrap
-                current={skill.description}
-                previous={previousSkills && previousSkills[i].description}
-              />
+
+            <Card.Description className='skill-description'>
+              <div className='skill-icon'>
+                <Image className='main' alt=''
+                  src={`/assets/icon/skill/main/${skill.resourceName}.png`}
+                />
+                {skill.subResourceName &&
+                  <Image className='sub' alt=''
+                    src={`/assets/icon/skill/sub/${skill.subResourceName}.png`}
+                  />
+                }
+              </div>
+
+              <div className='text'>
+                <SkillComparison wrap
+                  current={skill.description}
+                  previous={previousSkills && previousSkills[i].description}
+                />
+              </div>
             </Card.Description>
           </Card.Content>
 
@@ -150,6 +170,38 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
 }
 
 const styledDetailSkillTable = styled(DetailSkillTable)`
+  .skill-description {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    .skill-icon {
+      flex: 0 0 48px;
+      position: relative;
+      width: 48px;
+      height: 48px;
+
+      .main {
+        position: relative;
+        width: 48px;
+        height: 48px;
+      }
+
+      .sub {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .text {
+      flex: 1;
+      padding-left: 0.25em;
+    }
+  }
+
   .legacy {
     color: #878787;
   }
