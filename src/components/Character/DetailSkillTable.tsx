@@ -123,7 +123,7 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
               </Card.Meta>
             }
             <Card.Description>
-              <SkillComparison
+              <SkillComparison wrap
                 current={skill.description}
                 previous={previousSkills && previousSkills[i].description}
               />
