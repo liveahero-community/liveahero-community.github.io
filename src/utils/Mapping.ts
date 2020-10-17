@@ -12,9 +12,8 @@ export const statusIcons = {
     11: '/assets/icon/status/status_atkdown.png',
     12: '/assets/icon/status/status_defdown.png',
     13: '/assets/icon/status/status_agidown.png',
-    14: '/assets/icon/status/status_defdown.png',
-    // TODO:
-    15: '/assets/icon/status/???.png',
+    14: '/assets/icon/status/status_mosaic.png',
+    15: '/assets/icon/status/status_hide.png',
     16: '/assets/icon/status/status_unlucky.png',
     17: '/assets/icon/status/status_useless.png',
     18: '/assets/icon/status/status_poison.png',
@@ -27,7 +26,7 @@ export const statusIcons = {
     25: '/assets/icon/status/status_speedatk.png',
     26: '/assets/icon/status/status_damageAggregation.png',
     // TODO:
-    27: '/assets/icon/status/???.png',
+    27: '/assets/icon/skill/main/b_skill_special.png',
     28: '/assets/icon/skill/main/b_skill_special.png',
     29: '/assets/icon/status/status_superagidown.png',
 };

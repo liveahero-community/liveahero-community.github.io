@@ -1,17 +1,13 @@
 // Node modules.
 import _ from 'lodash';
 import React from 'react';
-import {
-  Popup,
-  Image,
-  Label,
-  Card,
-} from 'semantic-ui-react';
+import { Image, Card } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
-import { statusIcons } from '../../utils/Mapping';
+// Local components.
+import { StatusIcon } from '../Icon/';
 
 // TypeGraud.
 const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
@@ -28,33 +24,6 @@ const wrapDescription = (description?: any) => {
   }
 
   return description;
-};
-
-interface StatusIconProps {
-  statusId: number;
-  name?: string;
-  description?: string;
-  turn: number;
-}
-
-const StatusIcon: React.FC<StatusIconProps> = (props) => {
-  const { statusId, turn, name, description } = props;
-
-  return (
-    <Popup inverted position='top center'
-      trigger={
-        <div className='status'>
-          <Image className='icon'
-            src={_.get(statusIcons, statusId)}
-          />
-          <Label className='turn' circular color='grey' size='tiny'>
-            {turn}
-          </Label>
-        </div>
-      }
-      content={`${name}: ${description}`}
-    />
-  );
 };
 
 interface SkillComparisonProps {
@@ -217,24 +186,6 @@ const styledDetailSkillTable = styled(DetailSkillTable)`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
-    .status {
-      position: relative;
-      width: 36px;
-      height: 36px;
-      margin: 10px;
-
-      .icon {
-        width: 36px;
-        height: 36px;
-      }
-
-      .turn {
-        position: absolute;
-        bottom: -9px;
-        right: -9px;
-      }
-    }
   }
 `;
 
