@@ -2,16 +2,18 @@
 import _ from 'lodash';
 import React from 'react';
 import {
-  Table,
   Popup,
   Image,
   Label,
+  Card,
 } from 'semantic-ui-react';
+import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
 import { statusIcons } from '../../utils/Mapping';
 
+// TypeGraud.
 const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
   return (card as SidekickData)?.equipmentSkills ? true : false;
 }
@@ -28,28 +30,60 @@ const wrapDescription = (description?: any) => {
   return description;
 };
 
-interface SkillCellProps {
+interface StatusIconProps {
+  statusId: number;
+  name?: string;
+  description?: string;
+  turn: number;
+}
+
+const StatusIcon: React.FC<StatusIconProps> = (props) => {
+  const { statusId, turn, name, description } = props;
+
+  return (
+    <Popup inverted
+      trigger={
+        <div className='status'>
+          <Image className='icon'
+            src={_.get(statusIcons, statusId)}
+          />
+          <Label className='turn' circular color='grey' size='tiny'>
+            {turn}
+          </Label>
+        </div>
+      }
+      content={`${name}: ${description}`}
+    />
+  );
+};
+
+interface SkillComparisonProps {
   wrap?: boolean;
-  textAlign?: 'center' | 'right';
+  direction?: 'horizontal' | 'vertical';
   current: string | number;
   previous?: string | number;
 }
 
-const SkillCell: React.FC<SkillCellProps> = (props) => {
-  const { wrap, textAlign, current, previous } = props;
+const SkillComparison: React.FC<SkillComparisonProps> = (props) => {
+  const { wrap, direction, current, previous } = props;
 
   if (previous && current !== previous) {
-    return <Table.Cell positive textAlign={textAlign}>
-      <div>{wrap ? wrapDescription(previous) : previous}</div>
-      <div>⬇</div>
-      <div>{wrap ? wrapDescription(current) : current}</div>
-    </Table.Cell>;
+    return (direction === 'horizontal'
+      ? <>
+        <span className='legacy'>{wrap ? wrapDescription(previous) : previous}</span>
+        {`➡️`}
+        <span className='updated'>{wrap ? wrapDescription(current) : current}</span>
+      </>
+      : <>
+        <div className='legacy'>{wrap ? wrapDescription(previous) : previous}</div>
+        <div>⬇</div>
+        <div className='updated'>{wrap ? wrapDescription(current) : current}</div>
+      </>
+    );
   }
 
   return (
-    <Table.Cell textAlign={textAlign}>
-      {wrap ? wrapDescription(current) : current}
-    </Table.Cell>
+    wrap ? wrapDescription(current) : current
   );
 };
 
@@ -74,62 +108,56 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
     : previousCard?.skills;
 
   return (
-    <Table className={className} unstackable compact>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>名稱</Table.HeaderCell>
-          <Table.HeaderCell>說明</Table.HeaderCell>
-          <Table.HeaderCell textAlign='center'>狀態</Table.HeaderCell>
-          {!hideCost &&
-            <Table.HeaderCell textAlign='right'>消耗 view</Table.HeaderCell>
-          }
-        </Table.Row>
-      </Table.Header>
-
-      <Table.Body>
-        {skills.map((skill, i) => (
-          <Table.Row key={i}>
-            <Table.Cell>{skill.skillName}</Table.Cell>
-
-            <SkillCell wrap
-              current={skill.description}
-              previous={previousSkills && previousSkills[i].description}
-            />
-
-            <Table.Cell>
-              <div className='status-list'>
-                {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
-                  <Popup inverted key={i}
-                    trigger={
-                      <div className='status'>
-                        <Image className='icon'
-                          src={_.get(statusIcons, effect.effectDetail.statusId)}
-                        />
-                        <Label className='turn' circular color='grey' size='tiny'>
-                          {effect.effectDetail.turn}
-                        </Label>
-                      </div>
-                    }
-                    content={`${effect.effectDetail.status?.statusName}: ${effect.effectDetail.status?.description}`}
-                  />
-                )}
-              </div>
-            </Table.Cell>
-
+    <Card.Group className={className} centered itemsPerRow={isMobile ? 1 : 3}>
+      {skills.map((skill, i) => (
+        <Card key={i} fluid>
+          <Card.Content>
+            <Card.Header>{skill.skillName}</Card.Header>
             {!hideCost &&
-              <SkillCell textAlign='right'
-                current={skill.useView}
-                previous={previousSkills && previousSkills[i].useView}
-              />
+              <Card.Meta>
+                {`View: `}
+                <SkillComparison direction='horizontal'
+                  current={skill.useView}
+                  previous={previousSkills && previousSkills[i].useView}
+                />
+              </Card.Meta>
             }
-          </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
+            <Card.Description>
+              <SkillComparison
+                current={skill.description}
+                previous={previousSkills && previousSkills[i].description}
+              />
+            </Card.Description>
+          </Card.Content>
+
+          {skill.effects.filter((e) => e.effectDetail.turn > 0).length
+            ? <Card.Content className='status-list' extra>
+              {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
+                <StatusIcon key={i}
+                  statusId={effect.effectDetail.statusId}
+                  name={effect.effectDetail.status?.statusName}
+                  description={effect.effectDetail.status?.description}
+                  turn={effect.effectDetail.turn}
+                />
+              )}
+            </Card.Content>
+            : null
+          }
+        </Card>
+      ))}
+    </Card.Group>
   );
 }
 
 const styledDetailSkillTable = styled(DetailSkillTable)`
+  .legacy {
+    color: #878787;
+  }
+
+  .updated {
+    color: #2c662d;
+  }
+
   .status-list {
     display: flex;
     flex-wrap: wrap;
