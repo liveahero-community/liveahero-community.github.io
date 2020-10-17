@@ -130,16 +130,18 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
             }
 
             <Card.Description className='skill-description'>
-              <div className='skill-icon'>
-                <Image className='main' alt=''
-                  src={`/assets/icon/skill/main/${skill.resourceName}.png`}
-                />
-                {skill.subResourceName &&
-                  <Image className='sub' alt=''
-                    src={`/assets/icon/skill/sub/${skill.subResourceName}.png`}
+              {path === 'skills' &&
+                <div className='skill-icon'>
+                  <Image className='main' alt=''
+                    src={`/assets/icon/skill/main/${skill.resourceName}.png`}
                   />
-                }
-              </div>
+                  {skill.subResourceName &&
+                    <Image className='sub' alt=''
+                      src={`/assets/icon/skill/sub/${skill.subResourceName}.png`}
+                    />
+                  }
+                </div>
+              }
 
               <div className='text'>
                 <SkillComparison wrap
