@@ -1,3 +1,5 @@
+import { EffectClass } from './Skill';
+
 export interface StatusData {
   statusId: number;
   statusName: string;
@@ -9,7 +11,7 @@ export interface SkillEffectData {
   turn: number;
   count: number;
   effects: {
-    class: string;
+    class: EffectClass;
     parameter: {
       value: number;
     };

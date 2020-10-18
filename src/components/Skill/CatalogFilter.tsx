@@ -1,15 +1,16 @@
 // Node modules.
+import _ from 'lodash';
 import React, { useCallback, useState } from 'react';
 import {
   Button,
   Modal,
   Header,
   Icon,
-  Grid,
+  Dropdown,
 } from 'semantic-ui-react';
 import styled from 'styled-components';
-// Local components.
-import { ElementIcon } from '../Icon/';
+// Local modules.
+import { EffectClass } from '../../models/Skill';
 
 interface CatalogFilterButtonProps {
   className?: string;
@@ -39,16 +40,14 @@ const StyledCatalogFilterButton = styled(CatalogFilterButton)`
 
 interface CatalogFilterProps {
   className?: string;
-  ranks: boolean[];
-  updateRanks: (index: number) => void;
-  elements: boolean[];
-  updateElements: (index: number) => void;
+  effectClasses: EffectClass[];
+  updateSelectedEffectClasses: (effectClasses: EffectClass[]) => void;
 }
 
 const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   const { className } = props;
-  const { elements, updateElements } = props;
-
+  const { effectClasses, updateSelectedEffectClasses } = props;
+  
   const [open, setOpen] = useState(false);
 
   const onOpen = useCallback(() => {
@@ -58,6 +57,12 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   const onClose = useCallback(() => {
     setOpen(false);
   }, []);
+
+  const effectClassOptions = _.map(effectClasses, (effectClass) => ({
+    key: effectClass,
+    text: effectClass,
+    value: effectClass,
+  }))
 
   return (
     <Modal className={className} basic size='small' dimmer='blurring'
@@ -71,52 +76,14 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
       }
     >
       <Modal.Content>
-        {/* TODO:
-
-        <Checkbox />
-        {`直接顯示人物最高星素質`}
-
-        <Divider />
-
-        */}
-
-        {/* TODO:
-
         <Header as='h3' inverted textAlign='center'>
-          {`英雄天生星數`}
+          {`技能類型`}
         </Header>
 
-        <Grid columns='equal' padded>
-          <Grid.Row>
-            {ranks.map((rank, i) => (
-              <Grid.Column key={i} textAlign='center'>
-                <div onClick={updateRanks.bind(null, i)}>
-                  <RankIcon rankLevel={i + 3} size={54} pointer translucent={rank} />
-                </div>
-              </Grid.Column>
-            ))}
-          </Grid.Row>
-        </Grid>
-
-        <Divider />
-
-        */}
-
-        <Header as='h3' inverted textAlign='center'>
-          {`英雄屬性`}
-        </Header>
-
-        <Grid columns='equal' padded>
-          <Grid.Row>
-            {elements.map((element, i) => (
-              <Grid.Column key={i} textAlign='center'>
-                <div onClick={updateElements.bind(null, i)}>
-                  <ElementIcon elementId={i + 1} size={36} pointer translucent={!element} />
-                </div>
-              </Grid.Column>
-            ))}
-          </Grid.Row>
-        </Grid>
+        <Dropdown fluid multiple search selection
+          options={effectClassOptions}
+          onChange={(_event, data) => updateSelectedEffectClasses(data.value as EffectClass[])}
+        />
       </Modal.Content>
 
       <Modal.Actions>

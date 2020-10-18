@@ -49,15 +49,12 @@ const Common: React.FC<AppProps> = (props) => {
         </Link>
 
         <Container text>
-          <Grid className='links' centered textAlign='center' columns={isMobile ? 2 : 4}>
+          <Grid className='links' centered textAlign='center' columns={4}>
             <Grid.Column textAlign='center'>
               <Link to={Routes.HEROES}>
                 <Button basic inverted icon={isMobile}>
                   <Icon name='street view' />
-                  {isMobile
-                    ? <div>{`英雄資料`}</div>
-                    : <span>{`英雄資料`}</span>
-                  }
+                  {!isMobile && <span>{`英雄資料`}</span>}
                 </Button>
               </Link>
             </Grid.Column>
@@ -65,11 +62,8 @@ const Common: React.FC<AppProps> = (props) => {
             <Grid.Column textAlign='center'>
               <Link to={Routes.SKILLS}>
                 <Button basic inverted icon={isMobile}>
-                  <Icon name='magic' />
-                  {isMobile
-                    ? <div>{`技能列表`}</div>
-                    : <span>{`技能列表`}</span>
-                  }
+                  <Icon name='book' />
+                  {!isMobile && <span>{`技能列表`}</span>}
                 </Button>
               </Link>
             </Grid.Column>
@@ -78,10 +72,7 @@ const Common: React.FC<AppProps> = (props) => {
               <Link to={Routes.STATUSES}>
                 <Button basic inverted icon={isMobile}>
                   <Icon name='magic' />
-                  {isMobile
-                    ? <div>{`狀態一覽`}</div>
-                    : <span>{`狀態一覽`}</span>
-                  }
+                  {!isMobile && <span>{`狀態一覽`}</span>}
                 </Button>
               </Link>
             </Grid.Column>
@@ -90,10 +81,7 @@ const Common: React.FC<AppProps> = (props) => {
               <Link to={Routes.COMMUNITIES}>
                 <Button basic inverted icon={isMobile}>
                   <Icon name='users' />
-                  {isMobile
-                    ? <div>{`社群資源`}</div>
-                    : <span>{`社群資源`}</span>
-                  }
+                  {!isMobile && <span>{`社群資源`}</span>}
                 </Button>
               </Link>
             </Grid.Column>

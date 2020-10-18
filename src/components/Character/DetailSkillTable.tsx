@@ -1,13 +1,13 @@
 // Node modules.
 import _ from 'lodash';
 import React from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
+import { Card, Icon } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
 // Local components.
-import { StatusIcon } from '../Icon/';
+import { SkillIcon, StatusIcon } from '../Icon/';
 
 // TypeGraud.
 const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
@@ -100,16 +100,7 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
 
             <Card.Description className='skill-description'>
               {path === 'skills' &&
-                <div className='skill-icon'>
-                  <Image className='main' alt=''
-                    src={`/assets/icon/skill/main/${skill.resourceName}.png`}
-                  />
-                  {skill.subResourceName &&
-                    <Image className='sub' alt=''
-                      src={`/assets/icon/skill/sub/${skill.subResourceName}.png`}
-                    />
-                  }
-                </div>
+                <SkillIcon skill={skill} />
               }
 
               <div className='text'>
@@ -145,27 +136,6 @@ const styledDetailSkillTable = styled(DetailSkillTable)`
     display: flex;
     justify-content: left;
     align-items: center;
-
-    .skill-icon {
-      flex: 0 0 48px;
-      position: relative;
-      width: 48px;
-      height: 48px;
-
-      .main {
-        position: relative;
-        width: 48px;
-        height: 48px;
-      }
-
-      .sub {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 28px;
-        height: 28px;
-      }
-    }
 
     .text {
       flex: 1;

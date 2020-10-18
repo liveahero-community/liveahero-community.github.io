@@ -1,19 +1,37 @@
 // Node modules.
-import React, { useContext } from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import _ from 'lodash';
+import React, { useContext, useEffect, useState } from 'react';
+import {
+  Container,
+  Header,
+  Segment,
+  Label,
+  Message,
+} from 'semantic-ui-react';
 import { Helmet } from 'react-helmet';
 // Local modules.
 import * as Config from '../configs/index';
+import { EffectClass } from '../models/Skill';
 import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
+import * as Skill from '../components/Skill';
 
 const SkillsScreen: React.FC = () => {
   const { language, masterData } = useContext(AppContext);
 
-  const skills = masterData?.skillData;
+  const [effectClasses, updateEffectClasses] = useState<EffectClass[]>([]);
+  const [selectedEffectClasses, updateSelectedEffectClasses] = useState<EffectClass[]>(['SpdDeferenceDamage']);
 
-  console.log(masterData?.skillData);
+  useEffect(() => {
+    // TODO: refactor in future.
+    const newEffectClasses = _.uniq(_.flattenDeep(masterData?.skillData?.map((skill) =>
+      skill.effects.map((effect: any) =>
+        effect.effectDetail.effects.map((effect: any) => effect.class)
+      )
+    )));
+    updateEffectClasses(newEffectClasses);
+  }, [masterData]);
 
   return (
     <Framework.Common>
@@ -25,12 +43,28 @@ const SkillsScreen: React.FC = () => {
       <Container text>
         <Header inverted>{`技能列表`}</Header>
 
-        {skills?.map((skill, i) => (
-          <div key={i}>
-            <p>{skill.skillId} / {skill.skillName} / {skill.characterType} / {skill.characterId}</p>
-          </div>
-        ))}
+        <Message info>
+          <p>{`點選右下方篩選按鈕，開始過濾指定技能類型`}</p>
+          <p>{`此功能目前仍在開發中，初步版本可以先行體驗，部分資訊尚未翻譯完全`}</p>
+        </Message>
+
+        <Segment basic>
+          {selectedEffectClasses.map((selectedEffectClass, i) => (
+            <Label key={i}>
+              {selectedEffectClass}
+            </Label>
+          ))}
+        </Segment>
+
+        <Skill.Catalog
+          selectedEffectClasses={selectedEffectClasses}
+        />
       </Container>
+
+      <Skill.CatalogFilter
+        effectClasses={effectClasses}
+        updateSelectedEffectClasses={updateSelectedEffectClasses}
+      />
     </Framework.Common>
   );
 }

@@ -106,6 +106,7 @@ export class DataProcess {
       ...skill,
       characterType,
       characterId: data.characterId,
+      characterResourceName: data.resourceName,
     };
   }
 }
