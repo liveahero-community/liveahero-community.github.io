@@ -5,3 +5,5 @@ export const HEROES = '/heroes';
 export const HERO = '/heroes/:characterId';
 
 export const STATUSES = '/statuses';
+
+export const COMMUNITIES = '/communities';

@@ -10,9 +10,10 @@ import {
   Container,
   Icon,
 } from 'semantic-ui-react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { isMobile } from 'react-device-detect';
+import styled from 'styled-components';
 // Local modules.
 import * as Config from '../../configs/index';
 import * as Routes from '../../utils/Routes';
@@ -48,26 +49,42 @@ const Common: React.FC<AppProps> = (props) => {
         </Link>
 
         <Container text>
-          <Grid className='links' centered textAlign='center' columns={2}>
-            <Grid.Row>
-              <Grid.Column textAlign='center'>
-                <Link to={Routes.HEROES}>
-                  <Button basic inverted>
-                    <Icon name='street view' />
-                    {'英雄資料'}
-                  </Button>
-                </Link>
-              </Grid.Column>
+          <Grid className='links' centered textAlign='center' columns={3}>
+            <Grid.Column textAlign='center'>
+              <Link to={Routes.HEROES}>
+                <Button basic inverted icon={isMobile}>
+                  <Icon name='street view' />
+                  {isMobile
+                    ? <div>{`英雄資料`}</div>
+                    : <span>{`英雄資料`}</span>
+                  }
+                </Button>
+              </Link>
+            </Grid.Column>
 
-              <Grid.Column textAlign='center'>
-                <Link to={Routes.STATUSES}>
-                  <Button basic inverted>
-                    <Icon name='magic' />
-                    {'狀態一覽'}
-                  </Button>
-                </Link>
-              </Grid.Column>
-            </Grid.Row>
+            <Grid.Column textAlign='center'>
+              <Link to={Routes.STATUSES}>
+                <Button basic inverted icon={isMobile}>
+                  <Icon name='magic' />
+                  {isMobile
+                    ? <div>{`狀態一覽`}</div>
+                    : <span>{`狀態一覽`}</span>
+                  }
+                </Button>
+              </Link>
+            </Grid.Column>
+
+            <Grid.Column textAlign='center'>
+              <Link to={Routes.COMMUNITIES}>
+                <Button basic inverted icon={isMobile}>
+                  <Icon name='users' />
+                  {isMobile
+                    ? <div>{`社群資源`}</div>
+                    : <span>{`社群資源`}</span>
+                  }
+                </Button>
+              </Link>
+            </Grid.Column>
           </Grid>
         </Container>
 

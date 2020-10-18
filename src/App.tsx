@@ -69,6 +69,9 @@ const App: React.FC = () => {
           <Route path={Routes.STATUSES}
             component={withTracker(Screen.StatusesScreen)}
           />
+          <Route path={Routes.COMMUNITIES}
+            component={withTracker(Screen.CommunitiesScreen)}
+          />
           <Route path={Routes.HOME}>
             <Redirect to={Routes.HEROES} />
           </Route>
