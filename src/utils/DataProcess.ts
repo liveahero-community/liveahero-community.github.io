@@ -1,7 +1,7 @@
 // Node modules.
 import _ from 'lodash';
 // Local modules.
-import { HeroData, SidekickData } from '../models/Hero';
+import { HeroData, SidekickData, SkillData } from '../models/Hero';
 
 interface RawData {
   heroDataRaw: any;
@@ -13,11 +13,16 @@ interface RawData {
 
 export class DataProcess {
   private rawData: RawData;
+  // Flatten character cards.
   private heroData: HeroData[];
   private sidekickData: SidekickData[];
+  // Grouped character cards.
   private heroDict: any;
   private sidekickDict: any;
   public characterDict: any;
+  // Flatten skill data.
+  public skillData: any[];
+  // Status data.
   public statusDict: any;
 
   public constructor(rawData: RawData) {
@@ -61,6 +66,16 @@ export class DataProcess {
       return Object.assign(all, {[characterId.toString()]: data });
     }, {});
 
+    this.skillData = _.sortBy(_.uniqBy(_.flattenDeep([
+      this.heroData.map((data) =>
+        data.skills.map(this.skillAddMeta.bind(this, 'hero', data))
+      ),
+      this.sidekickData.map((data) => [
+        data.skills.map(this.skillAddMeta.bind(this, 'sidekick', data)),
+        data.equipmentSkills.map(this.skillAddMeta.bind(this, 'sidekick', data)),
+      ]),
+    ]), (skill: any) => skill.skillId), ['skillId']);
+
     this.statusDict = rawData.statusDataRaw;
   }
 
@@ -83,6 +98,14 @@ export class DataProcess {
           },
         }
       }),
+    };
+  }
+
+  private skillAddMeta(characterType: 'hero' | 'sidekick', data: HeroData | SidekickData, skill: SkillData) {
+    return {
+      ...skill,
+      characterType,
+      characterId: data.characterId,
     };
   }
 }

@@ -49,7 +49,7 @@ const Common: React.FC<AppProps> = (props) => {
         </Link>
 
         <Container text>
-          <Grid className='links' centered textAlign='center' columns={3}>
+          <Grid className='links' centered textAlign='center' columns={isMobile ? 2 : 4}>
             <Grid.Column textAlign='center'>
               <Link to={Routes.HEROES}>
                 <Button basic inverted icon={isMobile}>
@@ -57,6 +57,18 @@ const Common: React.FC<AppProps> = (props) => {
                   {isMobile
                     ? <div>{`英雄資料`}</div>
                     : <span>{`英雄資料`}</span>
+                  }
+                </Button>
+              </Link>
+            </Grid.Column>
+
+            <Grid.Column textAlign='center'>
+              <Link to={Routes.SKILLS}>
+                <Button basic inverted icon={isMobile}>
+                  <Icon name='magic' />
+                  {isMobile
+                    ? <div>{`技能列表`}</div>
+                    : <span>{`技能列表`}</span>
                   }
                 </Button>
               </Link>

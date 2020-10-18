@@ -66,6 +66,9 @@ const App: React.FC = () => {
           <Route path={Routes.HEROES}
             component={withTracker(Screen.HeroesScreen)}
           />
+          <Route path={Routes.SKILLS}
+            component={withTracker(Screen.SkillsScreen)}
+          />
           <Route path={Routes.STATUSES}
             component={withTracker(Screen.StatusesScreen)}
           />
