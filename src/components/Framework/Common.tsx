@@ -1,6 +1,15 @@
 // Node modules.
 import React, { useState, useContext, useCallback } from 'react';
-import { Grid, Segment, Image, Flag, Popup, Button, Container } from 'semantic-ui-react';
+import {
+  Grid,
+  Segment,
+  Image,
+  Flag,
+  Popup,
+  Button,
+  Container,
+  Icon,
+} from 'semantic-ui-react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -9,6 +18,8 @@ import * as Config from '../../configs/index';
 import * as Routes from '../../utils/Routes';
 import { AppContext } from '../../contexts/AppContext';
 import { Language } from '../../models/System';
+// Local components.
+import { ScrollToTop } from '../../components/Common/';
 
 interface AppProps {
   className?: string;
@@ -28,6 +39,8 @@ const Common: React.FC<AppProps> = (props) => {
 
   return (
     <div className={className}>
+      <ScrollToTop />
+
       <Segment className='logo-banner' basic attached textAlign='center'>
         <Link to={Routes.HOME}>
           <Image size='medium' centered src={logoUrl} />
@@ -40,6 +53,7 @@ const Common: React.FC<AppProps> = (props) => {
               <Grid.Column textAlign='center'>
                 <Link to={Routes.HEROES}>
                   <Button basic inverted>
+                    <Icon name='street view' />
                     {'英雄資料'}
                   </Button>
                 </Link>
@@ -48,6 +62,7 @@ const Common: React.FC<AppProps> = (props) => {
               <Grid.Column textAlign='center'>
                 <Link to={Routes.STATUSES}>
                   <Button basic inverted>
+                    <Icon name='magic' />
                     {'狀態一覽'}
                   </Button>
                 </Link>

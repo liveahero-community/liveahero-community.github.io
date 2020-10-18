@@ -1,8 +1,7 @@
 // Node modules.
 import React from 'react';
-import {
-  Table,
-} from 'semantic-ui-react';
+import { Table,Icon } from 'semantic-ui-react';
+import styled from 'styled-components';
 // Local modules.
 import { HeroData, SidekickData } from '../../models/Hero';
 
@@ -16,7 +15,11 @@ const StatusCell: React.FC<StatusCellProps> = (props) => {
 
   if (previous && current !== previous) {
     return (
-      <Table.Cell positive>{previous}➜{current}</Table.Cell>
+      <Table.Cell positive>
+        {previous}
+        <Icon className='upgrade-icon' name='caret square right outline' />
+        {current}
+      </Table.Cell>
     );
   }
 
@@ -26,15 +29,17 @@ const StatusCell: React.FC<StatusCellProps> = (props) => {
 };
 
 interface DetailStatusTableProps {
+  className?: string;
   card: HeroData | SidekickData;
   previousCard?: HeroData | SidekickData;
 }
 
 const DetailStatusTable: React.FC<DetailStatusTableProps> = (props) => {
+  const { className } = props;
   const { card, previousCard } = props;
 
   return (
-    <Table unstackable compact>
+    <Table className={className} unstackable compact singleLine>
       <Table.Header>
         <Table.Row textAlign='right'>
           <Table.HeaderCell width={1} textAlign='center'>等級</Table.HeaderCell>
@@ -58,8 +63,14 @@ const DetailStatusTable: React.FC<DetailStatusTableProps> = (props) => {
       </Table.Body>
     </Table>
   );
-}
+};
+
+const styledDetailStatusTable = styled(DetailStatusTable)`
+  .upgrade-icon {
+    margin: 0;
+  }
+`;
 
 export {
-  DetailStatusTable,
+  styledDetailStatusTable as DetailStatusTable,
 };

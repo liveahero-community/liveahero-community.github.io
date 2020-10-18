@@ -39,7 +39,7 @@ const StatusTable: React.FC = () => {
     status.isGoodStatus ? 'buff' : 'debuff'
   );
 
-  console.log(groupedStatusDict);
+  console.log('groupedStatusDict', groupedStatusDict);
 
   return (
     <Table unstackable selectable compact>

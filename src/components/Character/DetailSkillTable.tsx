@@ -1,7 +1,7 @@
 // Node modules.
 import _ from 'lodash';
 import React from 'react';
-import { Image, Card } from 'semantic-ui-react';
+import { Card, Image, Icon } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 // Local modules.
@@ -40,12 +40,12 @@ const SkillComparison: React.FC<SkillComparisonProps> = (props) => {
     return (direction === 'horizontal'
       ? <>
         <span className='legacy'>{wrap ? wrapDescription(previous) : previous}</span>
-        {`➡️`}
+        <Icon name='caret square right outline' />
         <span className='updated'>{wrap ? wrapDescription(current) : current}</span>
       </>
       : <div>
         <div className='legacy'>{wrap ? wrapDescription(previous) : previous}</div>
-        <div>⬇</div>
+        <Icon size='large' name='caret square down outline' />
         <div className='updated'>{wrap ? wrapDescription(current) : current}</div>
       </div>
     );

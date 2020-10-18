@@ -33,17 +33,17 @@ const HeroScreen: React.FC = () => {
 
   const character: CharacterData = _.get(masterData?.characterDict, characterId);
 
-  console.log(character);
+  console.log('character', character);
 
   return (
     <Framework.Common>
       {character && [
-        <Helmet>
+        <Helmet key='helmet'>
           <meta charSet='utf-8' />
           <title>{`${character.meta.cardName} | ${Config.websiteTitle[language]}`}</title>
         </Helmet>
         ,
-        <Container id='character-container'>
+        <Container key='container' id='character-container'>
           <Segment>
             <Header as='h2'>
               {tabIndex === 0
