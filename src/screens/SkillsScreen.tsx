@@ -21,7 +21,7 @@ const SkillsScreen: React.FC = () => {
   const { language, masterData } = useContext(AppContext);
 
   const [effectClasses, updateEffectClasses] = useState<EffectClass[]>([]);
-  const [selectedEffectClasses, updateSelectedEffectClasses] = useState<EffectClass[]>(['SpdDeferenceDamage']);
+  const [selectedEffectClass, updateSelectedEffectClass] = useState<EffectClass>('SpdDeferenceDamage');
 
   useEffect(() => {
     // TODO: refactor in future.
@@ -49,21 +49,19 @@ const SkillsScreen: React.FC = () => {
         </Message>
 
         <Segment basic>
-          {selectedEffectClasses.map((selectedEffectClass, i) => (
-            <Label key={i}>
-              {selectedEffectClass}
-            </Label>
-          ))}
+          <Label>
+            {selectedEffectClass}
+          </Label>
         </Segment>
 
         <Skill.Catalog
-          selectedEffectClasses={selectedEffectClasses}
+          selectedEffectClass={selectedEffectClass}
         />
       </Container>
 
       <Skill.CatalogFilter
         effectClasses={effectClasses}
-        updateSelectedEffectClasses={updateSelectedEffectClasses}
+        updateSelectedEffectClass={updateSelectedEffectClass}
       />
     </Framework.Common>
   );

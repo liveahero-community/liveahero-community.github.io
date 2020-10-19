@@ -2,9 +2,11 @@
 import _ from 'lodash';
 import React, { useContext } from 'react';
 import { Segment, Header, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // Local modules.
 import { EffectClass } from '../../models/Skill';
+import * as Routes from '../../utils/Routes';
 import { AppContext } from '../../contexts/AppContext';
 // Local components.
 import { SkillIcon } from '../Icon/';
@@ -23,12 +25,12 @@ const wrapDescription = (description?: any) => {
 
 interface CatalogProps {
   className?: string;
-  selectedEffectClasses: EffectClass[];
+  selectedEffectClass: EffectClass;
 }
 
 const Catalog: React.FC<CatalogProps> = (props) => {
   const { className } = props;
-  const { selectedEffectClasses } = props;
+  const { selectedEffectClass } = props;
 
   const { masterData } = useContext(AppContext);
 
@@ -36,14 +38,14 @@ const Catalog: React.FC<CatalogProps> = (props) => {
   const skills = masterData?.skillData.filter((skill) => {
     const matchedSkills = skill.effects.filter((effect: any) => {
       const matchedEffects = effect.effectDetail.effects.filter((effectDetail: any) => {
-        return _.includes(selectedEffectClasses, effectDetail.class);
+        return selectedEffectClass === effectDetail.class;
       });
       return !_.isEmpty(matchedEffects);
     });
     return !_.isEmpty(matchedSkills);
   });
 
-  console.log('selectedEffectClasses', selectedEffectClasses);
+  console.log('selectedEffectClass', selectedEffectClass);
   console.log('skills', skills);
 
   return (
@@ -65,13 +67,15 @@ const Catalog: React.FC<CatalogProps> = (props) => {
             </div>
 
             <div className='character-icon'>
-              {skill.characterType === 'hero' &&
-                <Image alt='' src={`/assets/icon/item/item_piece_${skill.characterResourceName}.png`} />
-              }
+              <Link to={`${Routes.HEROES}/${skill.characterId}`}>
+                {skill.characterType === 'hero' &&
+                  <Image alt='' src={`/assets/icon/item/item_piece_${skill.characterResourceName}.png`} />
+                }
 
-              {skill.characterType === 'sidekick' &&
-                <Image alt='' src={`/assets/icon/item/item_heart_${skill.characterResourceName}.png`} />
-              }
+                {skill.characterType === 'sidekick' &&
+                  <Image alt='' src={`/assets/icon/item/item_heart_${skill.characterResourceName}.png`} />
+                }
+              </Link>
             </div>
           </div>
           {/* <p>{JSON.stringify(skill.effects.map((effect: any) => effect.effectDetail.effects))}</p> */}

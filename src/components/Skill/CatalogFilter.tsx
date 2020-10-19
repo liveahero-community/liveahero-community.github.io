@@ -11,6 +11,7 @@ import {
 import styled from 'styled-components';
 // Local modules.
 import { EffectClass } from '../../models/Skill';
+import { effectClassTransform } from '../../utils/Transformer';
 
 interface CatalogFilterButtonProps {
   className?: string;
@@ -41,12 +42,12 @@ const StyledCatalogFilterButton = styled(CatalogFilterButton)`
 interface CatalogFilterProps {
   className?: string;
   effectClasses: EffectClass[];
-  updateSelectedEffectClasses: (effectClasses: EffectClass[]) => void;
+  updateSelectedEffectClass: (effectClass: EffectClass) => void;
 }
 
 const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   const { className } = props;
-  const { effectClasses, updateSelectedEffectClasses } = props;
+  const { effectClasses, updateSelectedEffectClass } = props;
   
   const [open, setOpen] = useState(false);
 
@@ -60,7 +61,7 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
 
   const effectClassOptions = _.map(effectClasses, (effectClass) => ({
     key: effectClass,
-    text: effectClass,
+    text: effectClassTransform(effectClass),
     value: effectClass,
   }))
 
@@ -80,9 +81,9 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
           {`技能類型`}
         </Header>
 
-        <Dropdown fluid multiple search selection
+        <Dropdown fluid search selection
           options={effectClassOptions}
-          onChange={(_event, data) => updateSelectedEffectClasses(data.value as EffectClass[])}
+          onChange={(_event, data) => updateSelectedEffectClass(data.value as EffectClass)}
         />
       </Modal.Content>
 

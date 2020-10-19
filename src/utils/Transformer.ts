@@ -1,3 +1,5 @@
+import { EffectClass } from "../models/Skill";
+
 const elementTransform = (elementId: number) => {
   switch (elementId) {
     case 1:
@@ -13,7 +15,7 @@ const elementTransform = (elementId: number) => {
     default:
       return '無';
   }
-}
+};
 
 const roleTransform = (roleId: number) => {
   switch (roleId) {
@@ -36,9 +38,69 @@ const roleTransform = (roleId: number) => {
     default:
       return '無';
   }
-}
+};
+
+const effectClassTransform = (effectClass: EffectClass) => {
+  switch (effectClass) {
+    case 'Damage':
+      return '單體/全體傷害';
+    case 'ChangeHp':
+      return '生命 % 數變化';
+    case 'MultipleAttack':
+      return '攻擊力變化';
+    case 'ChangeView':
+      return 'View 變化';
+    case 'MultipleDefence':
+      return '防禦力變化';
+    case 'ChangeAgi':
+      return '速度變化';
+    case 'RemoveBuff':
+      return '移除增益效果';
+    case 'SpdDeferenceDamage':
+      return '速度差異增傷';
+    case 'Heal':
+      return '恢復血量';
+    case 'ComboPlus':
+      return 'combo 數增加';
+    case 'ComboDamage':
+      return 'combo 數增傷';
+    case 'Aggregation':
+      return '傷害集中';
+    case 'HealthDamage':
+      return '血量 % 數增傷';
+    case 'Provocation':
+      return '嘲諷';
+    case 'Cure':
+      return '消除減益效果';
+    case 'MultipleBaseView':
+      return '基礎 view 變化';
+    case 'NowViewDamage':
+      return '當前 view 增傷';
+    case 'ChangeSkillProve':
+      return '技能發動率';
+    case 'NeedViewChange':
+      return '技能所需 view 改變 (% 數)';
+    case 'StatusNumDamage':
+      return '增益數量增傷';
+    case 'Silence':
+      return '沉默';
+    case 'MoreTurn':
+      return '額外行動回合';
+    case 'Penetration':
+      return '無視嘲諷';
+    case 'IncreaseLAH':
+      return '增加金幣';
+    case 'MultipleHp':
+      return '血量改變';
+    case 'IncreaseExp':
+      return '增加經驗值';
+    case 'NeedViewValueChange':
+      return '技能所需 view 改變 (定值)';
+  }
+};
 
 export {
   elementTransform,
   roleTransform,
+  effectClassTransform,
 };
