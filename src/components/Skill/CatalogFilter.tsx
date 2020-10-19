@@ -65,7 +65,7 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   }))
 
   return (
-    <Modal className={className} basic size='small' dimmer='blurring'
+    <Modal className={className} basic size='small' dimmer='blurring' closeOnDimmerClick={false}
       open={open}
       onClose={onClose}
       onOpen={onOpen}

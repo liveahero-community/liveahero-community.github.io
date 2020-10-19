@@ -9,6 +9,18 @@ import { AppContext } from '../../contexts/AppContext';
 // Local components.
 import { SkillIcon } from '../Icon/';
 
+const wrapDescription = (description?: any) => {
+  if (_.isString(description)) {
+    return description.split('。').filter(Boolean).map((token, i) => (
+      <div key={i}>
+        {`${token}。`}
+      </div>
+    ));
+  }
+
+  return description;
+};
+
 interface CatalogProps {
   className?: string;
   selectedEffectClasses: EffectClass[];
@@ -38,15 +50,19 @@ const Catalog: React.FC<CatalogProps> = (props) => {
     <div className={className}>
       {skills?.map((skill, i) => (
         <Segment id={skill.skillId} key={i}>
-          <Header>{skill.skillName}</Header>
-          
           <div className='section'>
-            <SkillIcon skill={skill} />
-            <p>{skill.description}</p>
-          </div>
+            {skill.characterType === 'hero' &&
+              <div className='skill-icon'>
+                <SkillIcon skill={skill} />
+              </div>
+            }
 
-          <div className='section'>
-            {`可學習人物:`}
+            <div className='description'>
+              <Header as='h3' dividing>
+                {skill.skillName}
+              </Header>
+              <p>{wrapDescription(skill.description)}</p>
+            </div>
 
             <div className='character-icon'>
               {skill.characterType === 'hero' &&
@@ -58,7 +74,6 @@ const Catalog: React.FC<CatalogProps> = (props) => {
               }
             </div>
           </div>
-
           {/* <p>{JSON.stringify(skill.effects.map((effect: any) => effect.effectDetail.effects))}</p> */}
         </Segment>
       ))}
@@ -70,10 +85,19 @@ const styledCatalog = styled(Catalog)`
   .section {
     display: flex;
     align-items: center;
-  }
 
-  .character-icon {
-    width: 45px;
+    .skill-icon {
+      margin-right: 1em;
+    }
+
+    .description {
+      flex: 1;
+    }
+
+    .character-icon {
+      width: 45px;
+      margin-left: 1em;
+    }
   }
 `;
 
