@@ -5,23 +5,28 @@ import {
   Container,
   Header,
   Segment,
-  Label,
-  Message,
+  Divider,
 } from 'semantic-ui-react';
+import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 // Local modules.
 import * as Config from '../configs/index';
 import { EffectClass } from '../models/Skill';
+import { effectClassTransform } from '../utils/Transformer';
 import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
 import * as Skill from '../components/Skill';
 
-const SkillsScreen: React.FC = () => {
+const SkillCategoryScreen: React.FC = () => {
   const { language, masterData } = useContext(AppContext);
 
+  const { category } = useParams<any>();
+
+  console.log(category);
+
   const [effectClasses, updateEffectClasses] = useState<EffectClass[]>([]);
-  const [selectedEffectClass, updateSelectedEffectClass] = useState<EffectClass>('SpdDeferenceDamage');
+  const [selectedEffectClass, setSelectedEffectClass] = useState<EffectClass>(category);
 
   useEffect(() => {
     // TODO: refactor in future.
@@ -33,6 +38,11 @@ const SkillsScreen: React.FC = () => {
     updateEffectClasses(newEffectClasses);
   }, [masterData]);
 
+  // Update selected effect class when redirecting.
+  useEffect(() => {
+    setSelectedEffectClass(category);
+  }, [category]);
+
   return (
     <Framework.Common>
       <Helmet>
@@ -43,15 +53,10 @@ const SkillsScreen: React.FC = () => {
       <Container text>
         <Header inverted>{`技能列表`}</Header>
 
-        <Message info>
-          <p>{`點選右下方篩選按鈕，開始過濾指定技能類型`}</p>
-          <p>{`此功能目前仍在開發中，初步版本可以先行體驗，部分資訊尚未翻譯完全`}</p>
-        </Message>
-
         <Segment basic>
-          <Label>
-            {selectedEffectClass}
-          </Label>
+          <Divider horizontal inverted>
+            {`類型: ${effectClassTransform(selectedEffectClass)}`}
+          </Divider>
         </Segment>
 
         <Skill.Catalog
@@ -61,12 +66,11 @@ const SkillsScreen: React.FC = () => {
 
       <Skill.CatalogFilter
         effectClasses={effectClasses}
-        updateSelectedEffectClass={updateSelectedEffectClass}
       />
     </Framework.Common>
   );
 }
 
 export {
-  SkillsScreen,
+  SkillCategoryScreen,
 };

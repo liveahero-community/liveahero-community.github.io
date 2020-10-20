@@ -63,7 +63,7 @@ const Catalog: React.FC<CatalogProps> = (props) => {
               <Header as='h3' dividing>
                 {skill.skillName}
               </Header>
-              <p>{wrapDescription(skill.description)}</p>
+              <div>{wrapDescription(skill.description)}</div>
             </div>
 
             <div className='character-icon'>

@@ -1,17 +1,20 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   Button,
   Modal,
   Header,
   Icon,
   Dropdown,
+  DropdownProps,
 } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 // Local modules.
 import { EffectClass } from '../../models/Skill';
 import { effectClassTransform } from '../../utils/Transformer';
+import * as Routes from '../../utils/Routes';
 
 interface CatalogFilterButtonProps {
   className?: string;
@@ -42,14 +45,14 @@ const StyledCatalogFilterButton = styled(CatalogFilterButton)`
 interface CatalogFilterProps {
   className?: string;
   effectClasses: EffectClass[];
-  updateSelectedEffectClass: (effectClass: EffectClass) => void;
 }
 
 const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   const { className } = props;
-  const { effectClasses, updateSelectedEffectClass } = props;
-  
+  const { effectClasses } = props;
+
   const [open, setOpen] = useState(false);
+  const [selectEffectClass, setSelectEffectClass] = useState<EffectClass>();
 
   const onOpen = useCallback(() => {
     setOpen(true);
@@ -59,11 +62,26 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
     setOpen(false);
   }, []);
 
+  const updateSelectedEffectClass = useCallback((_event, data: DropdownProps) => {
+    setSelectEffectClass(data.value as EffectClass);
+  }, []);
+
+  useEffect(() => {
+    setSelectEffectClass(undefined);
+    setOpen(false);
+  }, [selectEffectClass]);
+
   const effectClassOptions = _.map(effectClasses, (effectClass) => ({
     key: effectClass,
     text: effectClassTransform(effectClass),
     value: effectClass,
   }))
+
+  if (selectEffectClass) {
+    return (
+      <Redirect to={`${Routes.SKILL_CATEGORIES}/${selectEffectClass}`} />
+    );
+  }
 
   return (
     <Modal className={className} basic size='small' dimmer='blurring' closeOnDimmerClick={false}
@@ -83,7 +101,7 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
 
         <Dropdown fluid search selection
           options={effectClassOptions}
-          onChange={(_event, data) => updateSelectedEffectClass(data.value as EffectClass)}
+          onChange={updateSelectedEffectClass}
         />
       </Modal.Content>
 

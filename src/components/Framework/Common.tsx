@@ -60,7 +60,7 @@ const Common: React.FC<AppProps> = (props) => {
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Link to={Routes.SKILLS}>
+              <Link to={Routes.SKILL_CATEGORIES}>
                 <Button basic inverted icon={isMobile}>
                   <Icon name='book' />
                   {!isMobile && <span>{`技能列表`}</span>}
