@@ -23,9 +23,9 @@ const App: React.FC = () => {
   // Data preparing.
   const [masterData, setMasterData] = useState<DataProcess>();
 
-  const download = useCallback(async (url: string) => {
+  const download = useCallback(async (url: string, isJson = true) => {
     const res = await fetch(url);
-    const data = await res.json();
+    const data = isJson ? await res.json() : await res.text();
     return data;
   }, []);
 
@@ -36,8 +36,9 @@ const App: React.FC = () => {
       download(`https://liveahero-community.github.io/translations/latest/${language}/SkillMaster.json`),
       download(`https://liveahero-community.github.io/translations/latest/${language}/SkillEffectMaster.json`),
       download(`https://liveahero-community.github.io/translations/latest/${language}/StatusMaster.json`),
-    ]).then(([heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw]) => ({
-      heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw,
+      download(`https://liveahero-community.github.io/translations/latest/${language}/Japanese.properties`, false),
+    ]).then(([heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw, detailRaw]) => ({
+      heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw, detailRaw,
     }));
 
     const updatedMasterData = new DataProcess(masterRawData);
@@ -77,6 +78,9 @@ const App: React.FC = () => {
           />
           <Route path={Routes.COMMUNITIES}
             component={withTracker(Screen.CommunitiesScreen)}
+          />
+          <Route path={Routes.CONTRIBUTORS}
+            component={withTracker(Screen.ContributorsScreen)}
           />
           <Route path={Routes.HOME}>
             <Redirect to={Routes.HEROES} />

@@ -1,6 +1,14 @@
 // Node modules.
 import React, { useContext } from 'react';
-import { Container, List, Image, Divider, Header } from 'semantic-ui-react';
+import {
+  Container,
+  List,
+  Image,
+  Divider,
+  Header,
+  Segment,
+  Grid,
+} from 'semantic-ui-react';
 import { Helmet } from 'react-helmet';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 // Local modules.
@@ -60,18 +68,35 @@ const CommunitiesScreen: React.FC = () => {
 
         <Divider inverted section />
 
-        <Header inverted>{`LAH 日本官方 Twitter`}</Header>
+        <Grid stackable columns={2}>
+          <Grid.Column>
+            <Header inverted>{`LAH 日本官方 Twitter`}</Header>
 
-        <TwitterTimelineEmbed
-          sourceType='profile'
-          screenName='lah_lw'
-          options={{ height: 400 }}
-          theme='light'
-          noHeader
-          noFooter
-          noScrollbar
-          noBorders
-        />
+            <TwitterTimelineEmbed
+              sourceType='profile'
+              screenName='lah_lw'
+              options={{ height: 400 }}
+              theme='light'
+              noHeader
+              noFooter
+              noScrollbar
+              noBorders
+            />
+          </Grid.Column>
+
+          <Grid.Column>
+            <Header inverted>{`LAH 日本官方情報`}</Header>
+
+            <Segment>
+              <iframe style={{ border: 'none' }}
+                title='LAH_OFFICIAL_NEWS'
+                width='100%'
+                height='360'
+                src='https://live-a-hero.jp/news?is_webview=1'
+              />
+            </Segment>
+          </Grid.Column>
+        </Grid>
       </Container>
     </Framework.Common>
   );

@@ -1,6 +1,7 @@
 // Node modules.
 import _ from 'lodash';
 import React, { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Grid,
   Table,
@@ -8,10 +9,30 @@ import {
   Image,
   Select,
   DropdownProps,
+  Tab,
+  Segment,
 } from 'semantic-ui-react';
 import styled from 'styled-components';
 // Local modules.
 import { CharacterData } from '../../models/Hero';
+import * as Routes from '../../utils/Routes';
+
+const detailKeyMapping = (key: string) => {
+  switch (key) {
+    case 'h01':
+      return '情報01';
+    case 'h02':
+      return '情報02';
+    case 's01':
+      return '外傳';
+  }
+};
+
+const breakLineWrapper = (text: string) => {
+  return text.split('<br>').map((line, i) =>
+    <div key={i} className='paragraph'>{line}</div>
+  );
+};
 
 interface MetadataProps {
   className?: string;
@@ -20,7 +41,7 @@ interface MetadataProps {
 
 const Metadata: React.FC<MetadataProps> = (props) => {
   const { className } = props;
-  const { character: { heroes, sidekicks } } = props;
+  const { character: { heroes, sidekicks, meta } } = props;
 
   const character = (_.first(heroes) || _.first(sidekicks))!;
   const options = [];
@@ -28,17 +49,26 @@ const Metadata: React.FC<MetadataProps> = (props) => {
   if (_.first(heroes)) {
     options.push({
       key: `${character.resourceName}_h01`,
-      value: `/assets/illustrations/${character.resourceName}_h01.png`,
+      value: `/assets/illustrations/${character.resourceName}_h01.png`,
       text: `英雄`,
     });
   }
   if (_.first(sidekicks)) {
     options.push({
       key: `${character.resourceName}_s01`,
-      value: `/assets/illustrations/${character.resourceName}_s01.png`,
+      value: `/assets/illustrations/${character.resourceName}_s01.png`,
       text: `助手`,
     });
   }
+
+  const detailPanes = _.map(meta.detail, (value, key) => ({
+    menuItem: detailKeyMapping(key),
+    render: () => (
+      <Segment className='detail' basic compact>
+        {breakLineWrapper(value!)}
+      </Segment>
+    ),
+  }));
 
   const [illustration, setIllustration] = useState(_.first(options)?.value);
 
@@ -63,6 +93,8 @@ const Metadata: React.FC<MetadataProps> = (props) => {
       </Grid.Column>
 
       <Grid.Column>
+        <Header as='h3'>{`基本資訊`}</Header>
+
         <Table basic='very' unstackable>
           <Table.Body>
             <Table.Row>
@@ -101,12 +133,39 @@ const Metadata: React.FC<MetadataProps> = (props) => {
             </Table.Row>
           </Table.Body>
         </Table>
+
+        <Header as='h3'>{`個人情報`}</Header>
+
+        <Tab panes={detailPanes} defaultActiveIndex={detailPanes.length - 1} />
+
+        <Link className='source' to={Routes.CONTRIBUTORS}>
+          <div>{`翻譯來源`}</div>
+        </Link>
       </Grid.Column>
     </Grid>
   );
 }
 
 const styledMetadata = styled(Metadata)`
+  .detail {
+    line-height: 1.75em;
+    letter-spacing: 0.05em;
+
+    .paragraph {
+      margin-bottom: 1em;
+    }
+  }
+
+  .source {
+    color: #AAA;
+    text-align: right;
+    font-style: italic;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export {

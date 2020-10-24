@@ -9,6 +9,7 @@ interface RawData {
   skillDataRaw: any;
   skillEffectDataRaw: any;
   statusDataRaw: any;
+  detailRaw: string;
 };
 
 export class DataProcess {
@@ -44,6 +45,24 @@ export class DataProcess {
 
     this.sidekickDict = _.groupBy(this.sidekickData, 'characterId');
 
+    // TODO: need refactor.
+    const detailDict = this.rawData.detailRaw.split('\n')
+      .map((line) => ({
+        key: line.substr(0, line.indexOf('=')),
+        value: line.substr(line.indexOf('=') + 1),
+      }))
+      .filter(({ key }) => /^DETAIL_\w+_[H|S]\d{2}$/.test(key))
+      .reduce((all, { key, value }) => {
+        const matches = key.match(/^DETAIL_(\w+)_([H|S]\d{2})$/)!;
+        const resourceName = matches[1].toLowerCase();
+        const category = matches[2].toLowerCase();
+        all[resourceName] = {
+          ...all[resourceName],
+          [category]: value,
+        };
+        return all;
+      }, {} as any);
+
     const characterIds = _.union(_.flattenDeep([_.keys(this.heroDict), _.keys(this.sidekickDict)]));
     this.characterDict = characterIds.reduce((all, characterId) => {
       const heroes = _.get(this.heroDict, characterId) || [];
@@ -58,6 +77,7 @@ export class DataProcess {
           resourceName: a?.resourceName || b?.resourceName,
           heroElement: a?.element,
           heroRarity: a?.rarity,
+          detail: detailDict[a?.resourceName || b?.resourceName],
         },
         heroes,
         sidekicks,

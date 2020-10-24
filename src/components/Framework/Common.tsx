@@ -5,7 +5,6 @@ import {
   Segment,
   Image,
   Flag,
-  Popup,
   Button,
   Container,
   Icon,
@@ -107,16 +106,11 @@ const Common: React.FC<AppProps> = (props) => {
       <Segment className='logo-banner' basic attached textAlign='center'>
         <Image size='small' centered src={logoUrl} />
 
-        <Popup inverted position='top center'
-          trigger={
-            <div className='footer'>
-              <a href={`https://forum.gamer.com.tw/Co.php?bsn=39312&sn=106`}>
-                {'Made by liveahero-community'}
-              </a>
-            </div>
-          }
-          content='程式：Salmon / 翻譯：划水德小牛'
-        />
+        <div className='footer'>
+          <Link className='source' to={Routes.CONTRIBUTORS}>
+            {'Made by liveahero-community'}
+          </Link>
+        </div>
       </Segment>
     </div>
   );
@@ -157,7 +151,7 @@ const styledCommon = styled(Common)`
       color: #333;
 
       a {
-        color:inherit;
+        color: inherit;
         text-decoration: none;
       }
     }

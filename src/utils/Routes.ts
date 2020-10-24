@@ -11,3 +11,5 @@ export const SKILL_CATEGORY = '/skills/categories/:category';
 export const STATUSES = '/statuses';
 
 export const COMMUNITIES = '/communities';
+
+export const CONTRIBUTORS = '/contributors';

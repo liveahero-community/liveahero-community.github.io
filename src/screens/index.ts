@@ -4,3 +4,4 @@ export { SkillCategoriesScreen } from './SkillCategoriesScreen';
 export { SkillCategoryScreen } from './SkillCategoryScreen';
 export { StatusesScreen } from './StatusesScreen';
 export { CommunitiesScreen } from './CommunitiesScreen';
+export { ContributorsScreen } from './ContributorsScreen';

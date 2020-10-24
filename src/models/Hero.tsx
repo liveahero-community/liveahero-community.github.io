@@ -103,6 +103,11 @@ export interface CharacterData {
     resourceName: string;
     heroElement?: number;
     heroRarity: number;
+    detail: {
+      h01?: string;
+      h02?: string;
+      s01?: string;
+    };
   };
   heroes: HeroData[];
   sidekicks: SidekickData[];
