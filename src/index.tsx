@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { ToastContainer } from 'react-toastify';
 import 'semantic-ui-css/semantic.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'antd/dist/antd.dark.css';
 // Local modules.
 import App from './App';
 import * as serviceWorker from './serviceWorker';

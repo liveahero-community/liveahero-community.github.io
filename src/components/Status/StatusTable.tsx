@@ -1,70 +1,57 @@
 // Node modules.
 import _ from 'lodash';
 import React, { useContext } from 'react';
-import { Table } from 'semantic-ui-react';
+import { Table } from 'antd';
 // Local modules.
 import { AppContext } from '../../contexts/AppContext';
 // Local components.
 import { StatusIcon } from '../Icon/';
 
-interface StatusRowProps {
-  status: any;
-}
-
-const StatusRow: React.FC<StatusRowProps> = (props) => {
-  const { status } = props;
-
-  return (
-    <Table.Row
-      positive={!!status.isGoodStatus}
-      negative={!status.isGoodStatus}
-    >
-      <Table.Cell textAlign='right'>{status.statusName}</Table.Cell>
-      <Table.Cell>
-        <StatusIcon
-          statusId={status.statusId}
-          name={status.statusName}
-          description={status.description}
-        />
-      </Table.Cell>
-      <Table.Cell>{status.description}</Table.Cell>
-    </Table.Row>
-  );
-};
-
 const StatusTable: React.FC = () => {
   const { masterData } = useContext(AppContext);
 
-  const groupedStatusDict = _.groupBy(masterData?.statusDict, (status) =>
-    status.isGoodStatus ? 'buff' : 'debuff'
-  );
+  const data = _.values<Skill.StatusData>(masterData?.statusDict);
+  const statuses = _.sortBy(data, (status) => !status.isGoodStatus);
 
-  console.log('groupedStatusDict', groupedStatusDict);
+  console.log('statuses', statuses);
+
+  const columns = [
+    {
+      title: '狀態',
+      dataIndex: 'status',
+      key: 'status',
+      align: 'right' as 'right',
+    },
+    {
+      dataIndex: 'icon',
+      key: 'icon',
+      align: 'center' as 'center',
+    },
+    {
+      title: '說明',
+      dataIndex: 'desciption',
+      key: 'desciption',
+    },
+  ];
+
+  const dataSource = _.map(statuses, (status) => ({
+    key: status.statusId,
+    status: status.statusName,
+    icon: (
+      <StatusIcon
+        statusId={status.statusId}
+        name={status.statusName}
+        description={status.description}
+      />
+    ),
+    desciption: status.description,
+  }));
 
   return (
-    <Table unstackable selectable compact>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell textAlign='right'>狀態</Table.HeaderCell>
-          <Table.HeaderCell />
-          <Table.HeaderCell>說明</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-
-      <Table.Body>
-        {_.map(groupedStatusDict.buff, (status, i) => (
-          <StatusRow key={i}
-            status={status}
-          />
-        ))}
-
-        {_.map(groupedStatusDict.debuff, (status, i) => (
-          <StatusRow key={i}
-            status={status}
-          />
-        ))}
-      </Table.Body>
-    </Table>
+    <Table pagination={false}
+      columns={columns}
+      dataSource={dataSource}
+    />
   );
 }
 

@@ -1,6 +1,7 @@
 // Node modules.
 import React, { useContext } from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
+import { Typography } from 'antd';
 import { Helmet } from 'react-helmet';
 // Local modules.
 import * as Config from '../configs/index';
@@ -20,7 +21,7 @@ const StatusesScreen: React.FC = () => {
       </Helmet>
 
       <Container text>
-        <Header inverted>{`狀態一覽`}</Header>
+        <Typography.Title level={2}>{`狀態一覽`}</Typography.Title>
 
         <StatusTable />
       </Container>
