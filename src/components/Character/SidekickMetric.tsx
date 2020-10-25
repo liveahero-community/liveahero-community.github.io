@@ -9,8 +9,6 @@ import {
   RatingProps,
 } from 'semantic-ui-react';
 import { toast } from 'react-toastify';
-// Local modules.
-import { SidekickData } from '../../models/Hero';
 // Local components.
 import * as Hero from './index';
 
@@ -18,7 +16,7 @@ const MAX_RARITY = 4;
 const MAX_LEVEL_ZONE = 6;
 
 interface SidekickMetricProps {
-  sidekickCards: SidekickData[];
+  sidekickCards: DataExtend.SidekickData[];
 };
 
 const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
@@ -30,10 +28,10 @@ const SidekickMetric: React.FC<SidekickMetricProps> = (props) => {
   const [selectedLevelZone, setSelectedLevelZone] = useState(
     _.first(sidekickCards)!.levelZone || 0
   );
-  const [sidekickCard, setSidekickCard] = useState<SidekickData>(
+  const [sidekickCard, setSidekickCard] = useState<DataExtend.SidekickData>(
     _.find(sidekickCards, (card) => card.rarity === rarity)!
   );
-  const [previousSidekickCard, setPreviousSidekickCard] = useState<SidekickData>();
+  const [previousSidekickCard, setPreviousSidekickCard] = useState<DataExtend.SidekickData>();
 
   const minLevelZone = _.minBy(sidekickCards, (card) => card.levelZone)!.levelZone || 0;
   const maxLevelZone = _.maxBy(sidekickCards, (card) => card.levelZone)!.levelZone || 0;

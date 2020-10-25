@@ -12,7 +12,6 @@ import {
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 // Local modules.
-import { EffectClass } from '../../models/Skill';
 import { effectClassTransform } from '../../utils/Transformer';
 import * as Routes from '../../utils/Routes';
 
@@ -44,7 +43,7 @@ const StyledCatalogFilterButton = styled(CatalogFilterButton)`
 
 interface CatalogFilterProps {
   className?: string;
-  effectClasses: EffectClass[];
+  effectClasses: Skill.EffectClass[];
 }
 
 const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
@@ -52,7 +51,7 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   const { effectClasses } = props;
 
   const [open, setOpen] = useState(false);
-  const [selectEffectClass, setSelectEffectClass] = useState<EffectClass>();
+  const [selectEffectClass, setSelectEffectClass] = useState<Skill.EffectClass>();
 
   const onOpen = useCallback(() => {
     setOpen(true);
@@ -63,7 +62,7 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   }, []);
 
   const updateSelectedEffectClass = useCallback((_event, data: DropdownProps) => {
-    setSelectEffectClass(data.value as EffectClass);
+    setSelectEffectClass(data.value as Skill.EffectClass);
   }, []);
 
   useEffect(() => {

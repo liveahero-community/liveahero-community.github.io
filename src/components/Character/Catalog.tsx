@@ -3,7 +3,6 @@ import _ from 'lodash';
 import React, { useContext } from 'react';
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
-import { CharacterData } from '../../models/Hero';
 // Local modules.
 import { AppContext } from '../../contexts/AppContext';
 // Local components.
@@ -27,7 +26,7 @@ const Catalog: React.FC<CatalogProps> = (props) => {
 
   return (
     <Grid className={className} centered doubling>
-      {_.map(masterData?.characterDict, (character: CharacterData, i) => (
+      {_.map(masterData?.characterDict, (character: DataExtend.CharacterData, i) => (
         // TODO: refactor in future.
         // Filter for all - include none element.
         (!_.includes(elements, false) && _.isUndefined(character.meta.heroElement))

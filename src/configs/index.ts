@@ -1,5 +1,3 @@
-import { Language } from '../models/System';
-
 type i18nContent = {
   [language in Language]: string;
 }

@@ -1,5 +1,3 @@
-import { EffectClass } from "../models/Skill";
-
 const elementTransform = (elementId: number) => {
   switch (elementId) {
     case 1:
@@ -40,7 +38,7 @@ const roleTransform = (roleId: number) => {
   }
 };
 
-const effectClassTransform = (effectClass: EffectClass) => {
+const effectClassTransform = (effectClass: Skill.EffectClass) => {
   switch (effectClass) {
     case 'Damage':
       return '單體/全體傷害';

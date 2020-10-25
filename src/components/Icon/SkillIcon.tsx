@@ -2,12 +2,10 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 import styled from 'styled-components';
-// Local modules.
-import { SkillData } from '../../models/Hero';
 
 interface SkillIconProps {
   className?: string;
-  skill: SkillData;
+  skill: Skill.SkillData;
 }
 
 const SkillIcon: React.FC<SkillIconProps> = (props) => {

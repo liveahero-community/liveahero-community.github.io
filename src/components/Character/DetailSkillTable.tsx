@@ -4,14 +4,12 @@ import React from 'react';
 import { Card, Icon } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
-// Local modules.
-import { HeroData, SidekickData } from '../../models/Hero';
 // Local components.
 import { SkillIcon, StatusIcon } from '../Icon/';
 
 // TypeGraud.
-const isSidekickData = (card?: HeroData | SidekickData): card is SidekickData => {
-  return (card as SidekickData)?.equipmentSkills ? true : false;
+const isSidekickData = (card?: DataExtend.HeroData | DataExtend.SidekickData): card is DataExtend.SidekickData => {
+  return (card as DataExtend.SidekickData)?.equipmentSkills ? true : false;
 }
 
 const wrapDescription = (description?: any) => {
@@ -64,8 +62,8 @@ const SkillComparison: React.FC<SkillComparisonProps> = (props) => {
 interface DetailSkillTableProps {
   className?: string;
   path: 'skills' | 'equipmentSkills';
-  card: HeroData | SidekickData;
-  previousCard?: HeroData | SidekickData;
+  card: DataExtend.HeroData | DataExtend.SidekickData;
+  previousCard?: DataExtend.HeroData | DataExtend.SidekickData;
   hideCost?: boolean;
 }
 

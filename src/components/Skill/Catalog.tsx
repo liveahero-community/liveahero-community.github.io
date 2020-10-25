@@ -5,7 +5,6 @@ import { Segment, Header, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // Local modules.
-import { EffectClass } from '../../models/Skill';
 import * as Routes from '../../utils/Routes';
 import { AppContext } from '../../contexts/AppContext';
 // Local components.
@@ -25,7 +24,7 @@ const wrapDescription = (description?: any) => {
 
 interface CatalogProps {
   className?: string;
-  selectedEffectClass: EffectClass;
+  selectedEffectClass: Skill.EffectClass;
 }
 
 const Catalog: React.FC<CatalogProps> = (props) => {

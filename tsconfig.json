@@ -22,5 +22,13 @@
   "include": [
     "src",
     "tests"
+  ],
+  "files": [
+    "./src/models/Character.d.ts",
+    "./src/models/Skill.d.ts",
+    "./src/models/Item.d.ts",
+    "./src/models/MasterData.d.ts",
+    "./src/models/DataExtend.d.ts",
+    "./src/models/System.d.ts",
   ]
 }

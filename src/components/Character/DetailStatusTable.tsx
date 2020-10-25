@@ -2,8 +2,6 @@
 import React from 'react';
 import { Table,Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
-// Local modules.
-import { HeroData, SidekickData } from '../../models/Hero';
 
 interface StatusCellProps {
   current: number;
@@ -30,8 +28,8 @@ const StatusCell: React.FC<StatusCellProps> = (props) => {
 
 interface DetailStatusTableProps {
   className?: string;
-  card: HeroData | SidekickData;
-  previousCard?: HeroData | SidekickData;
+  card: DataExtend.HeroData | DataExtend.SidekickData;
+  previousCard?: DataExtend.HeroData | DataExtend.SidekickData;
 }
 
 const DetailStatusTable: React.FC<DetailStatusTableProps> = (props) => {

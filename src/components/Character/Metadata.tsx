@@ -14,7 +14,6 @@ import {
 } from 'semantic-ui-react';
 import styled from 'styled-components';
 // Local modules.
-import { CharacterData } from '../../models/Hero';
 import * as Routes from '../../utils/Routes';
 
 const detailKeyMapping = (key: string) => {
@@ -36,7 +35,7 @@ const breakLineWrapper = (text: string) => {
 
 interface MetadataProps {
   className?: string;
-  character: CharacterData;
+  character: DataExtend.CharacterData;
 };
 
 const Metadata: React.FC<MetadataProps> = (props) => {

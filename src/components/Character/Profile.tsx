@@ -6,14 +6,13 @@ import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 // Local modules.
-import { CharacterData } from '../../models/Hero';
 import * as Routes from '../../utils/Routes';
 import { elementTransform, roleTransform } from '../../utils/Transformer';
 import { ElementIcon } from '../Icon/ElementIcon';
 import { RoleIcon } from '../Icon/RoleIcon';
 
 interface ProfileProps {
-  character: CharacterData;
+  character: DataExtend.CharacterData;
 }
 
 const Profile: React.FC<ProfileProps> = (props) => {

@@ -11,12 +11,11 @@ import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 // Local modules.
 import * as Config from '../configs/index';
-import { EffectClass } from '../models/Skill';
 import { effectClassTransform } from '../utils/Transformer';
 import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
-import * as Skill from '../components/Skill';
+import * as SkillList from '../components/Skill';
 
 const SkillCategoryScreen: React.FC = () => {
   const { language, masterData } = useContext(AppContext);
@@ -25,8 +24,8 @@ const SkillCategoryScreen: React.FC = () => {
 
   console.log(category);
 
-  const [effectClasses, updateEffectClasses] = useState<EffectClass[]>([]);
-  const [selectedEffectClass, setSelectedEffectClass] = useState<EffectClass>(category);
+  const [effectClasses, updateEffectClasses] = useState<Skill.EffectClass[]>([]);
+  const [selectedEffectClass, setSelectedEffectClass] = useState<Skill.EffectClass>(category);
 
   useEffect(() => {
     // TODO: refactor in future.
@@ -59,12 +58,12 @@ const SkillCategoryScreen: React.FC = () => {
           </Divider>
         </Segment>
 
-        <Skill.Catalog
+        <SkillList.Catalog
           selectedEffectClass={selectedEffectClass}
         />
       </Container>
 
-      <Skill.CatalogFilter
+      <SkillList.CatalogFilter
         effectClasses={effectClasses}
       />
     </Framework.Common>

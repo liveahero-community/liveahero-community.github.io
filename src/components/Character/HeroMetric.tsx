@@ -10,7 +10,6 @@ import {
 } from 'semantic-ui-react';
 import { toast } from 'react-toastify';
 // Local modules.
-import { HeroData } from '../../models/Hero';
 import { elementTransform, roleTransform } from '../../utils/Transformer';
 // Local components.
 import { ElementIcon } from '../Icon/ElementIcon';
@@ -20,7 +19,7 @@ import * as Hero from './index';
 const MAX_RARITY = 6;
 
 interface HeroMetricProps {
-  heroCards: HeroData[];
+  heroCards: DataExtend.HeroData[];
 };
 
 const HeroMetric: React.FC<HeroMetricProps> = (props) => {
@@ -29,10 +28,10 @@ const HeroMetric: React.FC<HeroMetricProps> = (props) => {
   const [selectedRarity, setSelectedRarity] = useState(
     _.first(heroCards)!.rarity || 0
   );
-  const [heroCard, setHeroCard] = useState<HeroData>(
+  const [heroCard, setHeroCard] = useState<DataExtend.HeroData>(
     _.find(heroCards, (card) => card.rarity === selectedRarity)!
   );
-  const [previousHeroCard, setPreviousHeroCard] = useState<HeroData>();
+  const [previousHeroCard, setPreviousHeroCard] = useState<DataExtend.HeroData>();
 
   const minRarity = _.minBy(heroCards, (card) => card.rarity)!.rarity || 0;
   const maxRarity = _.maxBy(heroCards, (card) => card.rarity)!.rarity || 0;

@@ -10,7 +10,6 @@ import { Helmet } from 'react-helmet';
 import fetch from 'node-fetch';
 // Local modules.
 import * as Config from './configs/index';
-import { Language } from './models/System';
 import * as Routes from './utils/Routes';
 import { DataProcess } from './utils/DataProcess';
 import { AppContext } from './contexts/AppContext';

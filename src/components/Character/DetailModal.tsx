@@ -2,13 +2,11 @@
 import _ from 'lodash';
 import React, { useState } from 'react';
 import { Message, Modal, Tab } from 'semantic-ui-react';
-// Local modules.
-import { CharacterData } from '../../models/Hero';
 // Local components.
 import * as Hero from './index';
 
 interface DetailModalProps {
-  character: CharacterData;
+  character: DataExtend.CharacterData;
 }
 
 const DetailModal: React.FC<DetailModalProps> = (props) => {

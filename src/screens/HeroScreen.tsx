@@ -14,7 +14,6 @@ import {
 import { Helmet } from 'react-helmet';
 // Local modules.
 import * as Config from '../configs/index';
-import { CharacterData } from '../models/Hero';
 import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
@@ -31,7 +30,7 @@ const HeroScreen: React.FC = () => {
     setTabIndex(Number(data.activeIndex));
   }, []);
 
-  const character: CharacterData = _.get(masterData?.characterDict, characterId);
+  const character: DataExtend.CharacterData = _.get(masterData?.characterDict, characterId);
 
   console.log('character', character);
 

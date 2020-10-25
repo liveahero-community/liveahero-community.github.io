@@ -1,47 +1,45 @@
 // Node modules.
 import _ from 'lodash';
-// Local modules.
-import { HeroData, SidekickData, SkillData } from '../models/Hero';
 
 interface RawData {
-  heroDataRaw: any;
-  sidekickDataRaw: any;
-  skillDataRaw: any;
-  skillEffectDataRaw: any;
-  statusDataRaw: any;
+  heroDataRaw: MasterData.CardMaster;
+  sidekickDataRaw: MasterData.SidekickMaster;
+  skillDataRaw: MasterData.SkillMaster;
+  skillEffectDataRaw: MasterData.SkillEffectMaster;
+  statusDataRaw: MasterData.StatusMaster;
   detailRaw: string;
 };
 
-export class DataProcess {
+class DataProcess {
   private rawData: RawData;
   // Flatten character cards.
-  private heroData: HeroData[];
-  private sidekickData: SidekickData[];
+  private heroDataList: DataExtend.HeroData[];
+  private sidekickData: DataExtend.SidekickData[];
   // Grouped character cards.
-  private heroDict: any;
-  private sidekickDict: any;
+  private heroDict: _.Dictionary<DataExtend.HeroData[]>;
+  private sidekickDict: _.Dictionary<DataExtend.SidekickData[]>;
   public characterDict: any;
   // Flatten skill data.
-  public skillData: any[];
+  public skillData: DataExtend.SkillDataWithCharacter[];
   // Status data.
   public statusDict: any;
 
   public constructor(rawData: RawData) {
     this.rawData = rawData;
 
-    this.heroData = _.map(rawData.heroDataRaw, (data) => ({
+    this.heroDataList = _.map(rawData.heroDataRaw, (data) => ({
       ...data,
-      skills: (data.skillIds as any[]).map(this.skillMapping.bind(this)),
-    })) as any;
+      skills: (data.skillIds).map(this.skillMapping.bind(this)),
+    }));
 
     this.sidekickData = _.map(rawData.sidekickDataRaw, (data) => ({
       ...data,
       equipmentSkillIds: data.equipmentSkills,
       equipmentSkills: data.equipmentSkills.map(this.skillMapping.bind(this)),
       skills: data.skillIds.map(this.skillMapping.bind(this)),
-    })) as any;
+    }));
 
-    this.heroDict = _.groupBy(this.heroData, 'characterId');
+    this.heroDict = _.groupBy(this.heroDataList, 'characterId');
 
     this.sidekickDict = _.groupBy(this.sidekickData, 'characterId');
 
@@ -83,45 +81,53 @@ export class DataProcess {
         sidekicks,
       };
 
-      return Object.assign(all, {[characterId.toString()]: data });
+      return Object.assign(all, { [characterId.toString()]: data });
     }, {});
 
-    this.skillData = _.sortBy(_.uniqBy(_.flattenDeep([
-      this.heroData.map((data) =>
-        data.skills.map(this.skillAddMeta.bind(this, 'hero', data))
-      ),
-      this.sidekickData.map((data) => [
-        data.skills.map(this.skillAddMeta.bind(this, 'sidekick', data)),
-        data.equipmentSkills.map(this.skillAddMeta.bind(this, 'sidekick', data)),
-      ]),
-    ]), (skill: any) => skill.skillId), ['skillId']);
+    this.skillData = _.sortBy(
+      _.uniqBy(
+        _.flattenDeep<DataExtend.SkillDataWithCharacter>([
+          this.heroDataList.map((data) =>
+            data.skills.map(this.skillAddMeta.bind(this, 'hero', data))
+          ),
+          this.sidekickData.map((data) => [
+            data.skills.map(this.skillAddMeta.bind(this, 'sidekick', data)),
+            data.equipmentSkills.map(this.skillAddMeta.bind(this, 'sidekick', data)),
+          ]),
+        ]),
+        (skill) => skill.skillId
+      ), ['skillId']
+    );
 
     this.statusDict = rawData.statusDataRaw;
   }
 
-  private skillMapping(skillId: number) {
+  private skillMapping(skillId: number): DataExtend.SkillData {
     const skill = _.get(this.rawData.skillDataRaw, skillId);
 
-    return {
-      ...skill,
-      effects: skill.effects.map((effect: any) => {
-        const effectDetail = _.get(this.rawData.skillEffectDataRaw, effect.skillEffectId).skillEffectJson;
-        const status = _.get(this.rawData.statusDataRaw, effectDetail.statusId);
+    const effects = skill.effects.map((effect) => {
+      const effectDetail = _.get(this.rawData.skillEffectDataRaw, effect.skillEffectId).skillEffectJson;
+      const status = _.get(this.rawData.statusDataRaw, effectDetail.statusId);
 
-        return {
-          ...effect,
-          // Append from skillEffectDataRaw.
-          effectDetail: {
-            ...effectDetail,
-            // Append from statusDataRaw.
-            status,
-          },
-        }
-      }),
-    };
+      return {
+        ...effect,
+        // Append from skillEffectDataRaw.
+        effectDetail: {
+          ...effectDetail,
+          // Append from statusDataRaw.
+          status,
+        },
+      }
+    });
+
+    return { ...skill, effects };
   }
 
-  private skillAddMeta(characterType: 'hero' | 'sidekick', data: HeroData | SidekickData, skill: SkillData) {
+  private skillAddMeta(
+    characterType: 'hero' | 'sidekick',
+    data: DataExtend.HeroData | DataExtend.SidekickData,
+    skill: Skill.SkillData
+  ): DataExtend.SkillDataWithCharacter {
     return {
       ...skill,
       characterType,
@@ -130,3 +136,7 @@ export class DataProcess {
     };
   }
 }
+
+export {
+  DataProcess,
+};

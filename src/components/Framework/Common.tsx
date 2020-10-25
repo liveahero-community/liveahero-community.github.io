@@ -17,7 +17,6 @@ import styled from 'styled-components';
 import * as Config from '../../configs/index';
 import * as Routes from '../../utils/Routes';
 import { AppContext } from '../../contexts/AppContext';
-import { Language } from '../../models/System';
 // Local components.
 import { ScrollToTop } from '../../components/Common/';
 
