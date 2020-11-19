@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // Node modules.
 import React, { useState, useEffect, useCallback } from 'react';
 import {
@@ -12,6 +13,7 @@ import fetch from 'node-fetch';
 import * as Config from './configs/index';
 import * as Routes from './utils/Routes';
 import { DataProcess } from './utils/DataProcess';
+import { FigureProvider } from './utils/FigureProvider';
 import { AppContext } from './contexts/AppContext';
 // Local components.
 import { withTracker } from './hoc/ga';
@@ -21,6 +23,7 @@ const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('zh-TW');
   // Data preparing.
   const [masterData, setMasterData] = useState<DataProcess>();
+  const [figureProvider, setFigureProvider] = useState<FigureProvider>();
 
   const download = useCallback(async (url: string, isJson = true) => {
     const res = await fetch(url);
@@ -45,12 +48,20 @@ const App: React.FC = () => {
     setMasterData(updatedMasterData);
   }, [download]);
 
+  const fetchIllurationCatalog = useCallback(async () => {
+    setFigureProvider(await FigureProvider.build());
+  }, []);
+
   useEffect(() => {
     fetchMasterData(language);
   }, [language, fetchMasterData]);
 
+  useEffect(() => {
+    fetchIllurationCatalog();
+  }, []);
+
   return (
-    <AppContext.Provider value={{ language, setLanguage, masterData }}>
+    <AppContext.Provider value={{ language, setLanguage, masterData, figureProvider }}>
       <Helmet>
         <meta charSet='utf-8' />
         <title>{Config.websiteTitle[language]}</title>

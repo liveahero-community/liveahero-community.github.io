@@ -1,6 +1,15 @@
 // Node modules.
-// import _ from 'lodash';
 import fetch from 'node-fetch';
+
+/**
+ * Example usage
+
+  (async () => {
+    const figureProvider = await FigureProvider.build();
+    console.log(figureProvider.getFigureUrls('ryekie', ['group:hero']));
+  })();
+
+ */
 
 interface Catalog {
   sha: string;
@@ -21,25 +30,36 @@ interface FigureMap {
     name: string;
     fullname: string;
     characterName: string;
+    url: string;
     categories: string[] | null;
   }>;
 }
 
 class FigureProvider {
-  private catalogUrl = 'https://api.github.com/repos/liveahero-community/atlas/git/trees/gh-pages';
-  // private figureRootUrl = 'https://';
+  private static catalogUrl = 'https://api.github.com/repos/liveahero-community/atlas/git/trees/gh-pages';
+  // GitHub Pages of another repo in same domain.
+  private static figureRootUrl = '/atlas';
   private figureMap: FigureMap;
 
-  public async init() {
+  /**
+   * You cannot create this instance directly.
+   * Please use 'await FigureProvider.build()' to get instance;
+   */
+  constructor(figureMap: FigureMap) {
+    this.figureMap = figureMap;
+  }
+
+  public static async build() {
     const res = await fetch(this.catalogUrl);
     const catalog: Catalog = await res.json();
 
-    this.figureMap = catalog.tree.reduce<FigureMap>((previous, leaf) => {
+    const figureMap = catalog.tree.reduce<FigureMap>((previous, leaf) => {
       const figure = this.naming(leaf.path);
 
       if (figure) {
         const newFigure = {
           ...figure,
+          url: `${this.figureRootUrl}/${figure.fullname}`,
           categories: this.category(figure.name),
         };
 
@@ -52,18 +72,27 @@ class FigureProvider {
 
       return previous;
     }, {});
+
+    return new FigureProvider(figureMap);
   }
 
-  public getFigureUrl() {
-    // TODO:
-    return this.figureMap;
+  public getFigureUrls(characterName: string, patterns: string[]) {
+    const allFigures = this.figureMap[characterName];
+    const figures = allFigures.filter((figure) => {
+      const results = patterns.map((pattern) =>
+        figure.categories?.includes(pattern)
+      );
+      return results.includes(true);
+    });
+
+    return figures;
   }
 
   /**
    * Extract names from figure raw path
    * @param {string} raw e.g. `fg_ryekie_h01.png`
    */
-  private naming(raw: string) {
+  private static naming(raw: string) {
     const figureNameRegex = /^fg_(([^_]+)_\w+)\.png$/;
     const matches = raw.match(figureNameRegex);
 
@@ -80,7 +109,7 @@ class FigureProvider {
    * @param {string} raw `ryekie_h01_skin1`
    * @returns {string[]} `['hero', 'skin1']` 
    */
-  private category(raw: string): string[] | null {
+  private static category(raw: string): string[] | null {
     const regex = /^.+([h|s]\d+.+)$/;
     const matches = raw.match(regex);
 
@@ -128,9 +157,6 @@ class FigureProvider {
   }
 }
 
-const figureProvider = new FigureProvider();
-figureProvider.init();
-
 export {
-  figureProvider,
+  FigureProvider,
 };

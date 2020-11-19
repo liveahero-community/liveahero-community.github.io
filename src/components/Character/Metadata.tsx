@@ -1,6 +1,6 @@
 // Node modules.
 import _ from 'lodash';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Grid,
@@ -15,6 +15,7 @@ import {
 import styled from 'styled-components';
 // Local modules.
 import * as Routes from '../../utils/Routes';
+import { AppContext } from '../../contexts/AppContext';
 
 const detailKeyMapping = (key: string) => {
   switch (key) {
@@ -38,25 +39,40 @@ interface MetadataProps {
   character: DataExtend.CharacterData;
 };
 
+interface Option {
+  key: string;
+  value: string;
+  text: string;
+}
+
 const Metadata: React.FC<MetadataProps> = (props) => {
   const { className } = props;
   const { character: { heroes, sidekicks, meta } } = props;
 
+  const { figureProvider } = useContext(AppContext);
+
   const character = (_.first(heroes) || _.first(sidekicks))!;
-  const options = [];
+  const options: Option[] = [];
 
   if (_.first(heroes)) {
-    options.push({
-      key: `${character.resourceName}_h01`,
-      value: `/assets/illustrations/${character.resourceName}_h01.png`,
-      text: `英雄`,
+    const figures = figureProvider?.getFigureUrls(character.resourceName, ['group:hero']);
+    figures?.forEach((figure) => {
+      options.push({
+        key: figure.name,
+        value: figure.url,
+        text: `英雄 (${figure.name})`,
+      });
     });
   }
+
   if (_.first(sidekicks)) {
-    options.push({
-      key: `${character.resourceName}_s01`,
-      value: `/assets/illustrations/${character.resourceName}_s01.png`,
-      text: `助手`,
+    const figures = figureProvider?.getFigureUrls(character.resourceName, ['group:sidekick']);
+    figures?.forEach((figure) => {
+      options.push({
+        key: figure.name,
+        value: figure.url,
+        text: `助手 (${figure.name})`,
+      });
     });
   }
 
