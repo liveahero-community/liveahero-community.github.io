@@ -12,6 +12,11 @@ interface RawData {
   detailRaw: string;
 };
 
+interface Version {
+  appVersion: string;
+  masterVersion: number;
+};
+
 class DataProcess {
   private rawData: RawData;
   // Flatten character cards.
@@ -32,8 +37,10 @@ class DataProcess {
   public skillData: DataExtend.SkillDataWithCharacter[];
   // Status data.
   public statusDict: any;
+  // Version.
+  public version: Version;
 
-  public constructor(rawData: RawData) {
+  public constructor(rawData: RawData, version: Version) {
     this.rawData = rawData;
 
     this.heroDataList = _.map(rawData.heroDataRaw, (data) => ({
@@ -112,6 +119,8 @@ class DataProcess {
     );
 
     this.statusDict = rawData.statusDataRaw;
+
+    this.version = version;
   }
 
   private skillMapping(skillId: number): DataExtend.SkillData {

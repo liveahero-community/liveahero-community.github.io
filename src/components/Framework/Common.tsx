@@ -1,5 +1,5 @@
 // Node modules.
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useState, useContext, useCallback, useEffect } from 'react';
 import {
   Grid,
   Segment,
@@ -27,14 +27,19 @@ interface AppProps {
 const Common: React.FC<AppProps> = (props) => {
   const { className, children } = props;
 
-  const { setLanguage } = useContext(AppContext);
+  const { setLanguage, masterData } = useContext(AppContext);
 
   const [logoUrl] = useState('/assets/logo.png');
+  const [version, setVersion] = useState(masterData?.version);
 
   const switchLanguage = useCallback((lang: Language) => {
     setLanguage(lang);
     toast(`現在語系為 ${Config.displayedLanguage[lang]}`);
   }, [setLanguage]);
+
+  useEffect(() => {
+    setVersion(masterData?.version);
+  }, [masterData]);
 
   return (
     <div className={className}>
@@ -108,6 +113,10 @@ const Common: React.FC<AppProps> = (props) => {
         <div className='footer'>
           <Link className='source' to={Routes.CONTRIBUTORS}>
             {'Made by liveahero-community'}
+
+            <p className={'version'}>
+              {`ver. ${version?.appVersion} (${version?.masterVersion})`}
+            </p>
           </Link>
         </div>
       </Segment>
@@ -152,6 +161,10 @@ const styledCommon = styled(Common)`
       a {
         color: inherit;
         text-decoration: none;
+      }
+
+      .version {
+        font-size: 0.75em;
       }
     }
   }

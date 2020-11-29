@@ -32,6 +32,7 @@ const App: React.FC = () => {
   }, []);
 
   const fetchMasterData = useCallback(async (language: Language) => {
+    const version = await download(`${translationUrl}/version.json`);
     const masterDataRaw = {
       heroDataRaw: await download(`${translationUrl}/latest/${language}/CardMaster.json`),
       sidekickDataRaw: await download(`${translationUrl}/latest/${language}/SidekickMaster.json`),
@@ -43,7 +44,7 @@ const App: React.FC = () => {
       detailRaw: await download(`${translationUrl}/latest/${language}/Japanese.properties`, false),
     };
 
-    const updatedMasterData = new DataProcess(masterDataRaw);
+    const updatedMasterData = new DataProcess(masterDataRaw, version);
 
     setMasterData(updatedMasterData);
   }, [translationUrl, download]);
