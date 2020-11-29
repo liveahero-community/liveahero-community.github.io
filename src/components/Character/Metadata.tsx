@@ -45,6 +45,34 @@ interface Option {
   text: string;
 }
 
+const genNameFromCategories = (categories: string[] | null) => {
+  if (!categories) {
+    return '';
+  }
+
+  const name = categories.map((category) => {
+    switch (true) {
+      case /group:hero/.test(category):
+        return '英雄';
+      case /group:sidekick/.test(category):
+        return '助手';
+      case /series:\d+/.test(category):
+        const { 1: seriesNum } = category.match(/series:(\d+)/)!;
+        return `系列 ${seriesNum}`;
+      case /emotion:\w+/.test(category):
+        const { 1: motionId } = category.match(/emotion:(\w+)/)!;
+        return `表情 ${motionId}`;
+      case /skin:\d+/.test(category):
+        const { 1: skinNum } = category.match(/skin:(\d+)/)!;
+        return `外觀 ${skinNum}`;
+      default:
+        return '';
+    }
+  }).filter(Boolean).join(' | ');
+
+  return name;
+};
+
 const Metadata: React.FC<MetadataProps> = (props) => {
   const { className } = props;
   const { character: { heroes, sidekicks, meta } } = props;
@@ -60,7 +88,7 @@ const Metadata: React.FC<MetadataProps> = (props) => {
       options.push({
         key: figure.name,
         value: figure.url,
-        text: `英雄 (${figure.name})`,
+        text: genNameFromCategories(figure.categories),
       });
     });
   }
@@ -71,7 +99,7 @@ const Metadata: React.FC<MetadataProps> = (props) => {
       options.push({
         key: figure.name,
         value: figure.url,
-        text: `助手 (${figure.name})`,
+        text: genNameFromCategories(figure.categories),
       });
     });
   }

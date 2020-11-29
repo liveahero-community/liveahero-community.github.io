@@ -29,6 +29,14 @@ const Declaration: React.FC<DeclarationProps> = (props) => {
       <Divider inverted section />
 
       <p>
+        {`特別感謝 ENG wiki 管理者 `}
+        <b>{`rongjie-alter`}</b>
+        {` 給予諸多技術上的支援`}
+      </p>
+
+      <Divider inverted section />
+
+      <p>
         {`本網站所使用之 `}
         <b><i>{`Live A Hero`}</i></b>
         {` 素材多為 `}
