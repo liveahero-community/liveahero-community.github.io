@@ -20,8 +20,8 @@ import { withTracker } from './hoc/ga';
 import * as Screen from './screens/';
 
 const App: React.FC = () => {
+  const [translationUrl] = useState('https://liveahero-community.github.io/translations');
   const [language, setLanguage] = useState<Language>('zh-TW');
-  // Data preparing.
   const [masterData, setMasterData] = useState<DataProcess>();
   const [figureProvider, setFigureProvider] = useState<FigureProvider>();
 
@@ -32,21 +32,21 @@ const App: React.FC = () => {
   }, []);
 
   const fetchMasterData = useCallback(async (language: Language) => {
-    const masterRawData = await Promise.all([
-      download(`https://liveahero-community.github.io/translations/latest/${language}/CardMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/${language}/SidekickMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/${language}/SkillMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/${language}/SkillEffectMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/${language}/StatusMaster.json`),
-      download(`https://liveahero-community.github.io/translations/latest/${language}/Japanese.properties`, false),
-    ]).then(([heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw, detailRaw]) => ({
-      heroDataRaw, sidekickDataRaw, skillDataRaw, skillEffectDataRaw, statusDataRaw, detailRaw,
-    }));
+    const masterDataRaw = {
+      heroDataRaw: await download(`${translationUrl}/latest/${language}/CardMaster.json`),
+      sidekickDataRaw: await download(`${translationUrl}/latest/${language}/SidekickMaster.json`),
+      heroExpRaw: await download(`${translationUrl}/latest/${language}/HeroCardExpMaster.json`),
+      sidekickExpRaw: await download(`${translationUrl}/latest/${language}/SidekickCardExpMaster.json`),
+      skillDataRaw: await download(`${translationUrl}/latest/${language}/SkillMaster.json`),
+      skillEffectDataRaw: await download(`${translationUrl}/latest/${language}/SkillEffectMaster.json`),
+      statusDataRaw: await download(`${translationUrl}/latest/${language}/StatusMaster.json`),
+      detailRaw: await download(`${translationUrl}/latest/${language}/Japanese.properties`, false),
+    };
 
-    const updatedMasterData = new DataProcess(masterRawData);
+    const updatedMasterData = new DataProcess(masterDataRaw);
 
     setMasterData(updatedMasterData);
-  }, [download]);
+  }, [translationUrl, download]);
 
   const fetchIllurationCatalog = useCallback(async () => {
     setFigureProvider(await FigureProvider.build());
@@ -82,6 +82,12 @@ const App: React.FC = () => {
           />
           <Route path={Routes.SKILL_CATEGORIES}
             component={withTracker(Screen.SkillCategoriesScreen)}
+          />
+          <Route path={Routes.MISC}
+            component={withTracker(Screen.MiscScreen)}
+          />
+          <Route path={Routes.EXP}
+            component={withTracker(Screen.ExpScreen)}
           />
           <Route path={Routes.STATUSES}
             component={withTracker(Screen.StatusesScreen)}

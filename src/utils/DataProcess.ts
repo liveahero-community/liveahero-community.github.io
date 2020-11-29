@@ -4,6 +4,8 @@ import _ from 'lodash';
 interface RawData {
   heroDataRaw: MasterData.CardMaster;
   sidekickDataRaw: MasterData.SidekickMaster;
+  heroExpRaw: MasterData.HeroExpMaster;
+  sidekickExpRaw: MasterData.SidekickExpMaster;
   skillDataRaw: MasterData.SkillMaster;
   skillEffectDataRaw: MasterData.SkillEffectMaster;
   statusDataRaw: MasterData.StatusMaster;
@@ -18,7 +20,14 @@ class DataProcess {
   // Grouped character cards.
   private heroDict: _.Dictionary<DataExtend.HeroData[]>;
   private sidekickDict: _.Dictionary<DataExtend.SidekickData[]>;
+
+  /**
+   * Public fields.
+   */
   public characterDict: any;
+  // Exp information.
+  public heroExpData: MasterData.HeroExpMaster;
+  public sidekickExpData: MasterData.SidekickExpMaster;
   // Flatten skill data.
   public skillData: DataExtend.SkillDataWithCharacter[];
   // Status data.
@@ -83,6 +92,9 @@ class DataProcess {
 
       return Object.assign(all, { [characterId.toString()]: data });
     }, {});
+
+    this.heroExpData = rawData.heroExpRaw;
+    this.sidekickExpData = rawData.sidekickExpRaw;
 
     this.skillData = _.sortBy(
       _.uniqBy(

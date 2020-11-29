@@ -51,4 +51,16 @@ declare namespace Character {
     illustrator: string;
     equipmentSkills: number[];
   }
+
+  interface HeroExp {
+    level: number;
+    nextExp: number;
+    totalExp: number;
+  }
+
+  interface SidekickExp {
+    level: number;
+    nextExp: number;
+    totalExp: number;
+  }
 }

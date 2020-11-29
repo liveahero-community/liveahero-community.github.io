@@ -67,10 +67,10 @@ const Common: React.FC<AppProps> = (props) => {
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Link to={Routes.STATUSES}>
+              <Link to={Routes.MISC}>
                 <Button basic inverted icon={isMobile}>
-                  <Icon name='magic' />
-                  {!isMobile && <span>{`狀態一覽`}</span>}
+                  <Icon name='gamepad' />
+                  {!isMobile && <span>{`遊戲系統`}</span>}
                 </Button>
               </Link>
             </Grid.Column>

@@ -7,6 +7,14 @@ declare namespace MasterData {
     [sidekickCardId: string]: Character.SidekickData;
   }
 
+  interface HeroExpMaster {
+    [level: string]: Character.HeroExp;
+  }
+
+  interface SidekickExpMaster {
+    [level: string]: Character.SidekickExp;
+  }
+
   interface SkillMaster {
     [skillId: string]: Skill.SkillData;
   }
