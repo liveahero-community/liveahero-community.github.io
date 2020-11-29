@@ -25,6 +25,27 @@ const Declaration: React.FC<DeclarationProps> = (props) => {
       >
         {'> 巴哈姆特討論串 <'}
       </a>
+
+      <Divider inverted section />
+
+      <p>
+        {`本網站所使用之 `}
+        <b><i>{`Live A Hero`}</i></b>
+        {` 素材多為 `}
+        <b><i>{`LifeWonders Inc.`}</i></b>
+        {` 所擁有。`}
+      </p>
+      <p>{`僅作為學習，無商業營利等用途。`}</p>
+
+      <br/>
+
+      <p>
+        {`Most of the `}
+        <b><i>{`Live A Hero`}</i></b>
+        {` materials used on this website are owned by `}
+        <b><i>{`LifeWonders Inc.`}</i></b>
+      </p>
+      <p>{`Only used for learning, no commercial profit and other purposes.`}</p>
     </div>
   );
 };
