@@ -56,14 +56,14 @@ const genNameFromCategories = (categories: string[] | null) => {
         return '英雄';
       case /group:sidekick/.test(category):
         return '助手';
-      case /series:\d+/.test(category):
-        const { 1: seriesNum } = category.match(/series:(\d+)/)!;
+      case /series:.+/.test(category):
+        const { 1: seriesNum } = category.match(/series:(.+)/)!;
         return `系列 ${seriesNum}`;
-      case /emotion:\w+/.test(category):
-        const { 1: motionId } = category.match(/emotion:(\w+)/)!;
+      case /emotion:.+/.test(category):
+        const { 1: motionId } = category.match(/emotion:(.+)/)!;
         return `表情 ${motionId}`;
-      case /skin:\d+/.test(category):
-        const { 1: skinNum } = category.match(/skin:(\d+)/)!;
+      case /skin:.+/.test(category):
+        const { 1: skinNum } = category.match(/skin:(.+)/)!;
         return `外觀 ${skinNum}`;
       default:
         return '';

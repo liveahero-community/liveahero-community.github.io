@@ -1,4 +1,5 @@
 // Node modules.
+import { flatten } from 'lodash';
 import fetch from 'node-fetch';
 
 /**
@@ -25,14 +26,16 @@ interface Catalog {
   truncated: boolean;
 }
 
+interface Figure {
+  name: string;
+  fullname: string;
+  characterName: string;
+  url: string;
+  categories: string[] | null;
+}
+
 interface FigureMap {
-  [key: string]: Array<{
-    name: string;
-    fullname: string;
-    characterName: string;
-    url: string;
-    categories: string[] | null;
-  }>;
+  [key: string]: Figure[];
 }
 
 class FigureProvider {
@@ -76,8 +79,33 @@ class FigureProvider {
     return new FigureProvider(figureMap);
   }
 
-  public getFigureUrls(characterName: string, patterns: string[]) {
-    const allFigures = this.figureMap[characterName];
+  public getFigureUrls(characterName: string, patterns: string[]): Figure[] {
+    // 'player' is a special case.
+    if (characterName === 'player') {
+      const overwriteSeries = (figures: Figure[], prefix: number) => {
+        return figures.map((figure) => ({
+          ...figure,
+          categories: figure.categories?.map((category) => {
+            if (category.includes('series:')) {
+              const [seriesLabel, seriesNum] = category.split(':');
+              return `${seriesLabel}:${prefix}-${seriesNum}`;
+            } else {
+              return category;
+            }
+          }),
+        } as Figure));
+      };
+
+      return flatten([
+        overwriteSeries(this.getFigureUrls('player1', patterns), 1),
+        overwriteSeries(this.getFigureUrls('player2', patterns), 2),
+        overwriteSeries(this.getFigureUrls('player3', patterns), 3),
+        overwriteSeries(this.getFigureUrls('player4', patterns), 4),
+      ]);
+    }
+
+    // Normal cases.
+    const allFigures = this.figureMap[characterName] || [];
     const figures = allFigures.filter((figure) => {
       const results = patterns.map((pattern) =>
         figure.categories?.includes(pattern)
