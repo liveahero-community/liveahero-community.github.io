@@ -29,7 +29,7 @@ const RightSubTitle: React.FC<RightSubTitle> = (props) => {
     <div className={className}>
       {props.children}
     </div>
-  )
+  );
 };
 
 const StyledRightSubTitle = styled(RightSubTitle)`
@@ -72,8 +72,8 @@ const ExpScreen: React.FC = () => {
             </Header>
           </Grid.Column>
 
-          <Grid.Column textAlign='right'>
-            <Header inverted>
+          <Grid.Column>
+            <Header inverted floated='right'>
               <StyledRightSubTitle>
                 {'精簡'}
                 <Checkbox className={'checkbox'} toggle
@@ -99,8 +99,8 @@ const ExpScreen: React.FC = () => {
             </Header>
           </Grid.Column>
 
-          <Grid.Column textAlign='right'>
-            <Header inverted>
+          <Grid.Column>
+            <Header inverted floated='right'>
               <StyledRightSubTitle>
                 {'精簡'}
                 <Checkbox className={'checkbox'} toggle
