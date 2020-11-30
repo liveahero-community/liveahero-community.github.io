@@ -41,6 +41,7 @@ const App: React.FC = () => {
       skillDataRaw: await download(`${translationUrl}/latest/${language}/SkillMaster.json`),
       skillEffectDataRaw: await download(`${translationUrl}/latest/${language}/SkillEffectMaster.json`),
       statusDataRaw: await download(`${translationUrl}/latest/${language}/StatusMaster.json`),
+      userRankRaw: await download(`${translationUrl}/latest/${language}/UserRankMaster.json`),
       detailRaw: await download(`${translationUrl}/latest/${language}/Japanese.properties`, false),
     };
 
@@ -86,6 +87,9 @@ const App: React.FC = () => {
           />
           <Route path={Routes.MISC}
             component={withTracker(Screen.MiscScreen)}
+          />
+          <Route path={Routes.PLAYER_RANKS}
+            component={withTracker(Screen.PlayerRanksScreen)}
           />
           <Route path={Routes.EXP}
             component={withTracker(Screen.ExpScreen)}

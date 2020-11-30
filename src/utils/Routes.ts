@@ -10,6 +10,8 @@ export const SKILL_CATEGORY = '/skills/categories/:category';
 
 export const MISC = '/miscellaneous';
 
+export const PLAYER_RANKS = '/playerRanks';
+
 export const EXP = '/exp';
 
 export const STATUSES = '/statuses';

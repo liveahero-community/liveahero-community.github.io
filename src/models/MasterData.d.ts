@@ -27,6 +27,10 @@ declare namespace MasterData {
     [statusId: string]: Skill.StatusData;
   }
 
+  interface UserRankMaster {
+    [level: string]: Player.UserRank;
+  }
+
   interface ItemMaster {
     [itemId: string]: Item.ItemData;
   }

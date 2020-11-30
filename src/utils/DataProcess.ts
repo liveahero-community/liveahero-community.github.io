@@ -9,6 +9,7 @@ interface RawData {
   skillDataRaw: MasterData.SkillMaster;
   skillEffectDataRaw: MasterData.SkillEffectMaster;
   statusDataRaw: MasterData.StatusMaster;
+  userRankRaw: MasterData.UserRankMaster;
   detailRaw: string;
 };
 
@@ -37,6 +38,8 @@ class DataProcess {
   public skillData: DataExtend.SkillDataWithCharacter[];
   // Status data.
   public statusDict: any;
+  // User rank data.
+  public userRankData: MasterData.UserRankMaster;
   // Version.
   public version: Version;
 
@@ -118,6 +121,7 @@ class DataProcess {
       ), ['skillId']
     );
 
+    this.userRankData = rawData.userRankRaw;
     this.statusDict = rawData.statusDataRaw;
 
     this.version = version;

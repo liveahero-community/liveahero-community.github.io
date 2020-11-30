@@ -28,6 +28,14 @@ const MiscScreen: React.FC = () => {
       <Container text>
         <Header inverted>{`遊戲系統`}</Header>
 
+        <Link to={Routes.PLAYER_RANKS}>
+          <Button basic inverted>
+            {`玩家 升級經驗列表`}
+          </Button>
+        </Link>
+
+        <Divider hidden />
+
         <Link to={Routes.EXP}>
           <Button basic inverted>
             {`英雄 / 助手 升級經驗列表`}
