@@ -33,7 +33,7 @@ const ExpTable: React.FC<ExpTableProps> = (props) => {
       <Table.Header>
         <Table.Row textAlign='right'>
           <Table.HeaderCell>等級</Table.HeaderCell>
-          <Table.HeaderCell>升級所需 EXP</Table.HeaderCell>
+          {!isSimple && <Table.HeaderCell>升級所需 EXP</Table.HeaderCell>}
           <Table.HeaderCell>累積 EXP</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
@@ -42,7 +42,7 @@ const ExpTable: React.FC<ExpTableProps> = (props) => {
         {_.map(expList, (expData, i) => (
           <Table.Row key={i} textAlign='right'>
             <Table.Cell>{expData.level}</Table.Cell>
-            <Table.Cell>{Number(expData.nextExp).toLocaleString()}</Table.Cell>
+            {!isSimple && <Table.Cell>{Number(expData.nextExp).toLocaleString()}</Table.Cell>}
             <Table.Cell>{Number(expData.totalExp).toLocaleString()}</Table.Cell>
           </Table.Row>
         ))}
