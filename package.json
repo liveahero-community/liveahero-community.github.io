@@ -18,6 +18,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "disqus-react": "^1.0.10",
     "get-user-locale": "^1.4.0",
     "jsonpack": "^1.1.5",
     "lodash": "^4.17.20",
