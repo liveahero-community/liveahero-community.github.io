@@ -97,6 +97,10 @@ const Common: React.FC<AppProps> = (props) => {
             onClick={switchLanguage.bind(null, 'ja-JP')}
           />
           <Flag className='flag'
+            name='cn'
+            onClick={switchLanguage.bind(null, 'zh-CN')}
+          />
+          <Flag className='flag'
             name='tw'
             onClick={switchLanguage.bind(null, 'zh-TW')}
           />

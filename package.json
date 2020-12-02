@@ -19,6 +19,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "get-user-locale": "^1.4.0",
+    "jsonpack": "^1.1.5",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "react": "^16.13.1",
@@ -37,6 +38,7 @@
     "typescript": "~3.7.2"
   },
   "devDependencies": {
+    "@types/jsonpack": "^1.1.0",
     "@types/lodash": "^4.14.161",
     "@types/node-fetch": "^2.5.7",
     "@types/react-helmet": "^6.1.0",
