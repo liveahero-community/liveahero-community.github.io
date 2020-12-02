@@ -26,3 +26,9 @@ export const displayedLanguage: i18nContent = {
 };
 
 export const gaTrackingId = 'UA-179486566-1';
+
+export const disqusSettings = {
+  shortname: 'lah-community',
+  orignalEntry: '/#/',
+  allowedEntry: '/#!/',
+};

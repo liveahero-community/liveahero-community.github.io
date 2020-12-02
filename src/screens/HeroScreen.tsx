@@ -79,7 +79,7 @@ const HeroScreen: React.FC = () => {
                   render: () => <Hero.Metadata character={character} />,
                 },
                 {
-                  menuItem: '玩家討論 (beta)',
+                  menuItem: '玩家討論',
                   render: () => <Hero.PlayerDiscussion character={character} />,
                 },
               ]}
