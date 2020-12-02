@@ -57,7 +57,7 @@ const HeroScreen: React.FC = () => {
               onTabChange={onTabChange}
               panes={[
                 {
-                  menuItem: '英雄資訊',
+                  menuItem: '英雄',
                   render: () => (_.isEmpty(character.heroes)
                     ? <Message>
                       <Message.Header>此人物不能作為英雄</Message.Header>
@@ -66,7 +66,7 @@ const HeroScreen: React.FC = () => {
                   ),
                 },
                 {
-                  menuItem: '助手資訊',
+                  menuItem: '助手',
                   render: () => (_.isEmpty(character.sidekicks)
                     ? <Message>
                       <Message.Header>此人物不能作為助手</Message.Header>
@@ -75,7 +75,7 @@ const HeroScreen: React.FC = () => {
                   ),
                 },
                 {
-                  menuItem: '人物資訊',
+                  menuItem: '情報',
                   render: () => <Hero.Metadata character={character} />,
                 },
                 {
