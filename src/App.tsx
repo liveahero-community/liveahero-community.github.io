@@ -94,6 +94,9 @@ const App: React.FC = () => {
           <Route path={Routes.EXP}
             component={withTracker(Screen.ExpScreen)}
           />
+          <Route path={Routes.PLAYER_RANKS}
+            component={withTracker(Screen.PlayerRanksScreen)}
+          />
           <Route path={Routes.STATUSES}
             component={withTracker(Screen.StatusesScreen)}
           />
