@@ -58,9 +58,9 @@ class DataProcess {
       skills: data.skillIds.map(this.skillMapping.bind(this)),
     }));
 
-    this.heroDict = _.groupBy(this.heroDataList, 'characterId');
+    this.heroDict = _.groupBy(this.heroDataList, 'resourceName');
 
-    this.sidekickDict = _.groupBy(this.sidekickData, 'characterId');
+    this.sidekickDict = _.groupBy(this.sidekickData, 'resourceName');
 
     // TODO: need refactor.
     const detailDict = this.rawData.detailRaw.split('\n')

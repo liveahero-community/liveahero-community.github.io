@@ -22,13 +22,13 @@ const Profile: React.FC<ProfileProps> = (props) => {
   const [lazyLoadOffset] = useState(200);
 
   return (
-    <Link to={`${Routes.HEROES}/${character.meta.characterId}`}>
+    <Link to={`${Routes.HEROES}/${character.meta.resourceName}`}>
       <Card fluid>
         {/* This className is a workaround for LazyLoad with Card.Image */}
         {/* className will be 'image lazy-wrapper' */}
         <LazyLoad classNamePrefix='image lazy' offset={lazyLoadOffset}>
           <Image ui={false} alt={''}
-            src={`/assets/covers/${character.meta.resourceName}.png`}
+            src={`/assets/covers/${character.meta.resourceName.toLowerCase()}.png`}
           />
         </LazyLoad>
 
