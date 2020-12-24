@@ -94,7 +94,7 @@ class DataProcess {
           resourceName: a?.resourceName || b?.resourceName,
           heroElement: a?.element,
           heroRarity: a?.rarity,
-          detail: detailDict[a?.resourceName || b?.resourceName],
+          detail: detailDict[(a?.resourceName || b?.resourceName).toLowerCase()],
         },
         heroes,
         sidekicks,
