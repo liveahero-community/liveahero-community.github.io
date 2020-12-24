@@ -4,9 +4,7 @@ export { Profile } from './Profile';
 export { HeroMetric } from './HeroMetric';
 export { SidekickMetric } from './SidekickMetric';
 export { Metadata } from './Metadata';
+export { PlayerDiscussion } from './PlayerDiscussion';
 export { ExpTable } from './ExpTable';
 export { DetailStatusTable } from './DetailStatusTable';
 export { DetailSkillTable } from './DetailSkillTable';
-
-// Deprecated soon.
-export { DetailModal } from './DetailModal';

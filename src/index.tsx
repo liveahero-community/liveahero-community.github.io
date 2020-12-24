@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
+import './plugins/disqus';
 
 ReactDOM.render(
   <>

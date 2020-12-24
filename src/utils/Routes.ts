@@ -2,7 +2,7 @@ export const HOME = '/';
 
 export const HEROES = '/heroes';
 
-export const HERO = '/heroes/:characterId';
+export const HERO = '/heroes/:resourceName';
 
 export const SKILL_CATEGORIES = '/skills/categories';
 

@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import fetch from 'node-fetch';
+import { unpack } from 'jsonpack';
 // Local modules.
 import * as Config from './configs/index';
 import * as Routes from './utils/Routes';
@@ -33,15 +34,17 @@ const App: React.FC = () => {
 
   const fetchMasterData = useCallback(async (language: Language) => {
     const version = await download(`${translationUrl}/version.json`);
+    const packedData = await download(`${translationUrl}/latest/${language}/bundles.compressed.json`, false);
+    const unpackedData = unpack<any>(packedData);
     const masterDataRaw = {
-      heroDataRaw: await download(`${translationUrl}/latest/${language}/CardMaster.json`),
-      sidekickDataRaw: await download(`${translationUrl}/latest/${language}/SidekickMaster.json`),
-      heroExpRaw: await download(`${translationUrl}/latest/${language}/HeroCardExpMaster.json`),
-      sidekickExpRaw: await download(`${translationUrl}/latest/${language}/SidekickCardExpMaster.json`),
-      skillDataRaw: await download(`${translationUrl}/latest/${language}/SkillMaster.json`),
-      skillEffectDataRaw: await download(`${translationUrl}/latest/${language}/SkillEffectMaster.json`),
-      statusDataRaw: await download(`${translationUrl}/latest/${language}/StatusMaster.json`),
-      userRankRaw: await download(`${translationUrl}/latest/${language}/UserRankMaster.json`),
+      heroDataRaw: unpackedData['CardMaster.json'],
+      sidekickDataRaw: unpackedData['SidekickMaster.json'],
+      heroExpRaw: unpackedData['HeroCardExpMaster.json'],
+      sidekickExpRaw: unpackedData['SidekickCardExpMaster.json'],
+      skillDataRaw: unpackedData['SkillMaster.json'],
+      skillEffectDataRaw: unpackedData['SkillEffectMaster.json'],
+      statusDataRaw: unpackedData['StatusMaster.json'],
+      userRankRaw: unpackedData['UserRankMaster.json'],
       detailRaw: await download(`${translationUrl}/latest/${language}/Japanese.properties`, false),
     };
 
@@ -88,11 +91,11 @@ const App: React.FC = () => {
           <Route path={Routes.MISC}
             component={withTracker(Screen.MiscScreen)}
           />
-          <Route path={Routes.PLAYER_RANKS}
-            component={withTracker(Screen.PlayerRanksScreen)}
-          />
           <Route path={Routes.EXP}
             component={withTracker(Screen.ExpScreen)}
+          />
+          <Route path={Routes.PLAYER_RANKS}
+            component={withTracker(Screen.PlayerRanksScreen)}
           />
           <Route path={Routes.STATUSES}
             component={withTracker(Screen.StatusesScreen)}
