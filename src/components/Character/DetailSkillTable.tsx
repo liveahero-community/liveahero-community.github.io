@@ -91,7 +91,7 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
                 {`View: `}
                 <SkillComparison direction='horizontal'
                   current={skill.useView}
-                  previous={previousSkills && previousSkills[i].useView}
+                  previous={previousSkills && previousSkills[i]?.useView}
                 />
               </Card.Meta>
             }
@@ -104,7 +104,7 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
               <div className='text'>
                 <SkillComparison wrap
                   current={skill.description}
-                  previous={previousSkills && previousSkills[i].description}
+                  previous={previousSkills && previousSkills[i]?.description}
                 />
               </div>
             </Card.Description>
