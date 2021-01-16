@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import fetch from 'node-fetch';
+import urlJoin from 'url-join';
 import { unpack } from 'jsonpack';
 // Local modules.
 import * as Config from './configs/index';
@@ -21,7 +22,7 @@ import { withTracker } from './hoc/ga';
 import * as Screen from './screens/';
 
 const App: React.FC = () => {
-  const [translationUrl] = useState('https://liveahero-community.github.io/translations');
+  const [translationUrl] = useState(urlJoin(Config.publicUrl, '/translations'));
   const [language, setLanguage] = useState<Language>('zh-TW');
   const [masterData, setMasterData] = useState<DataProcess>();
   const [figureProvider, setFigureProvider] = useState<FigureProvider>();

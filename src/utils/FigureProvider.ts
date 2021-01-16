@@ -1,6 +1,9 @@
 // Node modules.
 import { flatten } from 'lodash';
 import fetch from 'node-fetch';
+import urlJoin from 'url-join';
+// Local modules.
+import { publicUrl } from '../configs';
 
 /**
  * Example usage
@@ -41,7 +44,7 @@ interface FigureMap {
 class FigureProvider {
   private static catalogUrl = 'https://api.github.com/repos/liveahero-community/atlas/git/trees/gh-pages';
   // GitHub Pages of another repo in same domain.
-  private static figureRootUrl = '/atlas';
+  private static figureRootUrl = urlJoin(publicUrl, '/atlas');
   private figureMap: FigureMap;
 
   /**
