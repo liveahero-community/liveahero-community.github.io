@@ -27,31 +27,31 @@ const Avatar: React.FC<AvatarProps> = (props) => {
     <LazyLoad classNamePrefix={`${className} image lazy`} offset={lazyLoadOffset}>
       {resourceName !== 'player' && [
         <Image key={`${resourceName}_1`} className={'advance'} ui={false} alt={''}
-          src={urlJoin(Configs.publicUrl, `/atlas/fg_${resourceName}_h02.png`)}
+          src={urlJoin(Configs.resizePrefix, `/atlas/fg_${resourceName}_h02.png`)}
           onError={(e: any) => {
             e.target.onerror = null;
             e.target.src= e.target.fixed
               ? ''
-              : urlJoin(Configs.publicUrl, `/atlas/fg_${resourceName}_h01.png`);
+              : urlJoin(Configs.resizePrefix, `/atlas/fg_${resourceName}_h01.png`);
             e.target.fixed = true;
           }}
         />,
         <Image key={`${resourceName}_2`} className={'normal'} ui={false} alt={''}
-          src={urlJoin(Configs.publicUrl, `/atlas/fg_${resourceName}_s01.png`)}
+          src={urlJoin(Configs.resizePrefix, `/atlas/fg_${resourceName}_s01.png`)}
           onError={(e: any) => {
             e.target.onerror = null;
             e.target.src= e.target.fixed
               ? ''
-              : urlJoin(Configs.publicUrl, `/atlas/fg_${resourceName}_h01.png`);
+              : urlJoin(Configs.resizePrefix, `/atlas/fg_${resourceName}_h01.png`);
             e.target.fixed = true;
           }}
         />,
         <div key={`${resourceName}_3`} className={'background-decorator-1'} />,
       ]}
-      
+
       {resourceName === 'player' && [1, 2, 3, 4].map((i) =>
         <Image key={`${resourceName}_${i}`} className={`player player${i}`} ui={false} alt={''}
-          src={urlJoin(Configs.publicUrl, `/atlas/fg_${resourceName}${i}_s01.png`)}
+          src={urlJoin(Configs.resizePrefix, `/atlas/fg_${resourceName}${i}_s01.png`)}
         />
       )}
     </LazyLoad>

@@ -1,7 +1,10 @@
 // Node modules.
 import React from 'react';
 import { Image } from 'semantic-ui-react';
+import urlJoin from 'url-join';
 import styled from 'styled-components';
+// Local modules.
+import * as Configs from '../../configs';
 
 interface SkillIconProps {
   className?: string;
@@ -15,11 +18,11 @@ const SkillIcon: React.FC<SkillIconProps> = (props) => {
   return (
     <div className={className}>
       <Image className='main' alt=''
-        src={`/assets/icon/skill/main/${skill.resourceName}.png`}
+        src={urlJoin(Configs.publicUrl, `/assets/icon/skill/main/${skill.resourceName}.png`)}
       />
       {skill.subResourceName &&
         <Image className='sub' alt=''
-          src={`/assets/icon/skill/sub/${skill.subResourceName}.png`}
+          src={urlJoin(Configs.publicUrl, `/assets/icon/skill/sub/${skill.subResourceName}.png`)}
         />
       }
     </div>

@@ -12,6 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { isMobile } from 'react-device-detect';
+import urlJoin from 'url-join';
 import styled from 'styled-components';
 // Local modules.
 import * as Config from '../../configs/index';
@@ -29,7 +30,7 @@ const Common: React.FC<AppProps> = (props) => {
 
   const { setLanguage, masterData } = useContext(AppContext);
 
-  const [logoUrl] = useState('/assets/logo.png');
+  const [logoUrl] = useState(urlJoin(Config.publicUrl, '/assets/logo.png'));
   const [version, setVersion] = useState(masterData?.version);
 
   const switchLanguage = useCallback((lang: Language) => {

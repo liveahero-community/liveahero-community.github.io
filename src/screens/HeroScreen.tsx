@@ -12,8 +12,9 @@ import {
   Image,
 } from 'semantic-ui-react';
 import { Helmet } from 'react-helmet';
+import urlJoin from 'url-join';
 // Local modules.
-import * as Config from '../configs/index';
+import * as Configs from '../configs';
 import * as Routes from '../utils/Routes';
 import { AppContext } from '../contexts/AppContext';
 // Local components.
@@ -51,15 +52,15 @@ const HeroScreen: React.FC = () => {
       {character && [
         <Helmet key='helmet'>
           <meta charSet='utf-8' />
-          <title>{`${character.meta.cardName} | ${Config.websiteTitle[language]}`}</title>
+          <title>{`${character.meta.cardName} | ${Configs.websiteTitle[language]}`}</title>
         </Helmet>
         ,
         <Container key='container' id='character-container'>
           <Segment>
             <Header as='h2'>
               {tabIndex === 0
-                ? <Image alt='' src={`/assets/icon/item/item_piece_${character.meta.resourceName}.png`} />
-                : <Image alt='' src={`/assets/icon/item/item_heart_${character.meta.resourceName}.png`} />
+                ? <Image alt='' src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_piece_${character.meta.resourceName}.png`)} />
+                : <Image alt='' src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_heart_${character.meta.resourceName}.png`)} />
               }
               {`${character.meta.cardName} (${character.meta.resourceName})`}
             </Header>

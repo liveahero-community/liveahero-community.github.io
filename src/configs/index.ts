@@ -3,6 +3,7 @@ type i18nContent = {
 }
 
 export const publicUrl: string = 'https://liveahero-community.github.io/';
+export const resizePrefix: string = `https://images.weserv.nl/?w=200&il&url=${publicUrl}`;
 
 export const websiteTitle: i18nContent = {
   'zh-TW': 'LIVE A HERO - 非官方資料站',

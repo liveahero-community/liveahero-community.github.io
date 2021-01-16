@@ -3,8 +3,10 @@ import _ from 'lodash';
 import React, { useContext } from 'react';
 import { Segment, Header, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import urlJoin from 'url-join';
 import styled from 'styled-components';
 // Local modules.
+import * as Configs from '../../configs';
 import * as Routes from '../../utils/Routes';
 import { AppContext } from '../../contexts/AppContext';
 // Local components.
@@ -68,11 +70,11 @@ const Catalog: React.FC<CatalogProps> = (props) => {
             <div className='character-icon'>
               <Link to={`${Routes.HEROES}/${skill.characterId}`}>
                 {skill.characterType === 'hero' &&
-                  <Image alt='' src={`/assets/icon/item/item_piece_${skill.characterResourceName}.png`} />
+                  <Image alt='' src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_piece_${skill.characterResourceName}.png`)} />
                 }
 
                 {skill.characterType === 'sidekick' &&
-                  <Image alt='' src={`/assets/icon/item/item_heart_${skill.characterResourceName}.png`} />
+                  <Image alt='' src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_heart_${skill.characterResourceName}.png`)} />
                 }
               </Link>
             </div>

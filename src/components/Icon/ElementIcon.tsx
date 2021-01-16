@@ -1,7 +1,10 @@
 // Node modules.
 import React from 'react';
 import { Image } from 'semantic-ui-react';
+import urlJoin from 'url-join';
 import styled from 'styled-components';
+// Local modules.
+import * as Configs from '../../configs';
 
 interface ElementIconProps {
   className?: string;
@@ -20,7 +23,7 @@ const ElementIcon: React.FC<ElementIconProps> = (props) => {
     case 1:
       return (
         <Image className={className}
-          src='/assets/icon/element/icon_element_fire.png'
+          src={urlJoin(Configs.publicUrl, '/assets/icon/element/icon_element_fire.png')}
         />
 
         // <svg className='icon iconfont' aria-hidden='true'>
@@ -30,7 +33,7 @@ const ElementIcon: React.FC<ElementIconProps> = (props) => {
     case 2:
       return (
         <Image className={className}
-          src='/assets/icon/element/icon_element_water.png'
+          src={urlJoin(Configs.publicUrl, '/assets/icon/element/icon_element_water.png')}
         />
 
         // <svg className='icon iconfont' aria-hidden='true'>
@@ -40,7 +43,7 @@ const ElementIcon: React.FC<ElementIconProps> = (props) => {
     case 3:
       return (
         <Image className={className}
-          src='/assets/icon/element/icon_element_earth.png'
+          src={urlJoin(Configs.publicUrl, '/assets/icon/element/icon_element_earth.png')}
         />
 
         // <svg className='icon iconfont' aria-hidden='true'>
@@ -50,7 +53,7 @@ const ElementIcon: React.FC<ElementIconProps> = (props) => {
     case 4:
       return (
         <Image className={className}
-          src='/assets/icon/element/icon_element_light.png'
+          src={urlJoin(Configs.publicUrl, '/assets/icon/element/icon_element_light.png')}
         />
 
         // <svg className='icon iconfont' aria-hidden='true'>
@@ -60,7 +63,7 @@ const ElementIcon: React.FC<ElementIconProps> = (props) => {
     case 5:
       return (
         <Image className={className}
-          src='/assets/icon/element/icon_element_shadow.png'
+          src={urlJoin(Configs.publicUrl, '/assets/icon/element/icon_element_shadow.png')}
         />
 
         // <svg className='icon iconfont' aria-hidden='true'>

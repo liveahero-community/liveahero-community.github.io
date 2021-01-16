@@ -1,7 +1,10 @@
 // Node modules.
 import React from 'react';
 import { Image } from 'semantic-ui-react';
+import urlJoin from 'url-join';
 import styled from 'styled-components';
+// Local modules.
+import * as Configs from '../../configs';
 
 interface RankIconProps {
   className?: string;
@@ -17,7 +20,7 @@ const RankIcon: React.FC<RankIconProps> = (props) => {
 
   return (
     <Image className={className}
-      src={`/assets/icon/item/item_genericpiece_rank${rankLevel}.png`}
+      src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_genericpiece_rank${rankLevel}.png`)}
     />
   );
 }
