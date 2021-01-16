@@ -15,16 +15,15 @@ import { ElementIcon } from '../Icon/ElementIcon';
 import { RoleIcon } from '../Icon/RoleIcon';
 
 interface AvatarProps {
-  className?: string;
   lazyLoadOffset: number;
   resourceName: string;
 }
 
 const Avatar: React.FC<AvatarProps> = (props) => {
-  const { className, lazyLoadOffset, resourceName } = props;
+  const { lazyLoadOffset, resourceName } = props;
 
   return (
-    <LazyLoad classNamePrefix={`${className} image lazy`} offset={lazyLoadOffset}>
+    <LazyLoad classNamePrefix='avatar-container image lazy' offset={lazyLoadOffset}>
       {resourceName !== 'player' && [
         <Image key={`${resourceName}_1`} className={'advance'} ui={false} alt={''}
           src={urlJoin(Configs.resizePrefix, `/atlas/fg_${resourceName}_h02.png`)}
@@ -58,119 +57,24 @@ const Avatar: React.FC<AvatarProps> = (props) => {
   );
 };
 
-const StyledAvatar = styled(Avatar)`
-  & {
-    position: relative;
-    width: 100% !important;
-    padding-top: 120% !important; /* 1:1 Aspect Ratio */
-    overflow: hidden;
-  }
-
-  .advance {
-    position: absolute;
-    top: -10%;
-    left: -20%;
-    bottom: 0;
-    right: 0;
-    opacity: 0.5;
-    z-index: 10;
-    transition: 0.5s;
-  }
-
-  .normal {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    bottom: 0;
-    right: 0;
-    opacity: 1;
-    z-index: 20;
-    -webkit-filter: drop-shadow(0px 0px 10px #CCC);
-            filter: drop-shadow(0px 0px 10px #CCC);
-    transition: 0.5s;
-  }
-
-  &:hover {
-    .advance {
-      top: 5%;
-      left: 5%;
-      bottom: 0;
-      right: 0;
-      opacity: 1;
-      z-index: 20;
-      -webkit-filter: drop-shadow(0px 0px 10px #CCC);
-              filter: drop-shadow(0px 0px 10px #CCC);
-    }
-
-    .normal {
-      top: -10%;
-      left: -20%;
-      bottom: 0;
-      right: 0;
-      opacity: 0.5;
-      z-index: 10;
-    }
-  }
-
-  .background-decorator-1 {
-    position: absolute;
-    top: 30%;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 15;
-    transform: rotate(40deg);
-  }
-
-  .player {
-    position: absolute;
-    width: 80% !important;
-    top: 5%;
-    left: 20%;
-    bottom: 0;
-    right: 0;
-    opacity: 1;
-    transition: 0.5s;
-  }
-
-  .player.player1 {
-    left: 0%;
-    z-index: 3;
-  }
-
-  .player.player2 {
-    left: 25%;
-    z-index: 4;
-  }
-
-  .player.player3 {
-    left: -25%;
-    z-index: 2;
-  }
-
-  .player.player4 {
-    left: 50%;
-    z-index: 1;
-  }
-`;
-
 interface ProfileProps {
+  className?: string;
   character: DataExtend.CharacterData;
 }
 
 const Profile: React.FC<ProfileProps> = (props) => {
+  const { className } = props;
   const { character } = props;
   const [heroCard] = _.orderBy(character.heroes, 'stockOrder', 'asc');
 
   const [lazyLoadOffset] = useState(200);
 
   return (
-    <Link to={`${Routes.HEROES}/${character.meta.resourceName}`} style={{ 'width': '100%' }}>
+    <Link className={className} to={`${Routes.HEROES}/${character.meta.resourceName}`}>
       <Card fluid>
         {/* This className is a workaround for LazyLoad with Card.Image */}
         {/* className will be 'image lazy-wrapper' */}
-        <StyledAvatar
+        <Avatar
           lazyLoadOffset={lazyLoadOffset}
           resourceName={character.meta.resourceName}
         />
@@ -206,8 +110,128 @@ const Profile: React.FC<ProfileProps> = (props) => {
       </Card>
     </Link>
   );
-}
+};
+
+
+const StyledProfile = styled(Profile)`
+  & {
+    width: 100%;
+    -webkit-user-drag: none;
+     -khtml-user-drag: none;
+       -moz-user-drag: none;
+         -o-user-drag: none;
+  }
+
+  .avatar-container {
+    position: relative;
+    width: 100% !important;
+    padding-top: 120% !important; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+
+    .advance {
+      position: absolute;
+      top: -10%;
+      left: -20%;
+      bottom: 0;
+      right: 0;
+      opacity: 0.5;
+      z-index: 10;
+      -webkit-filter: drop-shadow(0px 0px 10px #CCC);
+              filter: drop-shadow(0px 0px 10px #CCC);
+      transition: 0.5s;
+      -webkit-user-drag: none;
+       -khtml-user-drag: none;
+         -moz-user-drag: none;
+           -o-user-drag: none;
+    }
+
+    .normal {
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      bottom: 0;
+      right: 0;
+      opacity: 1;
+      z-index: 20;
+      -webkit-filter: drop-shadow(0px 0px 10px #CCC);
+              filter: drop-shadow(0px 0px 10px #CCC);
+      transition: 0.5s;
+      -webkit-user-drag: none;
+       -khtml-user-drag: none;
+         -moz-user-drag: none;
+           -o-user-drag: none;
+    }
+
+    .background-decorator-1 {
+      position: absolute;
+      top: 30%;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: rgba(0, 0, 0, 0.2);
+      z-index: 15;
+      transform: rotate(40deg);
+    }
+
+    .player {
+      position: absolute;
+      width: 80% !important;
+      top: 5%;
+      left: 20%;
+      bottom: 0;
+      right: 0;
+      opacity: 1;
+      transition: 0.5s;
+    }
+
+    .player.player1 {
+      left: 0%;
+      z-index: 3;
+    }
+
+    .player.player2 {
+      left: 25%;
+      z-index: 4;
+    }
+
+    .player.player3 {
+      left: -25%;
+      z-index: 2;
+    }
+
+    .player.player4 {
+      left: 50%;
+      z-index: 1;
+    }
+  }
+
+  &:hover {
+    .avatar-container {
+      .advance {
+        top: 5%;
+        left: 5%;
+        bottom: 0;
+        right: 0;
+        opacity: 1;
+        z-index: 20;
+        -webkit-filter: drop-shadow(0px 0px 10px #CCC);
+                filter: drop-shadow(0px 0px 10px #CCC);
+      }
+
+      .normal {
+        top: -10%;
+        left: -20%;
+        bottom: 0;
+        right: 0;
+        opacity: 0.5;
+        z-index: 10;
+        -webkit-filter: drop-shadow(0px 0px 10px #CCC);
+                filter: drop-shadow(0px 0px 10px #CCC);
+      }
+    }
+  }
+`;
 
 export {
-  Profile,
+  StyledProfile as Profile,
 };
