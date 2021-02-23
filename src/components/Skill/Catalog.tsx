@@ -70,11 +70,11 @@ const Catalog: React.FC<CatalogProps> = (props) => {
             <div className='character-icon'>
               <Link to={`${Routes.HEROES}/${skill.characterId}`}>
                 {skill.characterType === 'hero' &&
-                  <Image alt='' src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_piece_${skill.characterResourceName}.png`)} />
+                  <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_h01.png`)} />
                 }
 
                 {skill.characterType === 'sidekick' &&
-                  <Image alt='' src={urlJoin(Configs.publicUrl, `/assets/icon/item/item_heart_${skill.characterResourceName}.png`)} />
+                  <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_s01.png`)} />
                 }
               </Link>
             </div>
