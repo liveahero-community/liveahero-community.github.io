@@ -70,11 +70,15 @@ const Catalog: React.FC<CatalogProps> = (props) => {
             <div className='character-icon'>
               <Link to={`${Routes.HEROES}/${skill.characterId}`}>
                 {skill.characterType === 'hero' &&
-                  <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_h01.png`)} />
+                  <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_h01.png`)}
+                    onError={(e: any) => { e.target.onerror = null; e.target.src = urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_s01.png`) }}
+                  />
                 }
 
                 {skill.characterType === 'sidekick' &&
-                  <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_s01.png`)} />
+                  <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_s01.png`)}
+                    onError={(e: any) => { e.target.onerror = null; e.target.src = urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${skill.characterResourceName}_h01.png`) }}
+                  />
                 }
               </Link>
             </div>

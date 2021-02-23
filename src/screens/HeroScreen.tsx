@@ -59,8 +59,12 @@ const HeroScreen: React.FC = () => {
           <Segment>
             <Header as='h2'>
               {tabIndex === 0
-                ? <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_h01.png`)} />
-                : <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_s01.png`)} />
+                ? <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_h01.png`)}
+                  onError={(e: any) => { e.target.onerror = null; e.target.src = urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_s01.png`) }}
+                />
+                : <Image alt='' src={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_s01.png`)}
+                  onError={(e: any) => { e.target.onerror = null; e.target.src = urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_h01.png`) }}
+                />
               }
               {`${character.meta.cardName} (${character.meta.resourceName})`}
             </Header>
