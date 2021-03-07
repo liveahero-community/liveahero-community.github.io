@@ -12,6 +12,8 @@ export const MISC = '/miscellaneous';
 
 export const PLAYER_RANKS = '/playerRanks';
 
+export const HERO_TABLE_VIEW = '/heroTableView';
+
 export const EXP = '/exp';
 
 export const STATUSES = '/statuses';
