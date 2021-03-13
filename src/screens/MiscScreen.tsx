@@ -30,7 +30,15 @@ const MiscScreen: React.FC = () => {
 
         <Link to={Routes.HERO_TABLE_VIEW}>
           <Button basic inverted>
-            {`英雄能力一覽`}
+            {`英雄 素質能力一覽`}
+          </Button>
+        </Link>
+
+        <Divider hidden />
+
+        <Link to={Routes.SIDEKICK_TABLE_VIEW}>
+          <Button basic inverted>
+            {`助手 素質能力一覽`}
           </Button>
         </Link>
 

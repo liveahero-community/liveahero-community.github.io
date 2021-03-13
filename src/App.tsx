@@ -95,6 +95,9 @@ const App: React.FC = () => {
           <Route path={Routes.HERO_TABLE_VIEW}
             component={withTracker(Screen.HeroTableViewScreen)}
           />
+          <Route path={Routes.SIDEKICK_TABLE_VIEW}
+            component={withTracker(Screen.SidekickTableViewScreen)}
+          />
           <Route path={Routes.EXP}
             component={withTracker(Screen.ExpScreen)}
           />

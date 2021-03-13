@@ -4,8 +4,6 @@ import React, { useCallback, useContext, useState } from 'react';
 import {
   Container,
   Header,
-  Segment,
-  Button,
   Table,
   Image,
 } from 'semantic-ui-react';
@@ -19,31 +17,19 @@ import { AppContext } from '../contexts/AppContext';
 // Local components.
 import * as Framework from '../components/Framework';
 
-interface HeroTableViewProps {
+interface SidekickTableViewProps {
   className?: string;
-  filtering: {
-    ranks: boolean[];
-    elements: boolean[];
-  };
 }
 
-const HeroTableView: React.FC<HeroTableViewProps> = (props) => {
+const SidekickTableView: React.FC<SidekickTableViewProps> = (props) => {
   const { className } = props;
-  const { filtering } = props;
 
-  const { elements } = filtering;
-
-  const [rarity, setRarity] = useState<number>(6);
-  const [level, setLevel] = useState<number>(60);
+  const [levelZone] = useState<number>(6);
+  const [level] = useState<number>(100);
   const [column, setColumn] = useState<string>('id');
   const [direction, setDirection] = useState<'ascending' | 'descending'>('descending');
 
   const { masterData } = useContext(AppContext);
-
-  const updateRarity = useCallback((selectedRarity: number) => {
-    setRarity(selectedRarity);
-    setLevel(selectedRarity * 10);
-  }, []);
 
   const onSort = useCallback((selectedColumn: string) => {
     if (selectedColumn === column) {
@@ -56,29 +42,25 @@ const HeroTableView: React.FC<HeroTableViewProps> = (props) => {
 
   // Filtering.
   const characters = _
-    // Filter rarity 5 and 6 data.
+    // Filter levelZone 6 data.
     .map(masterData?.characterDict, (character: DataExtend.CharacterData) => ({
       ...character,
-      heroes: character.heroes.filter((hero) => hero.rarity === rarity),
+      sidekicks: character.sidekicks.filter((sidekick) => sidekick.levelZone === levelZone),
     }))
-    .filter((character) => character.heroes.length > 0)
+    .filter((character) => character.sidekicks.length > 0)
     // Metric status.
     .map((character) => ({
       meta: character.meta,
-      hero: {
-        ...character.heroes[0],
-        growth: character.heroes[0].growths.find((growth) => growth.level === level),
+      sidekick: {
+        ...character.sidekicks[0],
+        growth: character.sidekicks[0].growths.find((growth) => growth.level === level),
       },
-    }))
-    // Filter by element
-    .filter((character) => {
-      return !_.includes(elements, false) || elements[character.meta.heroElement! - 1];
-    });
+    }));
 
   // Sorting.
   const sortedCharacters = _.orderBy(
     characters,
-    [`hero.growth.${column}`],
+    [`sidekick.growth.${column}`],
     [direction === 'ascending' ? 'asc' : 'desc'],
   );
 
@@ -87,23 +69,9 @@ const HeroTableView: React.FC<HeroTableViewProps> = (props) => {
       <Container text textAlign='center'>
         <Header inverted>
           <Header.Content>
-            {`英雄素質能力一覽`}
+            {`助手素質能力一覽`}
           </Header.Content>
         </Header>
-
-        <Segment basic>
-          <Button inverted color={rarity === 5 ? 'orange' : 'grey'}
-            onClick={() => updateRarity(5)}
-          >
-            {`5 ★`}
-          </Button>
-
-          <Button inverted color={rarity === 6 ? 'orange' : 'grey'}
-            onClick={() => updateRarity(6)}
-          >
-            {`6 ★`}
-          </Button>
-        </Segment>
       </Container>
 
       <Table className={className} sortable compact celled unstackable>
@@ -155,35 +123,40 @@ const HeroTableView: React.FC<HeroTableViewProps> = (props) => {
               {/* Image and name */}
               <Table.Cell collapsing textAlign='center'>
                 <Link className={className} to={`${Routes.HEROES}/${character.meta.resourceName}`}>
-                  <Image alt='' size='mini'
-                    src={urlJoin(Config.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_h01.png`)}
-                  />
+                  {character.meta.resourceName !== 'player'
+                    ? <Image alt='' size='mini'
+                      src={urlJoin(Config.publicUrl, `/archives/Texture2D/icon_${character.meta.resourceName}_s01.png`)}
+                    />
+                    : <Image alt='' size='mini'
+                      src={urlJoin(Config.publicUrl, `/archives/Texture2D/icon_player1_s01.png`)}
+                    />
+                  }
                 </Link>
               </Table.Cell>
 
               {/* Level */}
               <Table.Cell textAlign='center'>
-                {character.hero.growth?.level}
+                {character.sidekick.growth?.level}
               </Table.Cell>
 
               {/* HP */}
               <Table.Cell textAlign='right'>
-                {character.hero.growth?.hp}
+                {character.sidekick.growth?.hp}
               </Table.Cell>
 
               {/* Attack */}
               <Table.Cell textAlign='right'>
-                {character.hero.growth?.attack}
+                {character.sidekick.growth?.attack}
               </Table.Cell>
 
               {/* Speed */}
               <Table.Cell textAlign='right'>
-                {character.hero.growth?.agility}
+                {character.sidekick.growth?.agility}
               </Table.Cell>
 
               {/* View */}
               <Table.Cell textAlign='right'>
-                {character.hero.growth?.addView}
+                {character.sidekick.growth?.addView}
               </Table.Cell>
             </Table.Row>
           ))}
@@ -193,28 +166,23 @@ const HeroTableView: React.FC<HeroTableViewProps> = (props) => {
   );
 }
 
-const HeroTableViewScreen: React.FC = () => {
+const SidekickTableViewScreen: React.FC = () => {
   const { language } = useContext(AppContext);
 
   return (
     <Framework.Common>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>{`英雄素質能力一覽 | ${Config.websiteTitle[language]}`}</title>
+        <title>{`助手素質能力一覽 | ${Config.websiteTitle[language]}`}</title>
       </Helmet>
 
       <Container>
-        <HeroTableView
-          filtering={{
-            ranks: [],
-            elements: [],
-          }}
-        />
+        <SidekickTableView />
       </Container>
     </Framework.Common>
   );
 }
 
 export {
-  HeroTableViewScreen,
+  SidekickTableViewScreen,
 };

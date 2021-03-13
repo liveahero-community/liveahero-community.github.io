@@ -14,6 +14,8 @@ export const PLAYER_RANKS = '/playerRanks';
 
 export const HERO_TABLE_VIEW = '/heroTableView';
 
+export const SIDEKICK_TABLE_VIEW = '/sidekickTableView';
+
 export const EXP = '/exp';
 
 export const STATUSES = '/statuses';
