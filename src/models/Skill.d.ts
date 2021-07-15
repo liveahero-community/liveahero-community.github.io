@@ -48,7 +48,13 @@ declare namespace Skill {
     'IncreaseLAH' |
     'MultipleHp' |
     'IncreaseExp' |
-    'NeedViewValueChange';
+    'NeedViewValueChange' |
+    'AddMultDamage' |
+    'Hide' |
+    'RandomTeamAttack' |
+    'AimHighestHPCharacter' |
+    'RateChangeView' |
+    'AimHighestAtkCharacter';
 
   type SkillEffect = Effect.Aggregation |
     Effect.AllAttack |

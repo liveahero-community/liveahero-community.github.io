@@ -83,7 +83,7 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
   }
 
   return (
-    <Modal className={className} basic size='small' dimmer='blurring' closeOnDimmerClick={false}
+    <Modal className={className} centered={false} basic dimmer='blurring' closeOnDimmerClick={false}
       open={open}
       onClose={onClose}
       onOpen={onOpen}
@@ -117,6 +117,10 @@ const CatalogFilter: React.FC<CatalogFilterProps> = (props) => {
 const styledCatalogFilter = styled(CatalogFilter)`
   .item {
     cursor: pointer;
+  }
+
+  .menu.transition {
+    max-height: 50vh !important;
   }
 `;
 

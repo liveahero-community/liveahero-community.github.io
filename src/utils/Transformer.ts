@@ -94,6 +94,21 @@ const effectClassTransform = (effectClass: Skill.EffectClass) => {
       return '增加經驗值';
     case 'NeedViewValueChange':
       return '技能所需 view 改變 (定值)';
+    case 'AddMultDamage':
+      return '傷害追加 (% 數)';
+    case 'Hide':
+      return '隱蔽';
+    case 'RandomTeamAttack':
+      return '隨機友軍追擊';
+    case 'AimHighestHPCharacter':
+      return '瞄準高血量角色';
+    case 'RateChangeView':
+      return '獲得 view';
+    case 'AimHighestAtkCharacter':
+      return '瞄準高攻擊力角色';
+    default:
+      console.log(`Unknown effectClass: ${effectClass}`);
+      return '其他類型';
   }
 };
 
