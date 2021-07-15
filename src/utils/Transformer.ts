@@ -34,7 +34,7 @@ const roleTransform = (roleId: number) => {
     case 99:
       return '特殊';
     default:
-      return '無';
+      return '助手';
   }
 };
 

@@ -87,10 +87,12 @@ const Profile: React.FC<ProfileProps> = (props) => {
           <Card.Description>
             <Grid divided={!isMobile} textAlign='center'>
               <Grid.Row>
-                <Grid.Column width={6}>
-                  <ElementIcon elementId={heroCard?.element} />
-                  {!isMobile && elementTransform(heroCard?.element)}
-                </Grid.Column>
+                {character.meta.heroElement &&
+                  <Grid.Column width={6}>
+                    <ElementIcon elementId={character.meta.heroElement} />
+                    {!isMobile && elementTransform(character.meta.heroElement)}
+                  </Grid.Column>
+                }
 
                 <Grid.Column width={10}>
                   {!isMobile && <RoleIcon roleId={heroCard?.role} />}
