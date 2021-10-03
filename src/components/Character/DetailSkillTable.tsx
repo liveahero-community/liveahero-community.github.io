@@ -79,6 +79,8 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
     ? previousCard?.equipmentSkills
     : previousCard?.skills;
 
+  console.log(skills);
+
   return (
     <Card.Group className={className} centered itemsPerRow={isMobile ? 1 : 3}>
       {skills.map((skill, i) => (
@@ -112,7 +114,8 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
 
           {skill.effects.filter((e) => e.effectDetail.turn > 0).length
             ? <Card.Content className='status-list' extra>
-              {skill.effects.filter((e) => e.effectDetail.turn > 0).map((effect, i) =>
+              {/* Only show known status and its turn over zero */}
+              {skill.effects.filter((e) => e.effectDetail.status?.statusName && e.effectDetail.turn > 0).map((effect, i) =>
                 <StatusIcon key={i}
                   statusId={effect.effectDetail.statusId}
                   name={effect.effectDetail.status?.statusName}
