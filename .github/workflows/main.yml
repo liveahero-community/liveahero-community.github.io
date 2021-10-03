@@ -14,6 +14,7 @@ jobs:
       USER_EMAIL  : githubaction@fake.com
       PUBLISH_DIR : ./build
       GH_PAGES_BRANCH: gh-pages
+      PUBLIC_URL: https://liveahero-community.github.io/
     runs-on: ubuntu-latest
     strategy:
       matrix:
