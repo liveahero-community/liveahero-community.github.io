@@ -52,6 +52,10 @@ const HeroScreen: React.FC = () => {
       {character && [
         <Helmet key='helmet'>
           <meta charSet='utf-8' />
+          <meta property='og:title' content={character.meta.cardName} />
+          <meta property='og:site_name' content={Configs.websiteTitle[language]} />
+          <meta property='og:description' content={Configs.websiteTitle[language]} />
+          <meta property='og:image' content={urlJoin(Configs.publicUrl, `/archives/Texture2D/icon_${character?.meta?.resourceName}_h01.png`)} />
           <title>{`${character.meta.cardName} | ${Configs.websiteTitle[language]}`}</title>
         </Helmet>
         ,

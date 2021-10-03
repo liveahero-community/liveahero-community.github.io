@@ -79,8 +79,6 @@ const DetailSkillTable: React.FC<DetailSkillTableProps> = (props) => {
     ? previousCard?.equipmentSkills
     : previousCard?.skills;
 
-  console.log(skills);
-
   return (
     <Card.Group className={className} centered itemsPerRow={isMobile ? 1 : 3}>
       {skills.map((skill, i) => (
