@@ -46,6 +46,8 @@ const App: React.FC = () => {
       skillEffectDataRaw: unpackedData['SkillEffectMaster.json'],
       statusDataRaw: unpackedData['StatusMaster.json'],
       userRankRaw: unpackedData['UserRankMaster.json'],
+      parallelWeaponExpRaw: unpackedData['ParallelWeaponExpMaster.json'],
+      // parallelWeaponFormRaw: unpackedData['ParallelWeaponFormMaster.json'],
       detailRaw: await download(`${translationUrl}/latest/${language}/Japanese.properties`, false),
     };
 
@@ -100,6 +102,9 @@ const App: React.FC = () => {
           />
           <Route path={Routes.EXP}
             component={withTracker(Screen.ExpScreen)}
+          />
+          <Route path={Routes.PARALLEL_WEAPON_EXP}
+            component={withTracker(Screen.ParallelWeaponScreen)}
           />
           <Route path={Routes.PLAYER_RANKS}
             component={withTracker(Screen.PlayerRanksScreen)}

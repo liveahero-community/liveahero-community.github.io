@@ -34,4 +34,10 @@ declare namespace MasterData {
   interface ItemMaster {
     [itemId: string]: Item.ItemData;
   }
+
+  type ParallelWeaponExpMaster = {
+    level: number;
+    nextExp: number;
+    totalExp: number;
+  }[]
 }

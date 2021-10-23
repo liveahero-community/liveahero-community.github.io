@@ -18,6 +18,8 @@ export const SIDEKICK_TABLE_VIEW = '/sidekickTableView';
 
 export const EXP = '/exp';
 
+export const PARALLEL_WEAPON_EXP = '/parallelWeaponExp';
+
 export const STATUSES = '/statuses';
 
 export const COMMUNITIES = '/communities';

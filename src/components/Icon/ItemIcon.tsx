@@ -9,6 +9,7 @@ import * as Configs from '../../configs';
 enum Item {
   EXP = 'exp',
   TRAINING_BAND = 'trainingband',
+  PWEXP = 'pwexp',
 }
 
 interface ItemIconProps {
@@ -25,17 +26,24 @@ const ItemIcon: React.FC<ItemIconProps> = (props) => {
     case Item.EXP:
       return (
         <Image className={className}
-          src={urlJoin(Configs.publicUrl, '/assets/icon/item/item_exp.png')}
+          src={urlJoin(Configs.publicUrl, '/archives/Texture2D/item_exp.png')}
         />
       );
 
     case Item.TRAINING_BAND:
       return (
         <Image className={className}
-          src={urlJoin(Configs.publicUrl, '/assets/icon/item/item_trainingband.png')}
+          src={urlJoin(Configs.publicUrl, '/archives/Texture2D/item_trainingband.png')}
         />
       );
 
+    case Item.PWEXP:
+      return (
+        <Image className={className}
+          src={urlJoin(Configs.publicUrl, '/archives/Texture2D/item_pwexp.png')}
+        />
+      );
+        
     default:
       return null;
   }

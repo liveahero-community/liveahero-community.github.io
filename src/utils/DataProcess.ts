@@ -10,6 +10,7 @@ interface RawData {
   skillEffectDataRaw: MasterData.SkillEffectMaster;
   statusDataRaw: MasterData.StatusMaster;
   userRankRaw: MasterData.UserRankMaster;
+  parallelWeaponExpRaw: MasterData.ParallelWeaponExpMaster;
   detailRaw: string;
 };
 
@@ -34,6 +35,7 @@ class DataProcess {
   // Exp information.
   public heroExpData: MasterData.HeroExpMaster;
   public sidekickExpData: MasterData.SidekickExpMaster;
+  public parallelWeaponExpData: MasterData.ParallelWeaponExpMaster;
   // Flatten skill data.
   public skillData: DataExtend.SkillDataWithCharacter[];
   // Status data.
@@ -121,6 +123,7 @@ class DataProcess {
       ), ['skillId']
     );
 
+    this.parallelWeaponExpData = rawData.parallelWeaponExpRaw;
     this.userRankData = rawData.userRankRaw;
     this.statusDict = rawData.statusDataRaw;
 

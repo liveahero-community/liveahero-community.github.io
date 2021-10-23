@@ -60,6 +60,14 @@ const MiscScreen: React.FC = () => {
 
         <Divider hidden />
 
+        <Link to={Routes.PARALLEL_WEAPON_EXP}>
+          <Button basic inverted>
+            {`平行武裝 升級經驗列表`}
+          </Button>
+        </Link>
+
+        <Divider hidden />
+
         <Link to={Routes.STATUSES}>
           <Button basic inverted>
             {`增益 / 減益 狀態一覽`}

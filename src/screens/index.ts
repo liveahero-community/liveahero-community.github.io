@@ -10,6 +10,7 @@ export { HeroTableViewScreen } from './HeroTableViewScreen';
 export { SidekickTableViewScreen } from './SidekickTableViewScreen';
 export { PlayerRanksScreen } from './PlayerRanksScreen';
 export { ExpScreen } from './ExpScreen';
+export { ParallelWeaponScreen } from './ParallelWeaponScreen';
 export { StatusesScreen } from './StatusesScreen';
 
 // Communities.
