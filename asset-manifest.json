@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "https://liveahero-community.github.io/static/css/main.88a775ac.chunk.css",
+    "main.js": "https://liveahero-community.github.io/static/js/main.c457ccf8.chunk.js",
+    "main.js.map": "https://liveahero-community.github.io/static/js/main.c457ccf8.chunk.js.map",
+    "runtime-main.js": "https://liveahero-community.github.io/static/js/runtime-main.f0e28309.js",
+    "runtime-main.js.map": "https://liveahero-community.github.io/static/js/runtime-main.f0e28309.js.map",
+    "static/css/2.b6ffb8c1.chunk.css": "https://liveahero-community.github.io/static/css/2.b6ffb8c1.chunk.css",
+    "static/js/2.56e787ee.chunk.js": "https://liveahero-community.github.io/static/js/2.56e787ee.chunk.js",
+    "static/js/2.56e787ee.chunk.js.map": "https://liveahero-community.github.io/static/js/2.56e787ee.chunk.js.map",
+    "index.html": "https://liveahero-community.github.io/index.html",
+    "precache-manifest.4cdd5921a4766e6845942894bc308237.js": "https://liveahero-community.github.io/precache-manifest.4cdd5921a4766e6845942894bc308237.js",
+    "service-worker.js": "https://liveahero-community.github.io/service-worker.js",
+    "static/css/2.b6ffb8c1.chunk.css.map": "https://liveahero-community.github.io/static/css/2.b6ffb8c1.chunk.css.map",
+    "static/css/main.88a775ac.chunk.css.map": "https://liveahero-community.github.io/static/css/main.88a775ac.chunk.css.map",
+    "static/js/2.56e787ee.chunk.js.LICENSE.txt": "https://liveahero-community.github.io/static/js/2.56e787ee.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "https://liveahero-community.github.io/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f0e28309.js",
+    "static/css/2.b6ffb8c1.chunk.css",
+    "static/js/2.56e787ee.chunk.js",
+    "static/css/main.88a775ac.chunk.css",
+    "static/js/main.c457ccf8.chunk.js"
+  ]
+}
