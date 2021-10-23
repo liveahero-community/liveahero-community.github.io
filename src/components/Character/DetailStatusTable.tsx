@@ -36,6 +36,16 @@ const DetailStatusTable: React.FC<DetailStatusTableProps> = (props) => {
   const { className } = props;
   const { card, previousCard } = props;
 
+  const rows = card?.growths.map((growth, i) => (
+    <Table.Row key={i} textAlign='right'>
+      <Table.Cell textAlign='center'>{growth.level}</Table.Cell>
+      <StatusCell current={growth.hp} previous={previousCard?.growths[i].hp} />
+      <StatusCell current={growth.attack} previous={previousCard?.growths[i].attack} />
+      <StatusCell current={growth.agility} previous={previousCard?.growths[i].agility} />
+      <StatusCell current={growth.addView} previous={previousCard?.growths[i].addView} />
+    </Table.Row>
+  )).reverse();
+
   return (
     <Table className={className} unstackable compact singleLine>
       <Table.Header>
@@ -49,15 +59,7 @@ const DetailStatusTable: React.FC<DetailStatusTableProps> = (props) => {
       </Table.Header>
 
       <Table.Body>
-        {card?.growths.map((growth, i) => (
-          <Table.Row key={i} textAlign='right'>
-            <Table.Cell textAlign='center'>{growth.level}</Table.Cell>
-            <StatusCell current={growth.hp} previous={previousCard?.growths[i].hp} />
-            <StatusCell current={growth.attack} previous={previousCard?.growths[i].attack} />
-            <StatusCell current={growth.agility} previous={previousCard?.growths[i].agility} />
-            <StatusCell current={growth.addView} previous={previousCard?.growths[i].addView} />
-          </Table.Row>
-        ))}
+        {rows}
       </Table.Body>
     </Table>
   );

@@ -139,10 +139,14 @@ const styledCommon = styled(Common)`
   .logo-banner {
     background-color: #EC833D !important;
     border: none !important;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 
     .subtitle {
       margin-top: 0.25em;
-      color: #FFF;
+      color: #EAEAEA;
       font-weight: 700;
     }
 
